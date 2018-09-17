@@ -43,7 +43,12 @@ gem 'autoprefixer-rails'
 # jquery
 gem 'jquery-rails'
 
+# resolves node version issues
 gem 'mini_racer'
+
+# caching gems
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
