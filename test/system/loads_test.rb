@@ -14,7 +14,7 @@ class LoadsTest < ApplicationSystemTestCase
     visit loads_url
     click_on "New Load"
 
-    fill_in "Client", with: @load.client_id
+    fill_in "Driver", with: @load.driver_id
     fill_in "Status", with: @load.status
     fill_in "Washer", with: @load.washer_id
     click_on "Create Load"
@@ -27,7 +27,7 @@ class LoadsTest < ApplicationSystemTestCase
     visit loads_url
     click_on "Edit", match: :first
 
-    fill_in "Client", with: @load.client_id
+    fill_in "Driver", with: @load.driver_id
     fill_in "Status", with: @load.status
     fill_in "Washer", with: @load.washer_id
     click_on "Update Load"

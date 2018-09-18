@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_212352) do
+ActiveRecord::Schema.define(version: 2018_09_18_223023) do
 
   create_table "admin_stats", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "total_num_washers"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_212352) do
 
   create_table "loads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "washer_id"
-    t.integer "client_id"
+    t.integer "driver_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
