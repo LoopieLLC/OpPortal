@@ -9,42 +9,26 @@
 
 
 
-.btn-danger, .btn-danger:active, .btn-success:visited {
-  background-color:$ColorRed;
-}
 
-.btn-danger:hover {
-  background-color:$ColorRed_Hover;
-}
 
-<<<<<<< HEAD
-=======
-.btn-primary, .btn-primary:active, .btn-primary:visited {
-  background-color:$ColorLoopie;
-}
->>>>>>> 35e6a481cec9d339fb174a11b54676ab3a9d38dc
 
-.btn-primary:hover {
-  background-color:$ColorLoopie_Hover;
-}
 
 //
 
 @import 'variables';
 
-<<<<<<< HEAD
 body {
   background-color: $ColorDark;
 }
-=======
-//
->>>>>>> 35e6a481cec9d339fb174a11b54676ab3a9d38dc
 
-//body of welcome page
-
-body {
-  background-color: $ColorDark;
+.success {
+  background-color: $ColorGreen;
 }
+
+.danger {
+  background-color: $ColorRed;
+}
+
 
 .flex-center {
   align-items: center;
@@ -65,6 +49,11 @@ body {
 .form-control {
    background-color: transparent;
    border-radius: 10em;
+   border-width: 0.105em;
    border-color: $ColorWhite;
-   margin-top: 1em;
+   margin-top: 1.25em;
+}
+.form-control:focus {
+  border-color: $ColorLoopie;
+  box-shadow: none;
 }
