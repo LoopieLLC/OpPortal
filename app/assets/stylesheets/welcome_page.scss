@@ -7,35 +7,38 @@
 
 //overridden variables go here
 
-
-
-.btn-danger, .btn-danger:active, .btn-success:visited {
-  background-color:$ColorRed;
-}
-
-.btn-danger:hover {
-  background-color:$ColorRed_Hover;
-}
-
-.btn-primary, .btn-primary:active, .btn-primary:visited {
-  background-color:$ColorLoopie;
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: $ColorLoopie;
 }
 
 .btn-primary:hover {
-  background-color:$ColorLoopie_Hover;
+    background-color: $ColorLoopie_Hover;
+}
+
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+    background-color: $ColorGreen;
+}
+
+.btn-success:hover, {
+    background-color: $ColorGreen_Hover;
+}
+
+.btn-danger, .btn-danger:active, .btn-danger:visited {
+    background-color: $ColorRed;
+}
+
+.btn-danger:hover {
+    background-color: $ColorRed_Hover;
 }
 
 //
 
 @import 'variables';
 
-//
-
-//body of welcome page
-
 body {
   background-color: $ColorDark;
 }
+
 
 .flex-center {
   align-items: center;
@@ -56,6 +59,11 @@ body {
 .form-control {
    background-color: transparent;
    border-radius: 10em;
+   border-width: 0.105em;
    border-color: $ColorWhite;
-   margin-top: 1em;
+   margin-top: 1.25em;
+}
+.form-control:focus {
+  border-color: $ColorLoopie;
+  box-shadow: none;
 }
