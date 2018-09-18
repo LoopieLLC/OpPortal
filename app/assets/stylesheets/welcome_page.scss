@@ -5,35 +5,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'variables';
-
-@import 'variables';
 //overridden variables go here
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: $ColorLoopie;
-}
-
-.btn-primary:hover {
-    background-color: $ColorLoopie_Hover;
-}
-
-.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
-    background-color: $ColorGreen;
-}
-
-.btn-success:hover, {
-    background-color: $ColorGreen_Hover;
-}
-
-.btn-danger, .btn-danger:active, .btn-danger:visited {
-    background-color: $ColorRed;
-}
-
-.btn-danger:hover {
-    background-color: $ColorRed_Hover;
-}
-
-//
 
 
 body {
