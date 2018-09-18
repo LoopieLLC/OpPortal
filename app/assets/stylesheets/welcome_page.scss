@@ -4,28 +4,22 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'variables';
 
 //overridden variables go here
 
-.btn-success,.btn-success:active, .btn-success:visited {
-  background-color: $ColorGreen;
-}
 
-.btn-success:hover {
-  background-color:$ColorGreen_Hover;
-}
+
+
 
 
 
 //
 
-
+@import 'variables';
 
 body {
   background-color: $ColorDark;
 }
-<<<<<<< HEAD
 
 .success {
   background-color: $ColorGreen;
@@ -48,8 +42,13 @@ body {
   padding: 1em;
   margin: 0 auto;
 }
-.splash_logo {
-  width: 7em;
+.form-signin img {
+  width: 16em;
 }
-=======
->>>>>>> 84ed157ecc0092133744fe38a5357c0d86bb3fd8
+
+.form-control {
+   background-color: transparent;
+   border-radius: 10em;
+   border-color: $ColorWhite;
+   margin-top: 1em;
+}
