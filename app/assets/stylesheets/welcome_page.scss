@@ -1,9 +1,52 @@
 // Place all the styles related to the WelcomePage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//overridden variables go here
+
+
+
+
+
+
+
+//
+
+@import 'variables';
+
 body {
-  background-color: #222627;
+  background-color: $ColorDark;
+}
+
+
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 1em;
+  margin: 0 auto;
+}
+.form-signin img {
+  width: 16em;
+}
+
+.form-control {
+   background-color: transparent;
+   border-radius: 10em;
+   border-width: 0.105em;
+   border-color: $ColorWhite;
+   margin-top: 1.25em;
+}
+.form-control:focus {
+  border-color: $ColorLoopie;
+  box-shadow: none;
 }
