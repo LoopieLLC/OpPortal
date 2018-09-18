@@ -16,8 +16,40 @@ $ColorRed: #D32F2F;
   color: $ColorWhite;
 }
 
+.text-dark {
+  color: $ColorDark;
+}
+
 // color scheme with hovering
 $ColorGreen_Hover: #12542E;
 $ColorBlue_Hover: #00388C;
 $ColorLoopie_Hover: #C19700;
 $ColorRed_Hover: #AA2525;
+
+//overridden variables go here
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: $ColorLoopie;
+}
+
+.btn-primary:hover {
+    background-color: $ColorLoopie_Hover;
+}
+
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+    background-color: $ColorGreen;
+}
+
+.btn-success:hover, {
+    background-color: $ColorGreen_Hover;
+}
+
+.btn-danger, .btn-danger:active, .btn-danger:visited {
+    background-color: $ColorRed;
+}
+
+.btn-danger:hover {
+    background-color: $ColorRed_Hover;
+}
+
+//
