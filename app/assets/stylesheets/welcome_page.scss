@@ -4,10 +4,9 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 @import 'variables';
-//overridden variables go here
 
+//overridden variables go here
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: $ColorLoopie;
 }
