@@ -3,7 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'variables';
 
 body {
-  background-color: #222627;
+  background-color: $ColorDark;
+}
+
+.success {
+  background-color: $ColorGreen;
+}
+
+.danger {
+  background-color: $ColorRed;
 }
