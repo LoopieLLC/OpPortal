@@ -51,10 +51,11 @@ body {
   max-width: 330px;
   padding: 1em;
   margin: 0 auto;
+  img {
+   width: 16em;
+ }
 }
-.form-signin img {
-  width: 16em;
-}
+
 
 .form-control {
    background-color: transparent;
