@@ -4,8 +4,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'variables';
-<<<<<<< HEAD
-@import 'variables'; //overridden variables go here
 
 .btn-primary,
 .btn-primary:active,
@@ -40,11 +38,6 @@
   background-color: $ColorRed_Hover;
 }
 //
-=======
-//overridden variables go here
-
-
->>>>>>> 4f20bd4dbefdece010ddfe20c007c688be10a42c
 body {
   background-color: $ColorDark;
 }
