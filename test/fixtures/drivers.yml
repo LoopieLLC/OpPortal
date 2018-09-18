@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password: MyString
+  firstname: MyString
+  lastname: MyString
+  email: MyString
+  address: MyString
+  phone: MyString
+  insurance: MyText
+  license_plate: MyString
+  car_year: 2018-09-18
+  car_make: MyString
+  car_model: MyString
+  car_color: MyString
+  driver_license_img: MyString
+  current_loads: 1
+  start_date: 2018-09-18
+  status: 1
+  description: MyText
+
+two:
+  username: MyString
+  password: MyString
+  firstname: MyString
+  lastname: MyString
+  email: MyString
+  address: MyString
+  phone: MyString
+  insurance: MyText
+  license_plate: MyString
+  car_year: 2018-09-18
+  car_make: MyString
+  car_model: MyString
+  car_color: MyString
+  driver_license_img: MyString
+  current_loads: 1
+  start_date: 2018-09-18
+  status: 1
+  description: MyText
