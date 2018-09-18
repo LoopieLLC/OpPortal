@@ -1,0 +1,107 @@
+<%= form_with(model: driver, local: true) do |form| %>
+  <% if driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+
+      <ul>
+      <% driver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insurance %>
+    <%= form.text_area :insurance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license_plate %>
+    <%= form.text_field :license_plate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :car_year %>
+    <%= form.date_select :car_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :car_make %>
+    <%= form.text_field :car_make %>
+  </div>
+
+  <div class="field">
+    <%= form.label :car_model %>
+    <%= form.text_field :car_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :car_color %>
+    <%= form.text_field :car_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_license_img %>
+    <%= form.text_field :driver_license_img %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_loads %>
+    <%= form.number_field :current_loads %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

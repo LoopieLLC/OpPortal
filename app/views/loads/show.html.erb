@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Washer:</strong>
+  <%= @load.washer_id %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @load.driver_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @load.status %>
+</p>
+
+<%= link_to 'Edit', edit_load_path(@load) %> |
+<%= link_to 'Back', loads_path %>
