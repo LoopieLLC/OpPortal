@@ -5,6 +5,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import 'variables';
 //overridden variables go here
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
@@ -33,7 +34,6 @@
 
 //
 
-@import 'variables';
 
 body {
   background-color: $ColorDark;
