@@ -3,16 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+//overridden variables go here
+
+
+
+
+
+
+
+//
+
 @import 'variables';
 
 body {
   background-color: $ColorDark;
-}
-
-.success {
-  background-color: $ColorGreen;
-}
-
-.danger {
-  background-color: $ColorRed;
 }
