@@ -1,9 +1,10 @@
 // Place all the styles related to the WelcomePage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'variables';
+
 
 body {
   background-color: $ColorDark;
