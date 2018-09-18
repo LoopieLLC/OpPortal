@@ -9,26 +9,42 @@
 
 
 
+.btn-danger, .btn-danger:active, .btn-success:visited {
+  background-color:$ColorRed;
+}
 
+.btn-danger:hover {
+  background-color:$ColorRed_Hover;
+}
 
+<<<<<<< HEAD
+=======
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+  background-color:$ColorLoopie;
+}
+>>>>>>> 35e6a481cec9d339fb174a11b54676ab3a9d38dc
 
+.btn-primary:hover {
+  background-color:$ColorLoopie_Hover;
+}
 
 //
 
 @import 'variables';
 
+<<<<<<< HEAD
 body {
   background-color: $ColorDark;
 }
+=======
+//
+>>>>>>> 35e6a481cec9d339fb174a11b54676ab3a9d38dc
 
-.success {
-  background-color: $ColorGreen;
+//body of welcome page
+
+body {
+  background-color: $ColorDark;
 }
-
-.danger {
-  background-color: $ColorRed;
-}
-
 
 .flex-center {
   align-items: center;
