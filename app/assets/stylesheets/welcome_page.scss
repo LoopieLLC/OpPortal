@@ -4,6 +4,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'variables';
 
 //overridden variables go here
 
@@ -33,7 +34,6 @@
 
 //
 
-@import 'variables';
 
 body {
   background-color: $ColorDark;
