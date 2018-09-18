@@ -16,7 +16,13 @@
   background-color:$ColorGreen_Hover;
 }
 
+.btn-danger, .btn-danger:active, .btn-success:visited {
+  background-color:$ColorRed;
+}
 
+.btn-danger:hover {
+  background-color:$ColorRed_Hover;
+}
 
 //
 
