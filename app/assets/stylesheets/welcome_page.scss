@@ -4,11 +4,23 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+//overridden variables go here
+
+
+
+
+
+
+
+//
+
 @import 'variables';
 
 body {
   background-color: $ColorDark;
 }
+<<<<<<< HEAD
 
 .success {
   background-color: $ColorGreen;
@@ -34,3 +46,5 @@ body {
 .splash_logo {
   width: 7em;
 }
+=======
+>>>>>>> 84ed157ecc0092133744fe38a5357c0d86bb3fd8
