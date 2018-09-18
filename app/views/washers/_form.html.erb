@@ -1,0 +1,82 @@
+<%= form_with(model: washer, local: true) do |form| %>
+  <% if washer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(washer.errors.count, "error") %> prohibited this washer from being saved:</h2>
+
+      <ul>
+      <% washer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_loads %>
+    <%= form.number_field :max_loads %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_loads %>
+    <%= form.number_field :current_loads %>
+  </div>
+
+  <div class="field">
+    <%= form.label :machine_description %>
+    <%= form.text_area :machine_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_loads_completed %>
+    <%= form.number_field :total_loads_completed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

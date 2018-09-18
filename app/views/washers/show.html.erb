@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @washer.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @washer.password %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @washer.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @washer.lastname %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @washer.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @washer.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @washer.address %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @washer.status %>
+</p>
+
+<p>
+  <strong>Max loads:</strong>
+  <%= @washer.max_loads %>
+</p>
+
+<p>
+  <strong>Current loads:</strong>
+  <%= @washer.current_loads %>
+</p>
+
+<p>
+  <strong>Machine description:</strong>
+  <%= @washer.machine_description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @washer.start_date %>
+</p>
+
+<p>
+  <strong>Total loads completed:</strong>
+  <%= @washer.total_loads_completed %>
+</p>
+
+<%= link_to 'Edit', edit_washer_path(@washer) %> |
+<%= link_to 'Back', washers_path %>

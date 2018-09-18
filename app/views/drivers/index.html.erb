@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Drivers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Insurance</th>
+      <th>License plate</th>
+      <th>Car year</th>
+      <th>Car make</th>
+      <th>Car model</th>
+      <th>Car color</th>
+      <th>Driver license img</th>
+      <th>Current loads</th>
+      <th>Start date</th>
+      <th>Status</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.username %></td>
+        <td><%= driver.password %></td>
+        <td><%= driver.firstname %></td>
+        <td><%= driver.lastname %></td>
+        <td><%= driver.email %></td>
+        <td><%= driver.address %></td>
+        <td><%= driver.phone %></td>
+        <td><%= driver.insurance %></td>
+        <td><%= driver.license_plate %></td>
+        <td><%= driver.car_year %></td>
+        <td><%= driver.car_make %></td>
+        <td><%= driver.car_model %></td>
+        <td><%= driver.car_color %></td>
+        <td><%= driver.driver_license_img %></td>
+        <td><%= driver.current_loads %></td>
+        <td><%= driver.start_date %></td>
+        <td><%= driver.status %></td>
+        <td><%= driver.description %></td>
+        <td><%= link_to 'Show', driver %></td>
+        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
+        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Driver', new_driver_path %>
