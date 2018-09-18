@@ -1,41 +1,44 @@
 // Place all the styles related to the WelcomePage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'variables';
+@import 'variables'; //overridden variables go here
 
-@import 'variables';
-//overridden variables go here
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: $ColorLoopie;
+.btn-primary,
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary:visited {
+  background-color: $ColorLoopie;
 }
 
 .btn-primary:hover {
-    background-color: $ColorLoopie_Hover;
+  background-color: $ColorLoopie_Hover;
 }
 
-.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
-    background-color: $ColorGreen;
+.btn-success,
+.btn-success:active,
+.btn-success:hover,
+.btn-success:visited {
+  background-color: $ColorGreen;
 }
 
-.btn-success:hover, {
-    background-color: $ColorGreen_Hover;
+,
+.btn-success:hover {
+  background-color: $ColorGreen_Hover;
 }
 
-.btn-danger, .btn-danger:active, .btn-danger:visited {
-    background-color: $ColorRed;
+.btn-danger,
+.btn-danger:active,
+.btn-danger:visited {
+  background-color: $ColorRed;
 }
 
 .btn-danger:hover {
-    background-color: $ColorRed_Hover;
+  background-color: $ColorRed_Hover;
 }
-
 //
-
-
 body {
   background-color: $ColorDark;
 }
@@ -46,24 +49,26 @@ body {
   padding-top: 3em;
   padding-bottom: 3em;
 }
+
 .form-signin {
   width: 100%;
   max-width: 330px;
   padding: 1em;
   margin: 0 auto;
-  img {
-   width: 16em;
- }
-}
 
+  img {
+    width: 16em;
+  }
+}
 
 .form-control {
-   background-color: transparent;
-   border-radius: 10em;
-   border-width: 0.105em;
-   border-color: $ColorWhite;
-   margin-top: 1.25em;
+  background-color: transparent;
+  border-radius: 10em;
+  border-width: 0.105em;
+  border-color: $ColorWhite;
+  margin-top: 1.25em;
 }
+
 .form-control:focus {
   border-color: $ColorLoopie;
   box-shadow: none;
