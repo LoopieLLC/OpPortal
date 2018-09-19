@@ -5,38 +5,7 @@
 @import "bootstrap";
 @import 'variables';
 
-.btn-primary,
-.btn-primary:active,
-.btn-primary:hover,
-.btn-primary:visited {
-  background-color: $ColorLoopie;
-}
 
-.btn-primary:hover {
-  background-color: $ColorLoopie_Hover;
-}
-
-.btn-success,
-.btn-success:active,
-.btn-success:hover,
-.btn-success:visited {
-  background-color: $ColorGreen;
-}
-
-,
-.btn-success:hover {
-  background-color: $ColorGreen_Hover;
-}
-
-.btn-danger,
-.btn-danger:active,
-.btn-danger:visited {
-  background-color: $ColorRed;
-}
-
-.btn-danger:hover {
-  background-color: $ColorRed_Hover;
-}
 //
 body {
   background-color: $ColorDark;
