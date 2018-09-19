@@ -28,13 +28,15 @@ body {
  }
 }
 
-
+//forms
 .form-control {
    background-color: transparent;
    border-radius: 10em;
-   border-width: 0.105em;
+   border-width: 0.108em;
    border-color: $ColorWhite;
    margin-top: 1.25em;
+   color: $ColorWhite;
+   
 }
 .form-control:focus {
   border-color: $ColorLoopie;
