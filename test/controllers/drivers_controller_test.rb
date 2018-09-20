@@ -17,7 +17,7 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
 
   test "should create driver" do
     assert_difference('Driver.count') do
-      post drivers_url, params: { driver: { address: @driver.address, car_color: @driver.car_color, car_make: @driver.car_make, car_model: @driver.car_model, car_year: @driver.car_year, current_loads: @driver.current_loads, description: @driver.description, driver_license_img: @driver.driver_license_img, email: @driver.email, firstname: @driver.firstname, insurance: @driver.insurance, lastname: @driver.lastname, license_plate: @driver.license_plate, password: @driver.password, phone: @driver.phone, start_date: @driver.start_date, status: @driver.status, username: @driver.username } }
+      post drivers_url, params: { driver: { address: @driver.address, car_color: @driver.car_color, car_make: @driver.car_make, car_model: @driver.car_model, car_year: @driver.car_year, confirmation_status: @driver.confirmation_status, current_loads: @driver.current_loads, description: @driver.description, driver_license_img: @driver.driver_license_img, driving_status: @driver.driving_status, email: @driver.email, firstname: @driver.firstname, insurance: @driver.insurance, lastname: @driver.lastname, license_plate: @driver.license_plate, password: @driver.password, phone: @driver.phone, start_date: @driver.start_date, username: @driver.username } }
     end
 
     assert_redirected_to driver_url(Driver.last)
@@ -34,7 +34,7 @@ class DriversControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update driver" do
-    patch driver_url(@driver), params: { driver: { address: @driver.address, car_color: @driver.car_color, car_make: @driver.car_make, car_model: @driver.car_model, car_year: @driver.car_year, current_loads: @driver.current_loads, description: @driver.description, driver_license_img: @driver.driver_license_img, email: @driver.email, firstname: @driver.firstname, insurance: @driver.insurance, lastname: @driver.lastname, license_plate: @driver.license_plate, password: @driver.password, phone: @driver.phone, start_date: @driver.start_date, status: @driver.status, username: @driver.username } }
+    patch driver_url(@driver), params: { driver: { address: @driver.address, car_color: @driver.car_color, car_make: @driver.car_make, car_model: @driver.car_model, car_year: @driver.car_year, confirmation_status: @driver.confirmation_status, current_loads: @driver.current_loads, description: @driver.description, driver_license_img: @driver.driver_license_img, driving_status: @driver.driving_status, email: @driver.email, firstname: @driver.firstname, insurance: @driver.insurance, lastname: @driver.lastname, license_plate: @driver.license_plate, password: @driver.password, phone: @driver.phone, start_date: @driver.start_date, username: @driver.username } }
     assert_redirected_to driver_url(@driver)
   end
 

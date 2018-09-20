@@ -47,8 +47,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.label :washing_status %>
+    <%= form.number_field :washing_status %>
   </div>
 
   <div class="field">
@@ -62,6 +62,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :total_loads_completed %>
+    <%= form.number_field :total_loads_completed %>
+  </div>
+
+  <div class="field">
     <%= form.label :machine_description %>
     <%= form.text_area :machine_description %>
   </div>
@@ -72,8 +77,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :total_loads_completed %>
-    <%= form.number_field :total_loads_completed %>
+    <%= form.label :confirmation_status %>
+    <%= form.number_field :confirmation_status %>
   </div>
 
   <div class="actions">

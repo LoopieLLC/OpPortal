@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title><%= yield(:title) %> | Loopie Laundry</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +13,7 @@
 
   <body>
     <%= render 'layouts/header' %>
-    
+
       <%= yield %>
 
   </body>

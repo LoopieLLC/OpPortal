@@ -36,8 +36,8 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @washer.status %>
+  <strong>Washing status:</strong>
+  <%= @washer.washing_status %>
 </p>
 
 <p>
@@ -51,6 +51,11 @@
 </p>
 
 <p>
+  <strong>Total loads completed:</strong>
+  <%= @washer.total_loads_completed %>
+</p>
+
+<p>
   <strong>Machine description:</strong>
   <%= @washer.machine_description %>
 </p>
@@ -61,8 +66,8 @@
 </p>
 
 <p>
-  <strong>Total loads completed:</strong>
-  <%= @washer.total_loads_completed %>
+  <strong>Confirmation status:</strong>
+  <%= @washer.confirmation_status %>
 </p>
 
 <%= link_to 'Edit', edit_washer_path(@washer) %> |

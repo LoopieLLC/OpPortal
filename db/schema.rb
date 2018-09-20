@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_223023) do
+ActiveRecord::Schema.define(version: 2018_09_19_013230) do
 
   create_table "admin_stats", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "total_num_washers"
@@ -31,19 +31,20 @@ ActiveRecord::Schema.define(version: 2018_09_18_223023) do
     t.string "firstname"
     t.string "lastname"
     t.string "email"
-    t.string "address"
     t.string "phone"
+    t.string "address"
     t.text "insurance"
     t.string "license_plate"
-    t.date "car_year"
+    t.string "car_year"
     t.string "car_make"
     t.string "car_model"
     t.string "car_color"
     t.string "driver_license_img"
+    t.text "description"
     t.integer "current_loads"
     t.date "start_date"
-    t.integer "status"
-    t.text "description"
+    t.integer "driving_status"
+    t.integer "confirmation_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,12 +65,13 @@ ActiveRecord::Schema.define(version: 2018_09_18_223023) do
     t.string "phone"
     t.string "email"
     t.string "address"
-    t.integer "status"
+    t.integer "washing_status"
     t.integer "max_loads"
     t.integer "current_loads"
+    t.integer "total_loads_completed"
     t.text "machine_description"
     t.date "start_date"
-    t.integer "total_loads_completed"
+    t.integer "confirmation_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

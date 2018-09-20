@@ -15,6 +15,7 @@ class WashersTest < ApplicationSystemTestCase
     click_on "New Washer"
 
     fill_in "Address", with: @washer.address
+    fill_in "Confirmation Status", with: @washer.confirmation_status
     fill_in "Current Loads", with: @washer.current_loads
     fill_in "Email", with: @washer.email
     fill_in "Firstname", with: @washer.firstname
@@ -24,9 +25,9 @@ class WashersTest < ApplicationSystemTestCase
     fill_in "Password", with: @washer.password
     fill_in "Phone", with: @washer.phone
     fill_in "Start Date", with: @washer.start_date
-    fill_in "Status", with: @washer.status
     fill_in "Total Loads Completed", with: @washer.total_loads_completed
     fill_in "Username", with: @washer.username
+    fill_in "Washing Status", with: @washer.washing_status
     click_on "Create Washer"
 
     assert_text "Washer was successfully created"
@@ -38,6 +39,7 @@ class WashersTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Address", with: @washer.address
+    fill_in "Confirmation Status", with: @washer.confirmation_status
     fill_in "Current Loads", with: @washer.current_loads
     fill_in "Email", with: @washer.email
     fill_in "Firstname", with: @washer.firstname
@@ -47,9 +49,9 @@ class WashersTest < ApplicationSystemTestCase
     fill_in "Password", with: @washer.password
     fill_in "Phone", with: @washer.phone
     fill_in "Start Date", with: @washer.start_date
-    fill_in "Status", with: @washer.status
     fill_in "Total Loads Completed", with: @washer.total_loads_completed
     fill_in "Username", with: @washer.username
+    fill_in "Washing Status", with: @washer.washing_status
     click_on "Update Washer"
 
     assert_text "Washer was successfully updated"
