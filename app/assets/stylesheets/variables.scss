@@ -1,7 +1,7 @@
 //
 //   Variables should go here.
 //
-]
+
 //Loopie Brand colors as of 18/9/2018
 $ColorDark: #222627;
 $ColorLoopie: #FFC700;
@@ -27,9 +27,40 @@ $ColorRed_Hover: #AA2525;
   color: $ColorDark;
 }
 
+// scss for buttons
+
+.btn {
+  border-radius: 75px;
+  margin-bottom: 1em;
+  color: $ColorDark;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: $ColorLoopie;
+}
+
+.btn-primary:hover {
+  background-color: $ColorLoopie_Hover;
+}
+
+.btn-success,
+.btn-success:active,
+.btn-success:visited {
+  background-color: $ColorGreen;
+}
 
 
+.btn-success:hover {
+  background-color: $ColorGreen_Hover;
+}
 
+.btn-danger,
+.btn-danger:visited {
+  background-color: $ColorRed;
+}
 
-// import components
-@import 'components/buttons';
+.btn-danger:hover {
+  background-color: $ColorRed_Hover;
+}
