@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/washer_login', to: 'login#washer_login'
+  get '/driver_login', to: 'login#driver_login'
   get '/about', to: 'static_pages#about'
   get '/help', to: 'static_pages#help'
   get '/contact', to: 'static_pages#contact'
