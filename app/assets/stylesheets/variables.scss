@@ -25,6 +25,7 @@ $ColorRed_Hover: #AA2525;
 .btn {
   border-radius: 75px;
   margin-bottom: 1em;
+  color:$ColorDark;
 }
 
 .btn-primary,
@@ -43,13 +44,6 @@ $ColorRed_Hover: #AA2525;
   background-color: $ColorGreen;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> f5bea8d0afb29edca41aa5b6a5f3fccfeaf77e1d
-=======
->>>>>>> a1c4eb7f9a970aa70607380d79fc6bec8c912080
 .btn-success:hover {
   background-color: $ColorGreen_Hover;
 }
