@@ -6,9 +6,6 @@
 @import 'variables';
 
 
-<<<<<<< HEAD
-//
-=======
 
 .btn-success,
 .btn-success:active,
@@ -32,7 +29,6 @@
 }
 
 
->>>>>>> 0330fd096829f4a96c8f6db09c027e1789af129a
 body {
   background-color: $ColorDark;
 }
@@ -42,26 +38,13 @@ body {
   justify-content: center;
   padding-top: 3em;
   padding-bottom: 3em;
-}
 
 
-<<<<<<< HEAD
   img {
     width: 16em;
   }
 }
 
-//forms
-.form-control {
-   background-color: transparent;
-   border-radius: 10em;
-   border-width: 0.108em;
-   border-color: $ColorWhite;
-   margin-top: 1.25em;
-   color: $ColorWhite;
-
-}
-=======
 
 //forms
 .form-control {
@@ -69,7 +52,6 @@ body {
   margin-top: 0.25em;
 }
 
->>>>>>> 0330fd096829f4a96c8f6db09c027e1789af129a
 
 .form-control:focus {
   border-color: $ColorLoopie;
