@@ -6,7 +6,33 @@
 @import 'variables';
 
 
+<<<<<<< HEAD
 //
+=======
+
+.btn-success,
+.btn-success:active,
+.btn-success:hover,
+.btn-success:visited {
+  background-color: $ColorGreen;
+}
+
+.btn-success:hover {
+  background-color: $ColorGreen_Hover;
+}
+
+.btn-danger,
+.btn-danger:active,
+.btn-danger:visited {
+  background-color: $ColorRed;
+}
+
+.btn-danger:hover {
+  background-color: $ColorRed_Hover;
+}
+
+
+>>>>>>> 4d7084b0bd6c6555c4e405e7e32c20b0e1b3fb83
 body {
   background-color: $ColorDark;
 }
@@ -29,6 +55,10 @@ body {
   }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d7084b0bd6c6555c4e405e7e32c20b0e1b3fb83
 //forms
 .form-control {
    background-color: transparent;
@@ -38,7 +68,10 @@ body {
    margin-top: 1.25em;
    color: $ColorWhite;
 
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 4d7084b0bd6c6555c4e405e7e32c20b0e1b3fb83
 
 .form-control:focus {
   border-color: $ColorLoopie;
