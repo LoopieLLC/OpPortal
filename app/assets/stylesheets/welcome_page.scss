@@ -40,30 +40,13 @@ body {
   padding-bottom: 3em;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 1em;
-  margin: 0 auto;
-
-  img {
-    width: 16em;
-  }
-}
 
 
 //forms
 .form-control {
-   background-color: transparent;
-   border-radius: 10em;
-   border-width: 0.108em;
-   border-color: $ColorWhite;
-   margin-top: 1.25em;
-   color: $ColorWhite;
-
-
+  @extend .form-control-shared;
+  margin-top: 0.25em;
 }
-
 
 
 .form-control:focus {

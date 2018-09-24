@@ -64,3 +64,31 @@ $ColorRed_Hover: #AA2525;
 .btn-danger:hover {
   background-color: $ColorRed_Hover;
 }
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 1em;
+  margin: 0 auto;
+
+  img {
+    width: 16em;
+  }
+}
+
+.form-control-shared {
+   background-color: transparent;
+   border-radius: 10em;
+   border-width: 0.108em;
+   border-color: $ColorWhite;
+   color: $ColorWhite;
+
+
+}
