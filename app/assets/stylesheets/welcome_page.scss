@@ -6,7 +6,33 @@
 @import 'variables';
 
 
+<<<<<<< HEAD
 //
+=======
+
+.btn-success,
+.btn-success:active,
+.btn-success:hover,
+.btn-success:visited {
+  background-color: $ColorGreen;
+}
+
+.btn-success:hover {
+  background-color: $ColorGreen_Hover;
+}
+
+.btn-danger,
+.btn-danger:active,
+.btn-danger:visited {
+  background-color: $ColorRed;
+}
+
+.btn-danger:hover {
+  background-color: $ColorRed_Hover;
+}
+
+
+>>>>>>> 0330fd096829f4a96c8f6db09c027e1789af129a
 body {
   background-color: $ColorDark;
 }
@@ -18,12 +44,8 @@ body {
   padding-bottom: 3em;
 }
 
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 1em;
-  margin: 0 auto;
 
+<<<<<<< HEAD
   img {
     width: 16em;
   }
@@ -39,6 +61,15 @@ body {
    color: $ColorWhite;
 
 }
+=======
+
+//forms
+.form-control {
+  @extend .form-control-shared;
+  margin-top: 0.25em;
+}
+
+>>>>>>> 0330fd096829f4a96c8f6db09c027e1789af129a
 
 .form-control:focus {
   border-color: $ColorLoopie;

@@ -5,6 +5,14 @@
 @import "bootstrap";
 @import 'variables';
 
+.form-group {
+  @extend .text-light;
+}
+
 label {
-  text-color:$ColorWhite;
+  text-color: $ColorWhite;
+}
+.form-control {
+  @extend .form-control-shared;
+  margin-bottom: 0.2em;
 }
