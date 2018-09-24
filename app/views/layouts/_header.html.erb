@@ -7,21 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">#</a>
+      <a class="navbar-brand" href="">Loopie LLC</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">#</a></li>
-        <li><a href="#holistic">#</a></li>
+        <li><%= link_to "Sign in as a washer", washer_login_path %></li>
+        <li><%= link_to "Sign in as a driver", driver_login_path %></li>
         <li class="dropdown">
-          <a href="#diets" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
-            <li><a href="#">#</a></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Help", help_path %></li>
+            <li><%= link_to "Driver Guidelines", driver_guidelines_path %></li>
+            <li><%= link_to "Washer Guidelines", washer_guidelines_path %></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">#</a></li>
+            <li><%= link_to "Contacts", contact_path %></li>
           </ul>
         </li>
       </ul>

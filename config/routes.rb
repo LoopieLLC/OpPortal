@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-  get 'static_pages/help'
-  get 'static_pages/about'
-  get 'static_pages/contact'
-  resources :loads
+  get '/washer_sign_up', to: 'sign_up#washer_sign_up'
+  get '/driver_sign_up', to: 'sign_up#driver_sign_up'
+  get '/washer_login', to: 'login#washer_login'
+  get '/driver_login', to: 'login#driver_login'
+  get '/about', to: 'static_pages#about'
+  get '/help', to: 'static_pages#help'
+  get '/contact', to: 'static_pages#contact'
+  get '/driver_guidelines', to: 'static_pages#driver_guidelines'
+  get '/washer_guidelines', to: 'static_pages#washer_guidelines'
+  get '/welcome', to: 'welcome_page#welcome'
+
   resources :drivers
+  resources :loads
   resources :admins
   resources :washers
-  get 'welcome_page/welcome'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome_page#welcome'
 end

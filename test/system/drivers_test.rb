@@ -19,9 +19,11 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "Car Make", with: @driver.car_make
     fill_in "Car Model", with: @driver.car_model
     fill_in "Car Year", with: @driver.car_year
+    fill_in "Confirmation Status", with: @driver.confirmation_status
     fill_in "Current Loads", with: @driver.current_loads
     fill_in "Description", with: @driver.description
     fill_in "Driver License Img", with: @driver.driver_license_img
+    fill_in "Driving Status", with: @driver.driving_status
     fill_in "Email", with: @driver.email
     fill_in "Firstname", with: @driver.firstname
     fill_in "Insurance", with: @driver.insurance
@@ -30,7 +32,6 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "Password", with: @driver.password
     fill_in "Phone", with: @driver.phone
     fill_in "Start Date", with: @driver.start_date
-    fill_in "Status", with: @driver.status
     fill_in "Username", with: @driver.username
     click_on "Create Driver"
 
@@ -47,9 +48,11 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "Car Make", with: @driver.car_make
     fill_in "Car Model", with: @driver.car_model
     fill_in "Car Year", with: @driver.car_year
+    fill_in "Confirmation Status", with: @driver.confirmation_status
     fill_in "Current Loads", with: @driver.current_loads
     fill_in "Description", with: @driver.description
     fill_in "Driver License Img", with: @driver.driver_license_img
+    fill_in "Driving Status", with: @driver.driving_status
     fill_in "Email", with: @driver.email
     fill_in "Firstname", with: @driver.firstname
     fill_in "Insurance", with: @driver.insurance
@@ -58,7 +61,6 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "Password", with: @driver.password
     fill_in "Phone", with: @driver.phone
     fill_in "Start Date", with: @driver.start_date
-    fill_in "Status", with: @driver.status
     fill_in "Username", with: @driver.username
     click_on "Update Driver"
 

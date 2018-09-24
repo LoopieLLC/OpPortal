@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   username: MyString
   password: MyString
   firstname: MyString
@@ -8,14 +9,16 @@ one:
   phone: MyString
   email: MyString
   address: MyString
-  status: 1
+  washing_status: 1
   max_loads: 1
   current_loads: 1
+  total_loads_completed: 1
   machine_description: MyText
   start_date: 2018-09-18
-  total_loads_completed: 1
+  confirmation_status: 1
 
 two:
+  id: 2
   username: MyString
   password: MyString
   firstname: MyString
@@ -23,9 +26,10 @@ two:
   phone: MyString
   email: MyString
   address: MyString
-  status: 1
+  washing_status: 1
   max_loads: 1
   current_loads: 1
+  total_loads_completed: 1
   machine_description: MyText
   start_date: 2018-09-18
-  total_loads_completed: 1
+  confirmation_status: 1

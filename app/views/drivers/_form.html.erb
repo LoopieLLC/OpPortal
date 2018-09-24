@@ -37,13 +37,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
   </div>
 
   <div class="field">
@@ -58,7 +58,7 @@
 
   <div class="field">
     <%= form.label :car_year %>
-    <%= form.date_select :car_year %>
+    <%= form.text_field :car_year %>
   </div>
 
   <div class="field">
@@ -82,6 +82,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
     <%= form.label :current_loads %>
     <%= form.number_field :current_loads %>
   </div>
@@ -92,13 +97,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.label :driving_status %>
+    <%= form.number_field :driving_status %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :confirmation_status %>
+    <%= form.number_field :confirmation_status %>
   </div>
 
   <div class="actions">

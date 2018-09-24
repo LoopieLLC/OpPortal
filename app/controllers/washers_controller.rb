@@ -69,6 +69,6 @@ class WashersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def washer_params
-      params.require(:washer).permit(:username, :password, :firstname, :lastname, :phone, :email, :address, :status, :max_loads, :current_loads, :machine_description, :start_date, :total_loads_completed)
+      params.require(:washer).permit(:username, :password, :firstname, :lastname, :phone, :email, :address, :washing_status, :max_loads, :current_loads, :total_loads_completed, :machine_description, :start_date, :confirmation_status)
     end
 end

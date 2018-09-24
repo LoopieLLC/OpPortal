@@ -26,13 +26,13 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @driver.address %>
+  <strong>Phone:</strong>
+  <%= @driver.phone %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
-  <%= @driver.phone %>
+  <strong>Address:</strong>
+  <%= @driver.address %>
 </p>
 
 <p>
@@ -71,6 +71,11 @@
 </p>
 
 <p>
+  <strong>Description:</strong>
+  <%= @driver.description %>
+</p>
+
+<p>
   <strong>Current loads:</strong>
   <%= @driver.current_loads %>
 </p>
@@ -81,13 +86,13 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @driver.status %>
+  <strong>Driving status:</strong>
+  <%= @driver.driving_status %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @driver.description %>
+  <strong>Confirmation status:</strong>
+  <%= @driver.confirmation_status %>
 </p>
 
 <%= link_to 'Edit', edit_driver_path(@driver) %> |
