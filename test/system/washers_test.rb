@@ -14,7 +14,9 @@ class WashersTest < ApplicationSystemTestCase
     visit washers_url
     click_on "New Washer"
 
-    fill_in "Address", with: @washer.address
+    fill_in "Address 1", with: @washer.address_1
+    fill_in "Address 2", with: @washer.address_2
+    fill_in "City", with: @washer.city
     fill_in "Confirmation Status", with: @washer.confirmation_status
     fill_in "Current Loads", with: @washer.current_loads
     fill_in "Email", with: @washer.email
@@ -25,9 +27,11 @@ class WashersTest < ApplicationSystemTestCase
     fill_in "Password", with: @washer.password
     fill_in "Phone", with: @washer.phone
     fill_in "Start Date", with: @washer.start_date
+    fill_in "State", with: @washer.state
     fill_in "Total Loads Completed", with: @washer.total_loads_completed
     fill_in "Username", with: @washer.username
     fill_in "Washing Status", with: @washer.washing_status
+    fill_in "Zip", with: @washer.zip
     click_on "Create Washer"
 
     assert_text "Washer was successfully created"
@@ -38,7 +42,9 @@ class WashersTest < ApplicationSystemTestCase
     visit washers_url
     click_on "Edit", match: :first
 
-    fill_in "Address", with: @washer.address
+    fill_in "Address 1", with: @washer.address_1
+    fill_in "Address 2", with: @washer.address_2
+    fill_in "City", with: @washer.city
     fill_in "Confirmation Status", with: @washer.confirmation_status
     fill_in "Current Loads", with: @washer.current_loads
     fill_in "Email", with: @washer.email
@@ -49,9 +55,11 @@ class WashersTest < ApplicationSystemTestCase
     fill_in "Password", with: @washer.password
     fill_in "Phone", with: @washer.phone
     fill_in "Start Date", with: @washer.start_date
+    fill_in "State", with: @washer.state
     fill_in "Total Loads Completed", with: @washer.total_loads_completed
     fill_in "Username", with: @washer.username
     fill_in "Washing Status", with: @washer.washing_status
+    fill_in "Zip", with: @washer.zip
     click_on "Update Washer"
 
     assert_text "Washer was successfully updated"

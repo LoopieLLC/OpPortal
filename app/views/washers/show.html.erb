@@ -21,23 +21,53 @@
 </p>
 
 <p>
-  <strong>Phone:</strong>
-  <%= @washer.phone %>
-</p>
-
-<p>
   <strong>Email:</strong>
   <%= @washer.email %>
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @washer.address %>
+  <strong>Phone:</strong>
+  <%= @washer.phone %>
+</p>
+
+<p>
+  <strong>Address 1:</strong>
+  <%= @washer.address_1 %>
+</p>
+
+<p>
+  <strong>Address 2:</strong>
+  <%= @washer.address_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @washer.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @washer.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @washer.zip %>
+</p>
+
+<p>
+  <strong>Machine description:</strong>
+  <%= @washer.machine_description %>
 </p>
 
 <p>
   <strong>Washing status:</strong>
   <%= @washer.washing_status %>
+</p>
+
+<p>
+  <strong>Confirmation status:</strong>
+  <%= @washer.confirmation_status %>
 </p>
 
 <p>
@@ -56,18 +86,8 @@
 </p>
 
 <p>
-  <strong>Machine description:</strong>
-  <%= @washer.machine_description %>
-</p>
-
-<p>
   <strong>Start date:</strong>
   <%= @washer.start_date %>
-</p>
-
-<p>
-  <strong>Confirmation status:</strong>
-  <%= @washer.confirmation_status %>
 </p>
 
 <%= link_to 'Edit', edit_washer_path(@washer) %> |
