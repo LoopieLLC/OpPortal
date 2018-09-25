@@ -1,6 +1,6 @@
 //fixing text for dark background
 .text-light {
-  color: $ColorWhite;
+  color: $ColorNotWhite;
 }
 
 .text-dark {
@@ -20,22 +20,28 @@
 
 
 // form styling
-.form-signin {
+.form-shared {
   width: 100%;
-  max-width: 330px;
   padding: 1em;
+
   margin: 0 auto;
 
   img {
-    width: 16em;
+    width: 14em;
   }
+}
+
+.form-signin {
+    @extend .form-shared;
+    max-width: 330px;
+    margin-top: 4em;
 }
 
 .form-control-shared {
    background-color: transparent;
    border-radius: 10em;
    border-width: 0.108em;
-   border-color: $ColorWhite;
+   border-color: $ColorNotWhite;
    color: $ColorWhite;
 
 }
