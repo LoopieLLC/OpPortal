@@ -20,15 +20,21 @@
 
 
 // form styling
-.form-signin {
+.form-shared {
   width: 100%;
-  max-width: 330px;
   padding: 1em;
+
   margin: 0 auto;
 
   img {
     width: 16em;
   }
+}
+
+.form-signin {
+    @extend .form-shared;
+    max-width: 330px;
+    margin-top: 4em;
 }
 
 .form-control-shared {
