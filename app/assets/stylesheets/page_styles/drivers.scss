@@ -13,3 +13,6 @@ label {
   @extend .form-control-shared;
   margin-bottom: 0.2em;
 }
+.form-signin {
+  max-width: none;
+}
