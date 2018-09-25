@@ -1,0 +1,44 @@
+//fixing text for dark background
+.text-light {
+  color: $ColorWhite;
+}
+
+.text-dark {
+  color: $ColorDark;
+}
+
+// scss for buttons
+
+
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+
+// form styling
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 1em;
+  margin: 0 auto;
+
+  img {
+    width: 16em;
+  }
+}
+
+.form-control-shared {
+   background-color: transparent;
+   border-radius: 10em;
+   border-width: 0.108em;
+   border-color: $ColorWhite;
+   color: $ColorWhite;
+
+}
+.form-text-area {
+  border-radius: 1em;
+}

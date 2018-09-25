@@ -1,0 +1,18 @@
+
+//import bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//import base
+@import 'base/variables';
+@import 'base/buttons';
+@import 'base/global';
+
+//import page styles
+@import 'page_styles/admins';
+@import 'page_styles/drivers';
+@import 'page_styles/loads';
+@import 'page_styles/login';
+@import 'page_styles/static_pages';
+@import 'page_styles/washers';
+@import 'page_styles/welcome_page';
