@@ -6,16 +6,20 @@ one:
   password: MyString
   firstname: MyString
   lastname: MyString
-  phone: MyString
   email: MyString
-  address: MyString
+  phone: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  machine_description: MyText
   washing_status: 1
+  confirmation_status: 1
   max_loads: 1
   current_loads: 1
   total_loads_completed: 1
-  machine_description: MyText
-  start_date: 2018-09-18
-  confirmation_status: 1
+  start_date: 2018-09-25
 
 two:
   id: 2
@@ -23,13 +27,17 @@ two:
   password: MyString
   firstname: MyString
   lastname: MyString
-  phone: MyString
   email: MyString
-  address: MyString
+  phone: MyString
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  machine_description: MyText
   washing_status: 1
+  confirmation_status: 1
   max_loads: 1
   current_loads: 1
   total_loads_completed: 1
-  machine_description: MyText
-  start_date: 2018-09-18
-  confirmation_status: 1
+  start_date: 2018-09-25

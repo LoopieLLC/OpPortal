@@ -31,13 +31,38 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @driver.address %>
+  <strong>Address 1:</strong>
+  <%= @driver.address_1 %>
 </p>
 
 <p>
-  <strong>Insurance:</strong>
-  <%= @driver.insurance %>
+  <strong>Address 2:</strong>
+  <%= @driver.address_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @driver.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @driver.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @driver.zip %>
+</p>
+
+<p>
+  <strong>Insurance info:</strong>
+  <%= @driver.insurance_info %>
+</p>
+
+<p>
+  <strong>Vin:</strong>
+  <%= @driver.vin %>
 </p>
 
 <p>
@@ -66,23 +91,18 @@
 </p>
 
 <p>
-  <strong>Driver license img:</strong>
-  <%= @driver.driver_license_img %>
+  <strong>License image:</strong>
+  <%= @driver.license_image %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @driver.description %>
+  <strong>Additional information:</strong>
+  <%= @driver.additional_information %>
 </p>
 
 <p>
   <strong>Current loads:</strong>
   <%= @driver.current_loads %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @driver.start_date %>
 </p>
 
 <p>
@@ -93,6 +113,11 @@
 <p>
   <strong>Confirmation status:</strong>
   <%= @driver.confirmation_status %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @driver.start_date %>
 </p>
 
 <%= link_to 'Edit', edit_driver_path(@driver) %> |
