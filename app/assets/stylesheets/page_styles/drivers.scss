@@ -1,0 +1,18 @@
+// Place all the styles related to the Drivers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+<<<<<<< HEAD:app/assets/stylesheets/drivers.scss
+=======
+
+.form-group {
+  @extend .text-light;
+}
+
+label {
+  text-color: $ColorWhite;
+}
+.form-control {
+  @extend .form-control-shared;
+  margin-bottom: 0.2em;
+}
+>>>>>>> 080735ecace3a3a0d14652aadcc82b1e6cedc729:app/assets/stylesheets/page_styles/drivers.scss
