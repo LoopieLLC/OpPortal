@@ -57,7 +57,7 @@
       <div class="form-group">
         <label>License Plate</label>
         <%= form.text_field :license_plate , class: 'form-control',placeholder: :license_plate %>
-        </div>
+      </div>
 
       <div class="form-group">
         <label>Car Year</label>
@@ -65,7 +65,8 @@
       </div>
 
       <div class="form-group">
-        <label> Car Make</label>
+        <label>
+          Car Make</label>
         <%= form.text_field :car_make , class: 'form-control',placeholder: :car_make %>
       </div>
 
@@ -87,14 +88,10 @@
 
       <div class="form-group">
         <label>Description</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <%= form.text_area :description, size: '50x2', class: "form-control form-text-area",placeholder: :description %>
       </div>
 
-<!--      <div class="form-group">
-        <label>Current Loads</label>
-        <%= form.text_field :current_loads , class: 'form-control',placeholder: :current_loads %>
-      </div>
-    -->
+      <!-- <div class="form-group"> <label>Current Loads</label> <%= form.text_field :current_loads , class: 'form-control',placeholder: :current_loads %> </div> -->
 
       <!--change to input/dropdown menu? see if there's calendar function -->
       <div class="form-group">
@@ -102,19 +99,11 @@
         <%= form.text_field :username , class: 'form-control',placeholder: :username %>
       </div>
 
-<!--      <div class="form-group">
-        <label>Driving Status</label>
-        <%= form.text_field :username , class: 'form-control',placeholder: :username %>
-      </div>
-
-      <div class="form-group">
-        <label>Confirm Status</label>
-        <%= form.text_field :username , class: 'form-control',placeholder: :username %>
-      </div>
--->
+      <!-- <div class="form-group"> <label>Driving Status</label> <%= form.text_field :username , class: 'form-control',placeholder: :username %> </div> <div class="form-group"> <label>Confirm Status</label> <%= form.text_field :username , class:
+      'form-control',placeholder: :username %> </div> -->
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label class="form-check-label" for="exampleCheck1">example checkbox</label>
       </div>
       <div class="">
         <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>

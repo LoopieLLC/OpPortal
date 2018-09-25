@@ -3,6 +3,7 @@
 //
 
 //Loopie Brand colors as of 18/9/2018
+
 $ColorDark: #222627;
 $ColorLoopie: #FFC700;
 $ColorBlue: #0052CC;
@@ -90,5 +91,7 @@ $ColorRed_Hover: #AA2525;
    border-color: $ColorWhite;
    color: $ColorWhite;
 
-
+}
+.form-text-area {
+  border-radius: 1em;
 }
