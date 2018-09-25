@@ -8,19 +8,24 @@ one:
   lastname: MyString
   email: MyString
   phone: MyString
-  address: MyString
-  insurance: MyText
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  insurance_info: MyText
+  vin: MyString
   license_plate: MyString
   car_year: MyString
   car_make: MyString
   car_model: MyString
   car_color: MyString
-  driver_license_img: MyString
-  description: MyText
+  license_image: MyString
+  additional_information: MyText
   current_loads: 1
-  start_date: 2018-09-18
   driving_status: 1
   confirmation_status: 1
+  start_date: 2018-09-25
 
 two:
   id: 2
@@ -30,16 +35,21 @@ two:
   lastname: MyString
   email: MyString
   phone: MyString
-  address: MyString
-  insurance: MyText
+  address_1: MyString
+  address_2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  insurance_info: MyText
+  vin: MyString
   license_plate: MyString
   car_year: MyString
   car_make: MyString
   car_model: MyString
   car_color: MyString
-  driver_license_img: MyString
-  description: MyText
+  license_image: MyString
+  additional_information: MyText
   current_loads: 1
-  start_date: 2018-09-18
   driving_status: 1
   confirmation_status: 1
+  start_date: 2018-09-25

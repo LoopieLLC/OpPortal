@@ -32,23 +32,53 @@
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
     <%= form.label :email %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_1 %>
+    <%= form.text_field :address_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_2 %>
+    <%= form.text_field :address_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zip %>
+    <%= form.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :machine_description %>
+    <%= form.text_area :machine_description %>
   </div>
 
   <div class="field">
     <%= form.label :washing_status %>
     <%= form.number_field :washing_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :confirmation_status %>
+    <%= form.number_field :confirmation_status %>
   </div>
 
   <div class="field">
@@ -67,18 +97,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :machine_description %>
-    <%= form.text_area :machine_description %>
-  </div>
-
-  <div class="field">
     <%= form.label :start_date %>
     <%= form.date_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :confirmation_status %>
-    <%= form.number_field :confirmation_status %>
   </div>
 
   <div class="actions">
