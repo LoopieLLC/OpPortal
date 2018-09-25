@@ -2,35 +2,6 @@
 
 <h1>Washers</h1>
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="email" class="" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">First Name</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Last Name</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
 <table>
   <thead>
     <tr>
@@ -38,16 +9,20 @@
       <th>Password</th>
       <th>Firstname</th>
       <th>Lastname</th>
-      <th>Phone</th>
       <th>Email</th>
-      <th>Address</th>
+      <th>Phone</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Machine description</th>
       <th>Washing status</th>
+      <th>Confirmation status</th>
       <th>Max loads</th>
       <th>Current loads</th>
       <th>Total loads completed</th>
-      <th>Machine description</th>
       <th>Start date</th>
-      <th>Confirmation status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -55,20 +30,24 @@
   <tbody>
     <% @washers.each do |washer| %>
       <tr>
-        <td></td>
+        <td><%= washer.username %></td>
         <td><%= washer.password %></td>
         <td><%= washer.firstname %></td>
         <td><%= washer.lastname %></td>
-        <td><%= washer.phone %></td>
         <td><%= washer.email %></td>
-        <td><%= washer.address %></td>
+        <td><%= washer.phone %></td>
+        <td><%= washer.address_1 %></td>
+        <td><%= washer.address_2 %></td>
+        <td><%= washer.city %></td>
+        <td><%= washer.state %></td>
+        <td><%= washer.zip %></td>
+        <td><%= washer.machine_description %></td>
         <td><%= washer.washing_status %></td>
+        <td><%= washer.confirmation_status %></td>
         <td><%= washer.max_loads %></td>
         <td><%= washer.current_loads %></td>
         <td><%= washer.total_loads_completed %></td>
-        <td><%= washer.machine_description %></td>
         <td><%= washer.start_date %></td>
-        <td><%= washer.confirmation_status %></td>
         <td><%= link_to 'Show', washer %></td>
         <td><%= link_to 'Edit', edit_washer_path(washer) %></td>
         <td><%= link_to 'Destroy', washer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
