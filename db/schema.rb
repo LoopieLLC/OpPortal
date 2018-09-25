@@ -71,27 +71,4 @@ ActiveRecord::Schema.define(version: 2018_09_25_204645) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "washers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.string "firstname"
-    t.string "lastname"
-    t.string "email"
-    t.string "phone"
-    t.string "address_1"
-    t.string "address_2"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.text "machine_description"
-    t.integer "washing_status"
-    t.integer "confirmation_status"
-    t.integer "max_loads"
-    t.integer "current_loads"
-    t.integer "total_loads_completed"
-    t.date "start_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
