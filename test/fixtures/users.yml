@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: Jack
-  email: Jack@Jack.com
-  role: 1
+  email: ianwhite2@gmail.com
+  firstname: MyString
+  lastname: MyString
   confirmation_status: 1
+  role: 1
+  start_date: 2018-09-25
 
 two:
-  username: Jeff
-  email: Jeff@Jeff.com
-  role: 1
+  email: jackburns2@gmail.com
+  firstname: MyString
+  lastname: MyString
   confirmation_status: 1
+  role: 1
+  start_date: 2018-09-25
