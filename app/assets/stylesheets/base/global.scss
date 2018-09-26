@@ -1,6 +1,6 @@
 //fixing text for dark background
 .text-light {
-  color: $ColorWhite;
+  color: $ColorNotWhite;
 }
 
 .text-dark {
@@ -27,7 +27,7 @@
   margin: 0 auto;
 
   img {
-    width: 16em;
+    width: 14em;
   }
 }
 
@@ -41,7 +41,7 @@
    background-color: transparent;
    border-radius: 10em;
    border-width: 0.108em;
-   border-color: $ColorWhite;
+   border-color: $ColorNotWhite;
    color: $ColorWhite;
 
 }
