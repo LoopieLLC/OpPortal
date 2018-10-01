@@ -113,7 +113,9 @@
           <!--change to image upload-->
           <div class="form-group">
             <label>Driver's License Image</label>
-
+            <%= form_tag({action: :upload}, multipart: true) do %>
+            <%= file_field_tag 'picture' %>
+            <% end %>
           </div>
 
           <div class="form-group">
@@ -130,7 +132,7 @@
         <div class='col-md-6'>
           <div class="form-group">
             <label>Start Date</label>
-            <%= form.text_field :username , class: 'form-control',placeholder: :username %>
+            <%= select_date Date.today, prefix: :start_date %> <!-- date selector, ugly as hell please change css as my eyes are burning -->
           </div>
         </div>
 

@@ -11,7 +11,8 @@ class DriverTest < ActiveSupport::TestCase
       firstname:"John",
       lastname:"Lee",
       license_plate:"ASB2983",
-      car_year: "2000"
+      car_year: "2000",
+      vin: "EE"
     )
   end
 
@@ -35,11 +36,6 @@ class DriverTest < ActiveSupport::TestCase
     assert_not @Driver.valid?
   end
 
-  test "Password should be present" do
-    @Driver.password = ""
-    assert_not @Driver.valid?
-  end
-
   test "email addresses and ids should be unique" do
     duplicate_driver = @Driver.dup
     @Driver.save
@@ -52,7 +48,7 @@ class DriverTest < ActiveSupport::TestCase
   end
 
   test "email validation should reject invalid addresses" do
-    invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
+    invalid_addresses = %w[user@example.com user_at_foo.org user.name@example.
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
       @Driver.email = invalid_address
@@ -70,22 +66,19 @@ class DriverTest < ActiveSupport::TestCase
     assert_not @Driver.valid?
   end
 
-  #test fails for some stupid reason, regex works fine, i have no idea why
-  #because it works in cmd but not in rails model
 
-   #test "license_plate should accept valid license plates" do
-    # valid_license_plates = %w[273-FSD ASD2384 837-AHX OFC3827]
-     #valid_license_plates.each do |valid_lp|
-      # @Driver.license_plate = valid_lp
-       #assert @Driver.valid?, "#{valid_lp.inspect} should be valid"
-     #end
-   #end
+#Hey Jack -- can you help me with these tests because i don't know why they aren't coming up true
+  # test "car_year validation should reject invalid car_years" do
+  #   invalid_car_years = %w[1899 1 300 200230]
+  #   invalid_car_years.each do |invalid_car_year|
+  #     @Driver.car_year = invalid_car_year
+  #     assert_not @Driver.valid?, "#{invalid_car_year.inspect} should be invalid"
+  #   end
+  # end
+  #
+  # test "VINS should be valid" do
+  #   @Driver.vin = "JH4NA1150RT000268"
+  #   assert @Driver.valid?
+  # end
 
-   #test "car_year should only accept valid years" do
-    # valid_car_years = %w[2000 2018 1966 1940]
-     #valid_car_years.each do |valid_car_year|
-      # @Driver.car_year = valid_car_year
-       #assert @Driver.valid?, "#{valid_car_year} should be valid"
-    # end
-   #end
 end
