@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/washer_guidelines', to: 'static_pages#washer_guidelines'
   get '/welcome', to: 'welcome_page#welcome'
 
+  resources :users
   resources :drivers
   resources :washers
   resources :loads
