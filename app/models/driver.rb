@@ -5,6 +5,7 @@ before_save { self.email = email.downcase }
 before_save { self.confirmation_status = 0 }
 
 has_many :loads
+has_secure_password
 
   def VINVALIDATE
     unless vin.include?('I', 'Q', 'O') == false
@@ -25,18 +26,14 @@ validates :username,
   length: { maximum: 50 },
   uniqueness: true
 
-#validates for password, needs 8 chars and 1 number, 1 special character
-validates :password,
-  presence: true,
-  length: { minimum: 8 },
-  format: { with: VALID_PASSWORD_REGEX }
-
 #validates email
 validates :email,
   presence: true,
   length: { maximum: 255 },
   format: { with: VALID_EMAIL_REGEX },
   uniqueness: { case_sensitive: false }
+
+validates :password, length: { minimum: 8 }
 
 #validates names
 validates :firstname, :lastname,

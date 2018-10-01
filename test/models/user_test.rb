@@ -4,9 +4,11 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(
       email: "jackburns1232542@gmail.com",
-      password: "ExPassword!23", 
+      password: "foobar9494934",
+      password_confirmation: "foobar9494934",
       firstname: "Jack",
-      lastname: "Burns")
+      lastname: "Burns"
+    )
   end
 
   test "should be valid" do
@@ -50,6 +52,16 @@ class UserTest < ActiveSupport::TestCase
       @user.email = invalid_address
       assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
     end
+  end
+
+  test "password should be present (nonblank)" do
+    @user.password = @user.password_confirmation = " " * 8
+    assert_not @user.valid?
+  end
+
+  test "password should have a minimum length" do
+    @user.password = @user.password_confirmation = "a" * 7
+    assert_not @user.valid?
   end
 
 end

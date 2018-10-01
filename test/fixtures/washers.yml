@@ -3,7 +3,7 @@
 one:
   id: 1
   username: MyString
-  password: MyString
+  password_digest: MyString
   firstname: MyString
   lastname: MyString
   email: MyString
@@ -24,7 +24,7 @@ one:
 two:
   id: 2
   username: MyString
-  password: MyString
+  password_digest: MyString
   firstname: MyString
   lastname: MyString
   email: MyString

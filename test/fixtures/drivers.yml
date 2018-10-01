@@ -3,7 +3,7 @@
 one:
   id: 1
   username: MyString1
-  password: 1234!asb
+  password_digest: 1234!asb
   firstname: MyString
   lastname: MyString
   email: zac@gmail.com
@@ -30,7 +30,7 @@ one:
 two:
   id: 2
   username: MyString2
-  password: 123456j!
+  password_digest: 123456j!
   firstname: MyString
   lastname: MyString
   email: slack@gmail.com

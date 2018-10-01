@@ -2,6 +2,8 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
 
+  has_secure_password
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}\z/
 
@@ -19,9 +21,6 @@ class User < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
-  #validates for password, needs 8 chars and 1 number, 1 special character
-  validates :password,
-    presence: true,
-    length: { minimum: 8 },
-    format: { with: VALID_PASSWORD_REGEX }
+  validates :password, presence: true, length: { minimum: 8 }
+
 end

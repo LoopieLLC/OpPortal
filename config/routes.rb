@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   get '/washer_guidelines', to: 'static_pages#washer_guidelines'
   get '/welcome', to: 'welcome_page#welcome'
 
+  resources :loads
   resources :users
   resources :drivers
   resources :washers
-  resources :loads
   resources :admins
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
