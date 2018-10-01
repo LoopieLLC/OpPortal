@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_184825) do
+ActiveRecord::Schema.define(version: 2018_10_01_194753) do
 
   create_table "admin_stats", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "total_num_washers"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_184825) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email"
+    t.string "password"
     t.string "firstname"
     t.string "lastname"
     t.integer "confirmation_status"
