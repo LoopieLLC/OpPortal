@@ -6,6 +6,6 @@ one:
   status: 1
 
 two:
-  washer_id: 2
+  washer_id: 1
   driver_id: 1
   status: 1
