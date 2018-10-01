@@ -77,8 +77,6 @@ ActiveRecord::Schema.define(version: 2018_10_01_211026) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-<<<<<<< HEAD
-=======
   create_table "washers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "username"
     t.string "firstname"
@@ -102,5 +100,4 @@ ActiveRecord::Schema.define(version: 2018_10_01_211026) do
     t.string "password_digest"
   end
 
->>>>>>> 0555282c0b88d42a3055d339677e508c4d926d1e
 end

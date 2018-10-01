@@ -7,11 +7,11 @@ before_save { self.confirmation_status = 0 }
 has_many :loads
 has_secure_password
 
-  def VINVALIDATE
-    unless vin.include?('I', 'Q', 'O') == false
-      errors.add(:vin, "VINS cannot contain I, Q, or O")
-    end
-  end
+  # def VINVALIDATE
+  #   unless vin.include?('I', 'Q', 'O') == false
+  #     errors.add(:vin, "VINS cannot contain I, Q, or O")
+  #   end
+  # end
 
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}\z/i
@@ -69,13 +69,13 @@ validates :license_plate,
   validates :car_color,
     presence: true
 
-#validates vin
-  validates :vin,
-    presence: true,
-    format: { with: VALID_VIN_REGEX }
-  validate :VINVALIDATE
+#validates vin #pain in the ass holy shit
 
-#pain in the ass holy shit
+  validates :vin,
+    presence: true
+    #format: { with: VALID_VIN_REGEX }
+  #validate :VINVALIDATE
+
 
 end
 

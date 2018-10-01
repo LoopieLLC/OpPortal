@@ -67,8 +67,6 @@ class DriverTest < ActiveSupport::TestCase
     assert_not @Driver.valid?
   end
 
-<<<<<<< HEAD
-=======
   test "password should be present (nonblank)" do
     @Driver.password = @Driver.password_confirmation = " " * 8
     assert_not @Driver.valid?
@@ -81,7 +79,6 @@ class DriverTest < ActiveSupport::TestCase
 
   #test fails for some stupid reason, regex works fine, i have no idea why
   #because it works in cmd but not in rails model
->>>>>>> 0555282c0b88d42a3055d339677e508c4d926d1e
 
 #Hey Jack -- can you help me with these tests because i don't know why they aren't coming up true
   # test "car_year validation should reject invalid car_years" do
