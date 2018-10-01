@@ -3,54 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-.btn-success,
-.btn-success:active,
-.btn-success:hover,
-.btn-success:visited {
-  background-color: $ColorGreen;
-}
-
-.btn-success:hover {
-  background-color: $ColorGreen_Hover;
-}
-
-.btn-danger,
-.btn-danger:active,
-.btn-danger:visited {
-  background-color: $ColorRed;
-}
-
-.btn-danger:hover {
-  background-color: $ColorRed_Hover;
-}
-
-
 body {
   background-color: $ColorDark;
 }
 
 .flex-center {
-  align-items: center;
-  justify-content: center;
-  padding-top: 3em;
-  padding-bottom: 3em;
-
 
   img {
     width: 16em;
   }
 }
 
-
-//forms
-.form-control {
-  @extend .form-control-shared;
-  margin-top: 0.25em;
-}
-
-
-.form-control:focus {
-  border-color: $ColorLoopie;
-  box-shadow: none;
+.form-signin {
+    @extend .form-shared;
+    max-width: 330px;
+    margin-top: 4em;
 }

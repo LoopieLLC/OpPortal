@@ -1,23 +1,23 @@
-<div class="container flex-center">
-  <div class="row form-shared">
-    <%= form_with(model: driver, local: true) do |form| %>
-    <% if driver.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(driver.errors.count, "error") %>
-          prohibited this driver from being saved:</h2>
+<div class="form-shared">
+  <%= form_with(model: driver, local: true) do |form| %>
+  <% if driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(driver.errors.count, "error") %>
+        prohibited this driver from being saved:</h2>
 
-        <ul>
-          <% driver.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+      <ul>
+        <% driver.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-    <form>
+  <form>
 
+    <div class="container flex-center container-light">
       <div class="row">
-        <h2 class="text-light">Account Information</h2>
+        <h2 class="">Account Information</h2>
         <div class="col-md-6">
           <div class="form-group">
             <label>Enter Your Username</label>
@@ -57,35 +57,36 @@
             <%= form.text_field :phone , class: 'form-control',placeholder: :phone %>
           </div>
 
-
         </div>
       </div>
       <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Address</label>
-              <%= form.text_field :address , class: 'form-control',placeholder: :address %>
-            </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Address</label>
+            <%= form.text_field :address , class: 'form-control',placeholder: :address %>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>City</label>
-              <%= form.text_field :city , class: 'form-control',placeholder: :city %>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="form-group">
-              <label>State</label>
-              <%= form.text_field :state, class: 'form-control',placeholder: :state%>
-            </div>
-          </div>
-       </div>
-
-      <hr>
+      </div>
       <div class="row">
-        <h2 class="text-light" >Car Info</h2>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>City</label>
+            <%= form.text_field :city , class: 'form-control',placeholder: :city %>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label>State</label>
+            <%= form.text_field :state, class: 'form-control',placeholder: :state%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container flex-center container-light">
+
+      <div class="row">
+    
+        <h2 class="">Car Info</h2>
         <div class="col-md-6">
 
           <div class="form-group">
@@ -162,8 +163,8 @@
 
       <!--change to input/dropdown menu? see if there's calendar function -->
 
-    </form>
-  <% end %>
-</div>
-</div>
+    </div>
+  </div>
+</form>
+<% end %>
 </div>
