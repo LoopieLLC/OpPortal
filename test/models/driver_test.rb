@@ -5,7 +5,8 @@ class DriverTest < ActiveSupport::TestCase
   def setup
     @Driver = Driver.new(
       username: "ExUsername",
-      password: "ExPassword!23",
+      password: "foobar9494934",
+      password_confirmation: "foobar9494934",
       email:"yeet@yeet.com",
       phone:"(123)-456-789",
       firstname:"John",
@@ -32,11 +33,6 @@ class DriverTest < ActiveSupport::TestCase
 
   test "lastname should not be too long" do
     @Driver.lastname = "a" * 26
-    assert_not @Driver.valid?
-  end
-
-  test "Password should be present" do
-    @Driver.password = ""
     assert_not @Driver.valid?
   end
 
@@ -67,6 +63,16 @@ class DriverTest < ActiveSupport::TestCase
 
   test "car_year should exist" do
     @Driver.car_year = ""
+    assert_not @Driver.valid?
+  end
+
+  test "password should be present (nonblank)" do
+    @Driver.password = @Driver.password_confirmation = " " * 8
+    assert_not @Driver.valid?
+  end
+
+  test "password should have a minimum length" do
+    @Driver.password = @Driver.password_confirmation = "a" * 7
     assert_not @Driver.valid?
   end
 
