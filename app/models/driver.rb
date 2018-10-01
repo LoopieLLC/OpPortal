@@ -54,11 +54,10 @@ has_many :loads
 
 
 #validates car_year
-  validates :car_year,
-    presence: true,
-    #only_integer: true,
-    allow_nil: false
-    #in: 1920..2019
+  validates :car_year,s
+    presence: true
+  validates_numericality_of :car_year,
+
 
 
 
