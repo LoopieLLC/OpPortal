@@ -20,15 +20,44 @@ class DriverTest < ActiveSupport::TestCase
     assert_not @Driver.valid?
   end
 
+  test "Username should not be too long" do
+    @Driver.username = "a" * 51
+    assert_not @Driver.valid?
+  end
+
+  test "firstname should not be too long" do
+    @Driver.firstname = "a" * 26
+    assert_not @Driver.valid?
+  end
+
+  test "lastname should not be too long" do
+    @Driver.lastname = "a" * 26
+    assert_not @Driver.valid?
+  end
+
   test "Password should be present" do
     @Driver.password = ""
     assert_not @Driver.valid?
   end
 
   test "email addresses and ids should be unique" do
-    duplicate_user = @Driver.dup
+    duplicate_driver = @Driver.dup
     @Driver.save
-    assert_not duplicate_user.valid?
+    assert_not duplicate_driver.valid?
+  end
+
+  test "email should not be too long" do
+    @Driver.email = "a" * 244 + "@example.com"
+    assert_not @Driver.valid?
+  end
+
+  test "email validation should reject invalid addresses" do
+    invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
+                           foo@bar_baz.com foo@bar+baz.com]
+    invalid_addresses.each do |invalid_address|
+      @Driver.email = invalid_address
+      assert_not @Driver.valid?, "#{invalid_address.inspect} should be invalid"
+    end
   end
 
   test "phone number should be valid" do

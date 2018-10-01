@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_004436) do
+ActiveRecord::Schema.define(version: 2018_10_01_184825) do
 
   create_table "admin_stats", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "total_num_washers"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2018_09_26_004436) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_drivers_on_email", unique: true
+    t.index ["username"], name: "index_drivers_on_username", unique: true
   end
 
   create_table "loads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -72,6 +74,29 @@ ActiveRecord::Schema.define(version: 2018_09_26_004436) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "washers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "email"
+    t.string "phone"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.text "machine_description"
+    t.integer "washing_status"
+    t.integer "confirmation_status"
+    t.integer "max_loads"
+    t.integer "current_loads"
+    t.integer "total_loads_completed"
+    t.date "start_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

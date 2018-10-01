@@ -3,6 +3,7 @@ class User < ApplicationRecord
   before_save { self.confirmation_status = 0 }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   validates :firstname,
     presence: true,
     length: { maximum: 25 }

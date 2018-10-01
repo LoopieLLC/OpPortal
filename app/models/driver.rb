@@ -1,12 +1,15 @@
 class Driver < ApplicationRecord
 
+before_save { self.email = email.downcase }
+before_save { self.confirmation_status = 0 }
+
+has_many :loads
+
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}\z/
 VALID_PHONE_NUMBER_REGEX = /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\z/
 VALID_VIN_REGEX = ""
 VALID_LP_REGEX = /\A[A-Z]{3}[0-9]{4}|[0-9]{3}-[A-Z]{3}\z/
-
-has_many :loads
 
 #validates for username
 validates :username,
@@ -29,7 +32,8 @@ validates :email,
 
 #validates names
 validates :firstname, :lastname,
-  presence:true
+  presence:true,
+  length: { maximum: 25 }
 
 #validates phone number field
 validates :phone,
