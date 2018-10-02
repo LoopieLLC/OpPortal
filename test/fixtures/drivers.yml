@@ -16,7 +16,7 @@ one:
   insurance_info: MyText
   vin: MyString
   license_plate: MyString
-  car_year: MyString
+  car_year: 2000
   car_make: MyString
   car_model: MyString
   car_color: MyString
