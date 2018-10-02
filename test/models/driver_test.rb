@@ -3,7 +3,7 @@ require 'test_helper'
 class DriverTest < ActiveSupport::TestCase
 
   def setup
-    @Driver = Driver.new(
+    @driver = Driver.new(
       username: "ExUsername2",
       password: "foobar9494934",
       password_confirmation: "foobar9494934",
@@ -12,68 +12,80 @@ class DriverTest < ActiveSupport::TestCase
       firstname:"John",
       lastname:"Lee",
       license_plate:"ASB2983",
-      car_year: "2000"
+      car_year: "2000",
+      car_make: "lexington",
+      car_model: "lefdsafs",
+      car_color: "red"
     )
   end
 
+  test "should be valid" do
+    assert @driver.valid?
+  end
+
   test "Username should be present" do
-    @Driver.username = ""
-    assert_not @Driver.valid?
+    @driver.username = ""
+    assert_not @driver.valid?
+  end
+
+  test "Username is present" do
+    @driver.username = "Jackburns"
+    assert @driver.valid?
   end
 
   test "Username should not be too long" do
-    @Driver.username = "a" * 51
-    assert_not @Driver.valid?
+    @driver.username = "a" * 51
+    assert_not @driver.valid?
   end
 
   test "firstname should not be too long" do
-    @Driver.firstname = "a" * 26
-    assert_not @Driver.valid?
+    @driver.firstname = "a" * 26
+    assert_not @driver.valid?
   end
 
   test "lastname should not be too long" do
-    @Driver.lastname = "a" * 26
-    assert_not @Driver.valid?
+    @driver.lastname = "a" * 26
+    assert_not @driver.valid?
   end
 
   test "email addresses and ids should be unique" do
-    duplicate_driver = @Driver.dup
-    @Driver.save
+    duplicate_driver = @driver.dup
+    @driver.save
     assert_not duplicate_driver.valid?
   end
 
   test "email should not be too long" do
-    @Driver.email = "a" * 244 + "@example.com"
-    assert_not @Driver.valid?
+    @driver.email = "a" * 244 + "@example.com"
+    assert_not @driver.valid?
   end
 
   test "email validation should reject invalid addresses" do
     invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
-      @Driver.email = invalid_address
-      assert_not @Driver.valid?, "#{invalid_address.inspect} should be invalid"
+      @driver.email = invalid_address
+      assert_not @driver.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
 
   test "phone number should be valid" do
-    @Driver.phone = ""
-    assert_not @Driver.valid?
+    @driver.phone = ""
+    assert_not @driver.valid?
   end
 
   test "car_year should exist" do
-    @Driver.car_year = ""
-    assert_not @Driver.valid?
+    @driver.car_year = ""
+    assert_not @driver.valid?
   end
 
   test "password should be present (nonblank)" do
-    @Driver.password = @Driver.password_confirmation = " " * 8
-    assert_not @Driver.valid?
+    @driver.password = @driver.password_confirmation = " " * 8
+    assert_not @driver.valid?
   end
 
   test "password should have a minimum length" do
-    @Driver.password = @Driver.password_confirmation = "a" * 7
-    assert_not @Driver.valid?
+    @driver.password = @driver.password_confirmation = "a" * 7
+    assert_not @driver.valid?
   end
 
   #test fails for some stupid reason, regex works fine, i have no idea why

@@ -4,6 +4,7 @@ class Driver < ApplicationRecord
   before_save { self.confirmation_status = 1 }
   before_save { self.driving_status = 0 }
   has_many :loads
+  has_secure_password
   #has_one_attached :license_image
 
     # def VINVALIDATE
@@ -19,7 +20,7 @@ class Driver < ApplicationRecord
   VALID_LP_REGEX = /\A[A-Z]{3}[0-9]{4}|[0-9]{3}-[A-Z]{3}\z/i
   current_car_year = Time.new.year + 1
 
-  #validates for username
+ #validates for username
   validates :username,
     presence: true,
     length: { maximum: 50 },
@@ -32,7 +33,6 @@ class Driver < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
-  has_secure_password
   validates :password, presence: true, length: { minimum: 8 }
 
   #validates names
@@ -42,8 +42,8 @@ class Driver < ApplicationRecord
 
   #validates phone number field
   validates :phone,
-    presence: true,
-    format: { with: VALID_PHONE_NUMBER_REGEX }
+    presence: true
+    #format: { with: VALID_PHONE_NUMBER_REGEX }
 
   #validates license_plate
   #note: change regex for all 50 states once Loopie expands, will use regex for washington LPs for now
@@ -68,12 +68,12 @@ class Driver < ApplicationRecord
   validates :car_color,
     presence: true
 
-  #validates vin #pain in the ass holy shit
-
-  validates :vin,
-    presence: true
-    #format: { with: VALID_VIN_REGEX }
-    #validate :VINVALIDATE
+  # #validates vin #pain in the ass holy shit
+  #
+  # validates :vin,
+  #   presence: true
+  #   #format: { with: VALID_VIN_REGEX }
+  #   #validate :VINVALIDATE
 
 
 end
