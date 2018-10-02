@@ -1,39 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
-
-<p>
-  <strong>Confirmation status:</strong>
-  <%= @user.confirmation_status %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @user.start_date %>
-</p>
+<% provide(:title, @user.firstname) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.firstname %>
+      </h1>
+    </section>
+  </aside>
+</div>
+<div class=jumbotron>
+  <%= @user.firstname %> <%= @user.lastname %>, <%= @user.email %>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

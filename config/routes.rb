@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'welcome_page#welcome'
+  
   get '/washer_login', to: 'login#washer_login'
   get '/driver_login', to: 'login#driver_login'
   get '/about', to: 'static_pages#about'
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
   resources :admins
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'welcome_page#welcome'
 end
