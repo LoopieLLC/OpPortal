@@ -44,6 +44,7 @@
 //form dark mode
 .form-dark {
   background-color: $ColorGrey;
+  border-color: $ColorGrey;
   color: $ColorWhite;
 
   &:focus {

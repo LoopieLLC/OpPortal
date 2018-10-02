@@ -1,8 +1,5 @@
 class Driver < ApplicationRecord
-<<<<<<< HEAD
-=======
 
->>>>>>> ea5b78e4fb3ae24546ac08bda9d6399dca0c500c
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 1 }
   before_save { self.driving_status = 0 }
@@ -83,8 +80,7 @@ class Driver < ApplicationRecord
   # next
 
 end
-<<<<<<< HEAD
-=======
+
 
 #validates car_color
 
@@ -105,4 +101,3 @@ end
 #validates created_at
 
 #validates updated_at
->>>>>>> ea5b78e4fb3ae24546ac08bda9d6399dca0c500c
