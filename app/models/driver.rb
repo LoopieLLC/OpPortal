@@ -4,6 +4,8 @@ class Driver < ApplicationRecord
   before_save { self.driving_status = 0 }
   has_many :loads
   has_one_attached :avatar
+  has_secure_password
+  #has_one_attached :license_image
 
     # def VINVALIDATE
     #   unless vin.include?('I', 'Q', 'O') == false
@@ -18,7 +20,7 @@ class Driver < ApplicationRecord
   VALID_LP_REGEX = /\A[A-Z]{3}[0-9]{4}|[0-9]{3}-[A-Z]{3}\z/i
   current_car_year = Time.new.year + 1
 
-  #validates for username
+ #validates for username
   validates :username,
     presence: true,
     length: { maximum: 50 },
@@ -43,8 +45,8 @@ class Driver < ApplicationRecord
 
   #validates phone number field
   validates :phone,
-    presence: true,
-    format: { with: VALID_PHONE_NUMBER_REGEX }
+    presence: true
+    #format: { with: VALID_PHONE_NUMBER_REGEX }
 
   #validates license_plate
   #note: change regex for all 50 states once Loopie expands, will use regex for washington LPs for now
@@ -78,40 +80,12 @@ class Driver < ApplicationRecord
 #validates car_color
   validates :car_color,
     presence: true
-
-#validates vin #pain in the ass holy shit
-
+  
   validates :vin,
     presence: true
-    #format: { with: VALID_VIN_REGEX }
-  #validate :VINVALIDATE
 
   # validates :start_date,
   # install gem required for dates
   # next
 
 end
-<<<<<<< HEAD
-=======
-
-
-#validates car_color
-
-#validates VIN(vehicle identification number)
-
-#validates driver_license_img
-
-#validates description
-
-#validates current_loads
-
-#validates start_date
-
-#validates driving_status
-
-#validates confirmation_status
-
-#validates created_at
-
-#validates updated_at
->>>>>>> 06895cc66c7e4b01a80287660a862a6ab49538fb
