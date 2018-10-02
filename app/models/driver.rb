@@ -2,10 +2,9 @@ class Driver < ApplicationRecord
   include ActiveModel::Validations
 
 before_save { self.email = email.downcase }
-before_save { self.confirmation_status = 0 }
-
+before_save { self.confirmation_status = 1 }
+before_save { self.driving_status = 0 }
 has_many :loads
-has_secure_password
 
   # def VINVALIDATE
   #   unless vin.include?('I', 'Q', 'O') == false
@@ -33,7 +32,8 @@ validates :email,
   format: { with: VALID_EMAIL_REGEX },
   uniqueness: { case_sensitive: false }
 
-validates :password, length: { minimum: 8 }
+has_secure_password
+validates :password, presence: true, length: { minimum: 8 }
 
 #validates names
 validates :firstname, :lastname,

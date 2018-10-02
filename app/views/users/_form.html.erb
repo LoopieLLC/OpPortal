@@ -1,57 +1,45 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% provide(:title, 'Sign Up') %>
+<div class="form-shared">
+  <%= form_with(model: user, local: true) do |form| %>
+  <%= render 'error_messages' %>
+    <form>
+      <div class="container flex-center container-light">
+        <h2 class="">Account Information</h2>
+        <div class="form-group">
+          <label>Firstname</label>
+          <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
+        </div>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <div class="form-group">
+          <label>Lastname</label>
+          <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <%= form.email_field :email , class: 'form-control', placeholder: :email %>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <%= form.password_field :password , class: 'form-control', placeholder: :password %>
+        </div>
+
+        <div class="form-group">
+          <label>Password Confirmation</label>
+          <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
+        </div>
+
+        <div class="form-group">
+          <label>Role</label>
+          <%= form.select :role, [['Washer', -1],['Driver', -2]] %>
+        </div>
+
+        <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+        <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+        </div>
+      </div>
     </div>
+  </form>
   <% end %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.text_field :password_confirmation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :firstname %>
-    <%= form.text_field :firstname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :lastname %>
-    <%= form.text_field :lastname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :confirmation_status %>
-    <%= form.number_field :confirmation_status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :role %>
-    <%= form.number_field :role %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
