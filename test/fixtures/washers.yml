@@ -2,11 +2,11 @@
 
 one:
   id: 1
-  username: MyString
+  username: Jackburns
   password_digest: MyString
   firstname: MyString
   lastname: MyString
-  email: MyString
+  email: MyString@globstopper.com
   phone: MyString
   address_1: MyString
   address_2: MyString
@@ -23,11 +23,11 @@ one:
 
 two:
   id: 2
-  username: MyString
+  username: Jackflackburns
   password_digest: MyString
   firstname: MyString
   lastname: MyString
-  email: MyString
+  email: MyString@fuck.com
   phone: MyString
   address_1: MyString
   address_2: MyString

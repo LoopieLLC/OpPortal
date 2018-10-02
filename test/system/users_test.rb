@@ -20,6 +20,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "Lastname", with: @user.lastname
     fill_in "Password", with: @user.password
     fill_in "Role", with: @user.role
+    fill_in "Zip Code", with: @user.zip_code
     fill_in "Start Date", with: @user.start_date
     click_on "Create User"
 
@@ -38,6 +39,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "Password", with: @user.password
     fill_in "Role", with: @user.role
     fill_in "Start Date", with: @user.start_date
+    fill_in "Zip Code", with: @user.zip_code
     click_on "Update User"
 
     assert_text "User was successfully updated"
