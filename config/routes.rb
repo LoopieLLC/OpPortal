@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome_page#welcome'
-  
+
   get '/washer_login', to: 'login#washer_login'
   get '/driver_login', to: 'login#driver_login'
   get '/about', to: 'static_pages#about'
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/driver_guidelines', to: 'static_pages#driver_guidelines'
   get '/washer_guidelines', to: 'static_pages#washer_guidelines'
   get '/welcome', to: 'welcome_page#welcome'
+  get '/new_driver', to: 'drivers#new'
+  get '/new_washer', to: 'washers#new'
 
   resources :loads
   resources :users
