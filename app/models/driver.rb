@@ -91,3 +91,27 @@ class Driver < ApplicationRecord
   # next
 
 end
+<<<<<<< HEAD
+=======
+
+
+#validates car_color
+
+#validates VIN(vehicle identification number)
+
+#validates driver_license_img
+
+#validates description
+
+#validates current_loads
+
+#validates start_date
+
+#validates driving_status
+
+#validates confirmation_status
+
+#validates created_at
+
+#validates updated_at
+>>>>>>> 06895cc66c7e4b01a80287660a862a6ab49538fb
