@@ -18,8 +18,9 @@
 
     <div class="container flex-center container-light">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
           <h2 class="">Account Information</h2>
+            <div class="hr-small"></div>
         </div>
       </div>
       <div class="row">
@@ -92,17 +93,15 @@
     <div class="container flex-center container-light">
 
       <div class="row">
-<<<<<<< HEAD
-        <div class="col-md-12">
+
+        <div class="col-md-12 text-center">
           <h2 class="">Car Info</h2>
+          <div class="hr-small"></div>
         </div>
       </div>
 
       <div class="row">
-=======
 
-        <h2 class="">Car Info</h2>
->>>>>>> fbc7b1c9e982fecd580cd3d97e4a2fb30423d7fd
         <div class="col-md-6">
 
           <div class="form-group">
@@ -135,6 +134,7 @@
           <!--change to image upload-->
           <div class="form-group">
             <label>Driver's License Image</label>
+            <%= form.file_field :avatar %>
           </div>
 
           <div class="form-group">
@@ -151,23 +151,11 @@
         <div class='col-md-6'>
           <div class="form-group button-group">
             <label>Start Date</label>
-            <%= select_date Date.today, prefix: :start_date, class: "form-control"%> <!-- date selector, ugly as hell please change css as my eyes are burning -->
+            <%= select_date Date.today, prefix: :start_date, class: ""%> <!-- date selector, ugly as hell please change css as my eyes are burning -->
           </div>
         </div>
 
       </div>
-      <div class='row'>
-        <div class='col-md-3'>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">example checkbox</label>
-          </div>
-          <div class="">
-            <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
-
-          </div>
-        </div>
-      </div>  
 
       <!-- <div class="form-group"> <label>Driving Status</label> <%= form.text_field :username , class: 'form-control',placeholder: :username %> </div> <div class="form-group"> <label>Confirm Status</label> <%= form.text_field :username , class:
       'form-control',placeholder: :username %> </div> -->
@@ -177,6 +165,21 @@
       <!--change to input/dropdown menu? see if there's calendar function -->
 
     </div>
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-4 col-md-offset-4'>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">example checkbox</label>
+        </div>
+        <div class="">
+          <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+
+        </div>
+      </div>
+    </div>
+</div>
+
   </div>
 </form>
 <% end %>

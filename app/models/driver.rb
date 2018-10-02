@@ -1,9 +1,9 @@
 class Driver < ApplicationRecord
-
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 1 }
   before_save { self.driving_status = 0 }
   has_many :loads
+  has_one_attached :avatar
   has_secure_password
   #has_one_attached :license_image
 
@@ -33,7 +33,10 @@ class Driver < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
-  validates :password, presence: true, length: { minimum: 8 }
+  has_secure_password
+  validates :password,
+    presence: true,
+    length: { minimum: 8 }
 
   #validates names
   validates :firstname, :lastname,
@@ -47,53 +50,42 @@ class Driver < ApplicationRecord
 
   #validates license_plate
   #note: change regex for all 50 states once Loopie expands, will use regex for washington LPs for now
+  #also need to use different case -- maybe checkbox for custom LPs
   validates :license_plate,
     presence: true,
     format: { with: VALID_LP_REGEX }
+
+  validates :address_1,
+    presence: true
+
+  validates :address_2,
+    presence: true
+
+  validates :zip,
+    presence: true
 
   #validates car_year
   validates :car_year,
     presence: true
     #inclusion: { in: (1900..current_car_year), message:"%{value} is not a valid car year"}
 
-  #validates car_make
+#validates car_make
   validates :car_make,
     presence: true
 
-  #validates car_model
+#validates car_model
   validates :car_model,
     presence: true
 
-  #validates car_color
+#validates car_color
   validates :car_color,
     presence: true
+  
+  validates :vin,
+    presence: true
 
-  # #validates vin #pain in the ass holy shit
-  #
-  # validates :vin,
-  #   presence: true
-  #   #format: { with: VALID_VIN_REGEX }
-  #   #validate :VINVALIDATE
-
+  # validates :start_date,
+  # install gem required for dates
+  # next
 
 end
-
-#validates car_color
-
-#validates VIN(vehicle identification number)
-
-#validates driver_license_img
-
-#validates description
-
-#validates current_loads
-
-#validates start_date
-
-#validates driving_status
-
-#validates confirmation_status
-
-#validates created_at
-
-#validates updated_at
