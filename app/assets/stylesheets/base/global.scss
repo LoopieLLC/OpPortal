@@ -19,7 +19,7 @@ body {
   justify-content: center;
   padding-top: 3em;
   padding-bottom: 3em;
-  text-align: center;
+
 }
 
 .container-light {
@@ -60,3 +60,13 @@ body {
     color: $state-danger-text;
   }
 }
+
+.form-signin {
+    max-width: 300px;
+    margin: 0 auto;
+    padding-top: 5em;
+    img {
+      width: 12em;
+      height: auto;
+    }
+  }
