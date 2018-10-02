@@ -4,7 +4,7 @@ class DriverTest < ActiveSupport::TestCase
 
   def setup
     @Driver = Driver.new(
-      username: "ExUsername",
+      username: "ExUsername2",
       password: "foobar9494934",
       password_confirmation: "foobar9494934",
       email:"yeet@yeet.com",
@@ -12,8 +12,7 @@ class DriverTest < ActiveSupport::TestCase
       firstname:"John",
       lastname:"Lee",
       license_plate:"ASB2983",
-      car_year: "2000",
-      vin: "EE"
+      car_year: "2000"
     )
   end
 
@@ -49,7 +48,7 @@ class DriverTest < ActiveSupport::TestCase
   end
 
   test "email validation should reject invalid addresses" do
-    invalid_addresses = %w[user@example.com user_at_foo.org user.name@example.
+    invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
                            foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
       @Driver.email = invalid_address
