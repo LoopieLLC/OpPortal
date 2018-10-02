@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$black: 900;
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.text-light {
+  color: $ColorNotWhite;
+}
+
+.text-dark {
+  color: $ColorDark;
+}
+
+h1, {
+  font-size: 2em;
+  color: $ColorLoopie;
+  text-transform: capitalize;
+  font-weight: $black;
+}
+h2, {
+  color: $ColorDark;
+  font-weight: $medium;
+  font-size: 1em;
+}
+h3, {
+font-size: 1em;
+}
+h4 {
+font-size: 1em;
+}

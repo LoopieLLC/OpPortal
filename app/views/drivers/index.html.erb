@@ -1,33 +1,44 @@
-<div class="container flex-center">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="img-big round"></div>
-      <h1><%= :firstname%> <%=  :lastname%></h1>
-      <p class="text-light">Loopie Driver |
-        <%= :car_color%> <%= :car_make %> <%=:car_model%>
-      </p>
-    </div>
-  </div>
 
+
+<div class="container container-top">
+<div class="col-md-4">
+    <div class="row flex-center">
+      <div class="col-md-12 profile">
+        <div class="img-big round"></div>
+        <h1><%= :firstname%>
+          <%= :lastname%></h1>
+        <p class="text-light">Loopie Driver |
+          <%= :car_color%>
+          <%= :car_make %>
+          <%=:car_model%>
+        </p>
+      </div>
 </div>
 
-<div class="container">
-  <button></button>
-</div>
-
-<div class="container container-light">
-  <div class="row">
-    <div class="col-xs-6">
-      <h1>Stats</h1>
-    </div>
-    <div class="col-xs-3">
-      <h3>Monthly</h3>
-      <h2>$300</h2>
-
-    </div>
-    <div class="col-xs-3">
-      <h3>All Time</h3>
-      <h2>$5.2k</h2>
-    </div>
   </div>
+  <div class="col-md-8 profile">
+    <button class="btn btn-primary btn-lg btn-block">Start delivering Laundry</button>
+  </div>
+  <div class="col-md-8 ">
+    <div class="row container-light">
+      <div class="col-xs-4">
+        <h1>Stats</h1>
+      </div>
+      <div class="col-xs-4">
+        <h3>Monthly</h3>
+        <h2>$300</h2>
+        <h3>Monthly</h3>
+        <h2>$300</h2>
+
+      </div>
+      <div class="col-xs-4">
+        <h3>All Time</h3>
+        <h2>$5.2k</h2>
+        <h3>All Time</h3>
+        <h2>$5.2k</h2>
+      </div>
+    </div>
+
+  </div>
+
 </div>

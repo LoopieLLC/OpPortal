@@ -2,13 +2,6 @@ body {
   background-color: $ColorDark;
 }
 //fixing text for dark background
-.text-light {
-  color: $ColorNotWhite;
-}
-
-.text-dark {
-  color: $ColorDark;
-}
 
 // scss for buttons
 
@@ -22,6 +15,10 @@ body {
 
 }
 
+.container-top {
+    margin-top: 7em;
+}
+
 .container-light {
   background-color: $ColorWhite;
   border-radius: 5px;
@@ -31,15 +28,6 @@ body {
   margin-bottom: 1em;
 }
 
-.img-big {
-  width: 5em;
-  height: 5em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url(teletubbies.jpg);
-
-}
 
 .round {
   border-radius: 50%;
@@ -70,3 +58,8 @@ body {
       height: auto;
     }
   }
+
+
+@mixin transition($property) {
+  transition: $property 0.15s ease-in-out ;
+}

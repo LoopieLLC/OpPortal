@@ -1,5 +1,5 @@
 .btn {
-  border-radius: 75px;
+  border-radius: 3px;
   margin-bottom: 1em;
   color: $ColorDark;
 }
@@ -7,13 +7,45 @@
 .btn-primary,
 .btn-primary:active,
 .btn-primary:visited {
-  background-color: $ColorLoopie;
+  background-color: $ColorBlue;
   border-width: 0em;
+  box-shadow: $DropShadowDark;
+  @include transition(all);
+  color: $ColorWhite;
+  font-weight: $bold;
+  &:active {
+
+  }
+
+  &:hover {
+    background-color: $ColorLoopie;
+    box-shadow: 0 0.7em 20px rgba(0, 0, 0, 0.7);
+    color: $ColorBlue;
+
+  }
 }
 
-.btn-primary:hover {
+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary:visited {
   background-color: $ColorBlue;
+  border-width: 0em;
+  box-shadow: $DropShadow;
+  @include transition(all);
+  color: $ColorWhite;
+  font-weight: $bold;
+  &:active {
+
+  }
+
+  &:hover {
+    background-color: $ColorLoopie;
+    box-shadow: 0 0.5em 15px rgba(0, 0, 0, 0.3);
+    color: $ColorBlue;
+
+  }
 }
+
 
 .btn-success,
 .btn-success:active,
