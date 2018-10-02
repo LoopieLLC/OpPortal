@@ -134,7 +134,7 @@
           <!--change to image upload-->
           <div class="form-group">
             <label>Driver's License Image</label>
-            <%= form.file_field :avatar %>
+            <%= form.file_field :avatar, class:'' %>
           </div>
 
           <div class="form-group">
@@ -151,7 +151,7 @@
         <div class='col-md-6'>
           <div class="form-group button-group">
             <label>Start Date</label>
-            <%= select_date Date.today, prefix: :start_date, class: ""%> <!-- date selector, ugly as hell please change css as my eyes are burning -->
+            <%= select_date Date.today, prefix: :start_date, class: "form-control-file"%> <!-- date selector, ugly as hell please change css as my eyes are burning -->
           </div>
         </div>
 
@@ -170,7 +170,8 @@
       <div class='col-md-4 col-md-offset-4'>
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">example checkbox</label>
+          <label class="form-check-label text-light" for="exampleCheck1">I agree to Loopie's terms of service</label>
+          <!-- add terms of service  -->
         </div>
         <div class="">
           <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>

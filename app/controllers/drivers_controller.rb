@@ -17,7 +17,7 @@ class DriversController < ApplicationController
     @driver = Driver.new
   end
 
-  # GET /drivers/1/edit
+  # GET /drivers/1/edit 
   def edit
   end
 
