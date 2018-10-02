@@ -70,6 +70,14 @@ class DriverTest < ActiveSupport::TestCase
     end
   end
 
+  test "email validation should accept valid addresses" do
+     valid_addresses = %w[user@example.com USER@foo.COM]
+     valid_addresses.each do |valid_address|
+       @driver.email = valid_address
+       assert @driver.valid?
+     end
+   end
+
   test "phone number should be valid" do
     @driver.phone = ""
     assert_not @driver.valid?
@@ -129,14 +137,6 @@ class DriverTest < ActiveSupport::TestCase
     @driver.car_year = ""
     assert_not @driver.valid?
   end
-
-  test "email validation should accept valid addresses" do
-     valid_addresses = %w[user@example.com USER@foo.COM]
-     valid_addresses.each do |valid_address|
-       @driver.email = valid_address
-       assert @driver.valid?
-     end
-   end
 
   #test fails for some stupid reason, regex works fine, i have no idea why
   #because it works in cmd but not in rails model
