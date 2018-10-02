@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'welcome_page#welcome'
-
   get '/washer_login', to: 'login#washer_login'
   get '/driver_login', to: 'login#driver_login'
   get '/about', to: 'static_pages#about'
