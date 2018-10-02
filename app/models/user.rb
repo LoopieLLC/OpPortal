@@ -19,6 +19,10 @@ class User < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
+  validates :zip_code,
+    presence: true,
+    length: { minimum: 5, maximum: 15 }
+
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }
 

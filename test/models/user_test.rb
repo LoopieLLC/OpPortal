@@ -7,7 +7,8 @@ class UserTest < ActiveSupport::TestCase
       password: "foobar9494934",
       password_confirmation: "foobar9494934",
       firstname: "Jack",
-      lastname: "Burns"
+      lastname: "Burns",
+      zip_code: "98406"
     )
   end
 
@@ -16,12 +17,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "firstname should be present" do
-    @user.firstname = "     "
+    @user.firstname = ""
     assert_not @user.valid?
   end
 
   test "lastname should be present" do
-    @user.lastname = "     "
+    @user.lastname = ""
     assert_not @user.valid?
   end
 
@@ -36,7 +37,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should be present" do
-    @user.email = "     "
+    @user.email = ""
     assert_not @user.valid?
   end
 
@@ -61,6 +62,21 @@ class UserTest < ActiveSupport::TestCase
 
   test "password should have a minimum length" do
     @user.password = @user.password_confirmation = "a" * 7
+    assert_not @user.valid?
+  end
+
+  test "zip should be present" do
+    @user.zip_code = ""
+    assert_not @user.valid?
+  end
+
+  test "zip should be at least 5 character long" do
+    @user.zip_code = "a" * 4
+    assert_not @user.valid?
+  end
+
+  test "zip should have a max length of 15" do
+    @user.zip_code = "a" * 17
     assert_not @user.valid?
   end
 
