@@ -91,8 +91,7 @@ class Driver < ApplicationRecord
   # next
 
 end
-<<<<<<< HEAD
-=======
+
 
 
 #validates car_color
@@ -114,4 +113,3 @@ end
 #validates created_at
 
 #validates updated_at
->>>>>>> 06895cc66c7e4b01a80287660a862a6ab49538fb

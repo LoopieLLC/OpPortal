@@ -5,10 +5,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-//import base
+//import global
 @import 'base/variables';
-@import 'base/typography';
 @import 'base/global';
+
+//import custom base
+@import 'base/typography';
 @import 'base/buttons';
 @import 'base/forms';
 

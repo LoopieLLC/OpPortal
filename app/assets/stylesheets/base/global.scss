@@ -79,6 +79,21 @@ body {
   transition: $property 0.15s ease-in-out ;
 }
 
+@mixin breakpoint($breakpoint, $query: 'min-width') {
+  $breakpoints: (
+  'bp-small': $screen-xs-min,
+  'bp-medium': $screen-sm-min,
+  'bp-large': $screen-md-min,
+  'bp-huge': $screen-lg-min,
+  );
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (#{$query}: map-get($breakpoints, $breakpoint)) { @content; }
+  } @else {
+    @warn 'No breakpoint found for `#{$breakpoint}`. Allowed values are: #{map-keys($breakpoints)}.';
+  }
+
+}
+
 .header-block {
   height: 4em;
   width: 100%;
