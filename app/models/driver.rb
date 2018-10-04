@@ -5,6 +5,7 @@ class Driver < ApplicationRecord
   has_many :loads
   has_one_attached :avatar
   has_secure_password
+  
   #has_one_attached :license_image
 
     # def VINVALIDATE
@@ -80,7 +81,7 @@ class Driver < ApplicationRecord
 #validates car_color
   validates :car_color,
     presence: true
-  
+
   validates :vin,
     presence: true
 
