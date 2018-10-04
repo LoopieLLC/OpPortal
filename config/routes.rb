@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/new_driver', to: 'drivers#new'
   get '/new_washer', to: 'washers#new'
   get '/new_user', to: 'users#new'
+  post '/new_user',  to: 'users#create'
 
   resources :loads
   resources :users
