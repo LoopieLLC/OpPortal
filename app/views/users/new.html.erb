@@ -8,8 +8,14 @@
       <div class="container flex-center container-light">
         <div class="section">
           <div class="row">
+            <div class="col-md-12 text-center">
+              <h2 class="">Account Information</h2>
+                <div class="hr-small"></div>
+            </div>
+          </div>
+          <div class="row">
             <div class="col-md-12">
-        <h2 class="">Account Information</h2>
+
 
         <%= form.label :firstname %>
         <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
@@ -32,12 +38,15 @@
         <%= form.label :role %>
         <%= form.select :role, [['Washer', 1],['Driver', 2]], {}, {class: "form-control"} %>
 
-        <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
-        <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+
       </div>
       </div>
       </div>
       </div>
+      <div class="container">
+      <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+      <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+    </div>
     </form>
   <% end %>
 </div>
