@@ -1,0 +1,22 @@
+.navbar-loopie {
+  background-color: $ColorDark;
+  
+  .icon-bar {
+    background-color: $ColorWhite;
+  }
+  a {
+    color: $ColorWhite;
+    @include transition(all);
+
+    &:hover {
+      background-color: $ColorLoopie;
+      color: $ColorDark;
+    }
+    &:active, &:focus {
+      color: $ColorDark;
+    }
+  }
+
+
+;
+}

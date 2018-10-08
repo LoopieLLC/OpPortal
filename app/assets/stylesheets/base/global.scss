@@ -79,7 +79,7 @@ body {
 
 
 @mixin transition($property) {
-  transition: $property 0.15s ease-in-out ;
+  transition: $property 0.10s ease-in-out ;
 }
 
 @mixin breakpoint($breakpoint, $query: 'min-width') {
