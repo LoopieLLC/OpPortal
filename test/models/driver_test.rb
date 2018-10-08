@@ -7,15 +7,18 @@ class DriverTest < ActiveSupport::TestCase
       password: "foobar9494934",
       password_confirmation: "foobar9494934",
       email:"yeet@yeet.com",
-      phone:"(123)-456-789",
+      phone:"123-456-789",
       firstname:"John",
       lastname:"Lee",
       license_plate:"ASB2983",
-      vin: "EE"
+      vin: "EE",
       car_year: "2000",
       car_make: "lexington",
       car_model: "lefdsafs",
-      car_color: "red"
+      car_color: "red",
+      address_1: "address",
+      address_2: "address2",
+      zip: "63105"
     )
   end
 
@@ -60,12 +63,20 @@ class DriverTest < ActiveSupport::TestCase
   end
 
   test "email validation should reject invalid addresses" do
-    invalid_addresses = %w[user@example.com]
+    invalid_addresses = %w[user@example,com]
     invalid_addresses.each do |invalid_address|
       @driver.email = invalid_address
       assert_not @driver.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
+
+  test "email validation should accept valid addresses" do
+     valid_addresses = %w[user@example.com USER@foo.COM]
+     valid_addresses.each do |valid_address|
+       @driver.email = valid_address
+       assert @driver.valid?
+     end
+   end
 
   test "phone number should be valid" do
     @driver.phone = ""
@@ -88,52 +99,45 @@ class DriverTest < ActiveSupport::TestCase
   end
 
   test "vin should exist" do
-    @Driver.vin = ""
-    assert_not @Driver.valid?
+    @driver.vin = ""
+    assert_not @driver.valid?
   end
 
   test "address1 should exist" do
-    @Driver.address_1 = ""
-    assert_not @Driver.valid?
+    @driver.address_1 = ""
+    assert_not @driver.valid?
   end
 
   test "address2 should exist" do
-    @Driver.address_2 = ""
-    assert_not @Driver.valid?
+    @driver.address_2 = ""
+    assert_not @driver.valid?
   end
 
   test "zip should exist" do
-    @Driver.zip = ""
-    assert_not @Driver.valid?
+    @driver.zip = ""
+    assert_not @driver.valid?
   end
 
   test "car_make should exist" do
-    @Driver.car_make = ""
-    assert_not @Driver.valid?
+    @driver.car_make = ""
+    assert_not @driver.valid?
   end
 
   test "car_color should exist" do
-    @Driver.car_color = ""
-    assert_not @Driver.valid?
+    @driver.car_color = ""
+    assert_not @driver.valid?
   end
 
   test "car_model should exist" do
-    @Driver.car_model = ""
-    assert_not @Driver.valid?
+    @driver.car_model = ""
+    assert_not @driver.valid?
   end
 
   test "car_year should accept valid values" do
-    @Driver.car_year = ""
-    assert_not @Driver.valid?
+    @driver.car_year = ""
+    assert_not @driver.valid?
   end
 
-  # test "email validation should accept valid addresses" do
-  #    valid_addresses = %w[user@example.com USER@foo.COM]
-  #    valid_addresses.each do |valid_address|
-  #      @Driver.email = valid_address
-  #      assert @Driver.valid?
-  #    end
-  #  end
   #test fails for some stupid reason, regex works fine, i have no idea why
   #because it works in cmd but not in rails model
 
@@ -141,14 +145,14 @@ class DriverTest < ActiveSupport::TestCase
   # test "car_year validation should reject invalid car_years" do
   #   invalid_car_years = %w[1899 1 300 200230]
   #   invalid_car_years.each do |invalid_car_year|
-  #     @Driver.car_year = invalid_car_year
-  #     assert_not @Driver.valid?, "#{invalid_car_year.inspect} should be invalid"
+  #     @driver.car_year = invalid_car_year
+  #     assert_not @driver.valid?, "#{invalid_car_year.inspect} should be invalid"
   #   end
   # end
   #
   # test "VINS should be valid" do
-  #   @Driver.vin = "JH4NA1150RT000268"
-  #   assert @Driver.valid?
+  #   @driver.vin = "JH4NA1150RT000268"
+  #   assert @driver.valid?
   # end
 
 end
