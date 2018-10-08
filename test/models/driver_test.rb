@@ -7,7 +7,7 @@ class DriverTest < ActiveSupport::TestCase
       password: "foobar9494934",
       password_confirmation: "foobar9494934",
       email:"yeet@yeet.com",
-      phone:"(123)-456-789",
+      phone:"123-456-789",
       firstname:"John",
       lastname:"Lee",
       license_plate:"ASB2983",

@@ -15,6 +15,10 @@ class WasherTest < ActiveSupport::TestCase
     )
   end
 
+  test "should be valid" do
+    assert @Washer.valid?
+  end
+
   test "Username should be present" do
     @Washer.username = ""
     assert_not @Washer.valid?
@@ -54,6 +58,14 @@ class WasherTest < ActiveSupport::TestCase
       assert_not @Washer.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
+
+  test "email validation should accept valid addresses" do
+     valid_addresses = %w[user@example.com USER@foo.COM]
+     valid_addresses.each do |valid_address|
+       @Washer.email = valid_address
+       assert @Washer.valid?
+     end
+   end
 
   test "phone number should be valid" do
     @Washer.phone = ""
