@@ -30,7 +30,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        if @user.role = 1
+          flash[:success] = "Thank you!\nYour Loopie LLC washer application will be processed shortly."
+        elsif @user.role = 2
+          flash[:success] = "Thank you!\nYour Loopie LLC driver application will be processed shortly."
+        end
+
+        format.html { redirect_to @user}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -71,6 +77,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :confirmation_status, :role, :zip_code)
+      params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :role, :zip_code)
     end
 end

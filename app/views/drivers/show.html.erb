@@ -1,124 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @driver.username %>
-</p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @driver.password %>
-</p>
+<div class="header-block"></div>
+<div class="container container-top">
+<div class="col-md-4">
+    <div class="row flex-center">
+      <div class="col-md-12 profile">
+        <div class="img-big round"></div>
+        <h1><%= :firstname%>
+          <%= :lastname%></h1>
+        <p class="text-light">Loopie Driver |
+          <%= :car_color%>
+          <%= :car_make %>
+          <%=:car_model%>
+        </p>
+      </div>
+</div>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @driver.firstname %>
-</p>
+  </div>
+  <div class="col-md-8 profile">
+    <button class="btn btn-primary btn-lg btn-block">Start delivering Laundry</button>
+  </div>
+  <div class="col-md-8 ">
+    <div class="row container-light">
+      <div class="col-xs-4">
+        <h1>Stats</h1>
+      </div>
+      <div class="col-xs-4">
+        <h3>Monthly</h3>
+        <h2>$300</h2>
+        <h3>Monthly</h3>
+        <h2>$300</h2>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @driver.lastname %>
-</p>
+      </div>
+      <div class="col-xs-4">
+        <h3>All Time</h3>
+        <h2>$5.2k</h2>
+        <h3>All Time</h3>
+        <h2>$5.2k</h2>
+      </div>
+    </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @driver.email %>
-</p>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @driver.phone %>
-</p>
+</div>
 
-<p>
-  <strong>Address 1:</strong>
-  <%= @driver.address_1 %>
-</p>
-
-<p>
-  <strong>Address 2:</strong>
-  <%= @driver.address_2 %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @driver.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @driver.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @driver.zip %>
-</p>
-
-<p>
-  <strong>Insurance info:</strong>
-  <%= @driver.insurance_info %>
-</p>
-
-<p>
-  <strong>Vin:</strong>
-  <%= @driver.vin %>
-</p>
-
-<p>
-  <strong>License plate:</strong>
-  <%= @driver.license_plate %>
-</p>
-
-<p>
-  <strong>Car year:</strong>
-  <%= @driver.car_year %>
-</p>
-
-<p>
-  <strong>Car make:</strong>
-  <%= @driver.car_make %>
-</p>
-
-<p>
-  <strong>Car model:</strong>
-  <%= @driver.car_model %>
-</p>
-
-<p>
-  <strong>Car color:</strong>
-  <%= @driver.car_color %>
-</p>
-
-<p>
-  <strong>License image:</strong>
-  <%= @driver.license_image %>
-</p>
-
-<p>
-  <strong>Additional information:</strong>
-  <%= @driver.additional_information %>
-</p>
-
-<p>
-  <strong>Current loads:</strong>
-  <%= @driver.current_loads %>
-</p>
-
-<p>
-  <strong>Driving status:</strong>
-  <%= @driver.driving_status %>
-</p>
-
-<p>
-  <strong>Confirmation status:</strong>
-  <%= @driver.confirmation_status %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @driver.start_date %>
-</p>
 
 <%= link_to 'Edit', edit_driver_path(@driver) %> |
 <%= link_to 'Back', drivers_path %>

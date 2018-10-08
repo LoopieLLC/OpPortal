@@ -1,3 +1,38 @@
-<h1>New User</h1>
+<% provide(:title, 'Register') %>
+<h1>Register</h1>
 
-<%= render 'form', user: @user %>
+<div class="form-shared">
+  <%= form_for(@user, url: new_user_path) do |form| %>
+    <%= render 'error_messages' %>
+    <form>
+      <div class="container flex-center container-light">
+        <h2 class="">Account Information</h2>
+
+        <%= form.label :firstname %>
+        <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
+
+        <%= form.label :lastname %>
+        <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+
+        <%= form.label :email %>
+        <%= form.email_field :email , class: 'form-control', placeholder: :email %>
+
+        <%= form.label :zip_code %>
+        <%= form.text_field :zip_code , class: 'form-control', placeholder: :zip_code %>
+
+        <%= form.label :password %>
+        <%= form.password_field :password , class: 'form-control', placeholder: :password %>
+
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
+
+        <%= form.label :role %>
+        <%= form.select :role, [['Washer', 1],['Driver', 2]] %>
+
+        <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+        <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+
+      </div>
+    </form>
+  <% end %>
+</div>

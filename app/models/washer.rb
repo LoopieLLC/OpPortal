@@ -7,7 +7,7 @@ class Washer < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}\z/
-  VALID_PHONE_NUMBER_REGEX = /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\z/
+  VALID_PHONE_NUMBER_REGEX = /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\z/i
 
   #validates for username
   validates :username,
@@ -29,8 +29,8 @@ class Washer < ApplicationRecord
 
   #validates phone number field
   validates :phone,
-    presence: true,
-    format: { with: VALID_PHONE_NUMBER_REGEX }
+    presence: true
+    #format: { with: VALID_PHONE_NUMBER_REGEX }
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }
