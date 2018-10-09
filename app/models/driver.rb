@@ -2,7 +2,9 @@ class Driver < ApplicationRecord
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 1 }
   before_save { self.driving_status = 0 }
+
   has_many :loads
+  has_one :user, :foreign_key => 'email'
 
   #has_one_attached :license_image
 
@@ -60,7 +62,7 @@ class Driver < ApplicationRecord
   validates :address_2,
     presence: true
 
-  validates :zip,
+  validates :zip_code,
     presence: true
 
   #validates car_year
