@@ -10,6 +10,11 @@ class AdminsController < ApplicationController
   # GET /admins/1
   # GET /admins/1.json
   def show
+    @sessionid = Admin.find params[:id]
+    unless session[:id] = @sessionid.id
+      redirect_to root_url
+      return
+    end
   end
 
   # GET /admins/new

@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @admin.username %>
-</p>
+<h1>
+  Hi, <%= @admin.username %>
+</h1>
 
-<p>
-  <strong>Password:</strong>
-  <%= @admin.password %>
-</p>
+<h1>Pending Users</h1>
+<tbody>
+  <div class="table">
+    <% user = User.all %>
+    <% user.each do |u| %>
+      <tr color="white">
+        <h2>ID: <%= u.id%></h2>
+        <p>Email: <%= u.email%></p>
+        <p>Name: <%= u.firstname%> <%= u.lastname%> </p>
+
+      </tr>
+    <% end %>
+  </div>
+
+</tbody>
 
 <%= link_to 'Edit', edit_admin_path(@admin) %> |
 <%= link_to 'Back', admins_path %>
+<%= link_to 'Log Out', admin_logout_path, method: :delete%>
