@@ -13,11 +13,17 @@
         <h2>ID: <%= u.id%></h2>
         <p>Email: <%= u.email%></p>
         <p>Name: <%= u.firstname%> <%= u.lastname%> </p>
-
+        <p>Zip Code: <%= u.zip_code %></p>
+        <% if u.role == 1%>
+          <p>Requested: Driver</p>
+        <% else %>
+          <p>Requested: Washer</p>
+        <% end %>
+        <%= link_to 'Approve this User', class: 'btn btn-success'%>
+        <%= link_to 'Deny this User', class: 'btn btn-danger'%>
       </tr>
     <% end %>
   </div>
-
 </tbody>
 
 <%= link_to 'Edit', edit_admin_path(@admin) %> |
