@@ -1,3 +1,25 @@
 // Place all the styles related to the Loads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.loads-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        display: inline-block;
+        padding-bottom: 5px;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            bottom: 0;
+            left: 25%;
+            border-bottom: 2px solid gray;
+        }
+    }
+}
+
