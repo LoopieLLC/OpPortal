@@ -13,7 +13,6 @@
     width: 14em;
   }
 }
-
 // form defaults to light input
 .form-control {
   background-color: $ColorNotWhite;
@@ -28,9 +27,9 @@
 
   &:focus {
     color: $ColorDark;
-
     box-shadow: $DropShadow;
     border-color: $ColorBlue;
+
     &::placeholder {
       color: $ColorGrey;
     }
@@ -39,8 +38,8 @@
   &::placeholder {
     color: $ColorGrey;
   }
-}
 
+}
 //form dark mode
 .form-dark {
   background-color: $ColorGrey;
@@ -61,7 +60,6 @@
   &::placeholder {
     color: $ColorGreyDark;
   }
-
 }
 
 .form-text-area {
