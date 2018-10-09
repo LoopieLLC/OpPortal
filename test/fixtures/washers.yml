@@ -12,7 +12,7 @@ one:
   address_2: MyString
   city: MyString
   state: MyString
-  zip: MyString
+  zip_code: MyString
   machine_description: MyText
   washing_status: 1
   confirmation_status: 1
@@ -33,7 +33,7 @@ two:
   address_2: MyString
   city: MyString
   state: MyString
-  zip: MyString
+  zip_code: MyString
   machine_description: MyText
   washing_status: 1
   confirmation_status: 1

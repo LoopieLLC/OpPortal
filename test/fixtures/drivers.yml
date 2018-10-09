@@ -12,7 +12,7 @@ one:
   address_2: MyString
   city: MyString
   state: MyString
-  zip: MyString
+  zip_code: MyString
   insurance_info: MyText
   vin: MyString
   license_plate: MyString
@@ -39,7 +39,7 @@ two:
   address_2: MyString
   city: MyString
   state: MyString
-  zip: MyString
+  zip_code: MyString
   insurance_info: MyText
   vin: MyString
   license_plate: MyString
