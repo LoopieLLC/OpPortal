@@ -18,4 +18,7 @@ module AdminSessionHelper
    !current_user.nil?
  end
 
+ def confirm_user
+ end
+
 end
