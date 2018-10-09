@@ -3,8 +3,7 @@ class Driver < ApplicationRecord
   before_save { self.confirmation_status = 1 }
   before_save { self.driving_status = 0 }
   has_many :loads
-  has_one_attached :avatar
-  has_secure_password
+
   #has_one_attached :license_image
 
     # def VINVALIDATE
@@ -15,7 +14,7 @@ class Driver < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}\z/i
-  VALID_PHONE_NUMBER_REGEX = /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\z/i
+  VALID_PHONE_NUMBER_REGEX = /\A^[2-9]\d{2}-\d{3}-\d{4}$\z/i
   VALID_VIN_REGEX = /\A[A-HJ-NPR-Z0-9]{17}\z/i
   VALID_LP_REGEX = /\A[A-Z]{3}[0-9]{4}|[0-9]{3}-[A-Z]{3}\z/i
   current_car_year = Time.new.year + 1
@@ -80,7 +79,7 @@ class Driver < ApplicationRecord
 #validates car_color
   validates :car_color,
     presence: true
-  
+
   validates :vin,
     presence: true
 
