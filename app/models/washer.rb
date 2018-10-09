@@ -4,6 +4,7 @@ class Washer < ApplicationRecord
   before_save { self.washing_status = 0 }
   has_many :loads
   #has_one_attached :profile_picture
+  #has_one :users
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}\z/
