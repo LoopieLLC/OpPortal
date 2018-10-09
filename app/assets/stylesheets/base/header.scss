@@ -1,0 +1,34 @@
+.navbar-loopie {
+  background-color: $ColorDark;
+  
+  [aria-expanded="true"] {
+    .icon-bar {
+      background-color: $ColorLoopie;
+    }
+  }
+
+  li {
+    a:hover {
+      background-color: $ColorLoopie;
+    }
+  }
+
+  .icon-bar {
+    background-color: $ColorWhite;
+  }
+
+  a {
+    color: $ColorWhite;
+    @include transition(all);
+
+    &:hover {
+      background-color: $ColorLoopie;
+      color: $ColorDark;
+    }
+
+    &:active,
+    &:focus {
+      color: $ColorDark;
+    }
+  };
+}

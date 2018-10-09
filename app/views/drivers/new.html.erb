@@ -18,7 +18,7 @@
         <%= form.email_field :email , class: 'form-control', placeholder: :email %>
 
         <%= form.label :zip_code %>
-        <%= form.text_field :zip_code , class: 'form-control', placeholder: :zip_code %>
+        <%= form.text_field :zip , class: 'form-control', placeholder: :zip %>
 
         <%= form.label :password %>
         <%= form.password_field :password , class: 'form-control', placeholder: :password %>
@@ -26,8 +26,7 @@
         <%= form.label :password_confirmation %>
         <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
 
-        <%= form.label :role %>
-        <%= form.select :role, [['Washer', 1],['Driver', 2]] %>
+
 
         <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
         <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>

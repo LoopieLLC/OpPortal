@@ -1,3 +1,8 @@
+<% provide(:title, 'Dashboard') %>
+<% content_for :custom_header do %>
+  <%= render 'layouts/user_header' %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 
@@ -14,6 +19,8 @@
           <%= :car_make %>
           <%=:car_model%>
         </p>
+        <p>
+        <%= link_to 'Edit', edit_driver_path(@driver) %> |</p>
       </div>
 </div>
 
@@ -46,5 +53,4 @@
 </div>
 
 
-<%= link_to 'Edit', edit_driver_path(@driver) %> |
 <%= link_to 'Back', drivers_path %>
