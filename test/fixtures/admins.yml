@@ -5,5 +5,5 @@ one:
   password_digest: MyString
 
 two:
-  username: Admin34254326
-  password_digest: MyString
+  username: MyString1
+  password_digest: MyString1
