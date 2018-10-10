@@ -31,7 +31,7 @@ class WashersTest < ApplicationSystemTestCase
     fill_in "Total Loads Completed", with: @washer.total_loads_completed
     fill_in "Username", with: @washer.username
     fill_in "Washing Status", with: @washer.washing_status
-    fill_in "Zip", with: @washer.zip
+    fill_in "Zip", with: @washer.zip_code
     click_on "Create Washer"
 
     assert_text "Washer was successfully created"
@@ -59,7 +59,7 @@ class WashersTest < ApplicationSystemTestCase
     fill_in "Total Loads Completed", with: @washer.total_loads_completed
     fill_in "Username", with: @washer.username
     fill_in "Washing Status", with: @washer.washing_status
-    fill_in "Zip", with: @washer.zip
+    fill_in "Zip", with: @washer.zip_code
     click_on "Update Washer"
 
     assert_text "Washer was successfully updated"
