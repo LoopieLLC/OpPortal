@@ -10,6 +10,7 @@ class DriversController < ApplicationController
   # GET /drivers/1
   # GET /drivers/1.json
   def show
+    @driver = Driver.find(params[:id])
   end
 
   # GET /drivers/new
@@ -17,7 +18,7 @@ class DriversController < ApplicationController
     @driver = Driver.new
   end
 
-  # GET /drivers/1/edit 
+  # GET /drivers/1/edit
   def edit
   end
 
@@ -28,7 +29,8 @@ class DriversController < ApplicationController
 
     respond_to do |format|
       if @driver.save
-        format.html { redirect_to @driver, notice: 'Driver was successfully created.' }
+        flash[:success] = "You are now a Loopie driver!"
+        format.html { redirect_to @driver }
         format.json { render :show, status: :created, location: @driver }
       else
         format.html { render :new }
@@ -42,7 +44,8 @@ class DriversController < ApplicationController
   def update
     respond_to do |format|
       if @driver.update(driver_params)
-        format.html { redirect_to @driver, notice: 'Driver was successfully updated.' }
+        flash[:success] = "Your profile has been successfully updated!"
+        format.html { redirect_to @driver }
         format.json { render :show, status: :ok, location: @driver }
       else
         format.html { render :edit }

@@ -1,12 +1,24 @@
 <% provide(:title, 'New Driver') %>
-<h1>Register</h1>
+<h1>New Driver</h1>
 
 <div class="form-shared">
   <%= form_for(@driver, url: new_driver_path) do |form| %>
     <%= render 'error_messages' %>
     <form>
       <div class="container flex-center container-light">
-        <h2 class="">Account Information</h2>
+        <div class="col-md-12 text-center">
+          <h2 class="">Account Information</h2>
+          <div class="hr-small"></div>
+        </div>
+
+        <%= form.label :username %>
+        <%= form.text_field :username , class: 'form-control', placeholder: :username %>
+
+        <%= form.label :email %>
+        <%= form.text_field :email , class: 'form-control', placeholder: :email %>
+
+        <%= form.label :phone %>
+        <%= form.text_field :phone , class: 'form-control', placeholder: :phone %>
 
         <%= form.label :firstname %>
         <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
@@ -14,18 +26,74 @@
         <%= form.label :lastname %>
         <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
 
-        <%= form.label :email %>
-        <%= form.email_field :email , class: 'form-control', placeholder: :email %>
-
-        <%= form.label :zip_code %>
-        <%= form.text_field :zip , class: 'form-control', placeholder: :zip %>
-
         <%= form.label :password %>
         <%= form.password_field :password , class: 'form-control', placeholder: :password %>
 
         <%= form.label :password_confirmation %>
         <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
 
+        <%= form.label :address_1 %>
+        <%= form.text_field :address_1 , class: 'form-control',placeholder: :address_1 %>
+
+        <%= form.label :address_2 %>
+        <%= form.text_field :address_2 , class: 'form-control',placeholder: :address_2 %>
+
+        <%= form.label :zip_code %>
+        <%= form.text_field :zip_code , class: 'form-control',placeholder: :zip_code %>
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label :city %>
+              <%= form.text_field :city , class: 'form-control',placeholder: :city %>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <%= form.label :state %>
+              <%= form.text_field :state, class: 'form-control',placeholder: :state%>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container flex-center container-light">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="">Car Info</h2>
+            <div class="hr-small"></div>
+          </div>
+        </div>
+
+        <%= form.label :license_plate %>
+        <%= form.text_field :license_plate , class: 'form-control',placeholder: :license_plate %>
+
+        <%= form.label :vehicle_id_number %>
+        <%= form.text_field :vin, class: 'form-control', placeholder: :vehicle_id_number %>
+
+        <%= form.label :car_make %>
+        <%= form.text_field :car_make , class: 'form-control',placeholder: :car_make %>
+
+        <%= form.label :car_model %>
+        <%= form.text_field :car_model , class: 'form-control',placeholder: :car_model %>
+
+        <%= form.label :car_year %>
+        <%= form.text_field :car_year , class: 'form-control',placeholder: :car_year %>
+
+        <%= form.label :car_color %>
+        <%= form.text_field :car_color , class: 'form-control',placeholder: :car_color %>
+
+        <%= form.label :insurance_info %>
+        <%= form.text_area :insurance_info, class: 'form-control', placeholder: :insurance_info %>
+
+        <%= form.label :license_image %>
+        <%= form.file_field :avatar, class:'', placeholder: :license_image %>
+
+        <%= form.label :start_date %>
+        <%= select_date Date.today, prefix: :start_date, class: "form-control-file"%> <!-- date selector, ugly as hell please change css as my eyes are burning -->
+
+      </div>
 
         <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
         <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
