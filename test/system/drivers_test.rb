@@ -37,7 +37,7 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "State", with: @driver.state
     fill_in "Username", with: @driver.username
     fill_in "Vin", with: @driver.vin
-    fill_in "Zip", with: @driver.zip
+    fill_in "Zip", with: @driver.zip_code
     click_on "Create Driver"
 
     assert_text "Driver was successfully created"
@@ -71,7 +71,7 @@ class DriversTest < ApplicationSystemTestCase
     fill_in "State", with: @driver.state
     fill_in "Username", with: @driver.username
     fill_in "Vin", with: @driver.vin
-    fill_in "Zip", with: @driver.zip
+    fill_in "Zip", with: @driver.zip_code
     click_on "Update Driver"
 
     assert_text "Driver was successfully updated"

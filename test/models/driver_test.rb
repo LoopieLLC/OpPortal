@@ -6,7 +6,7 @@ class DriverTest < ActiveSupport::TestCase
       username: "ExUsername2",
       password: "foobar9494934",
       password_confirmation: "foobar9494934",
-      email:"yeet@yeet.com",
+      email:"yeet@yeeter.com",
       phone:"123-456-789",
       firstname:"John",
       lastname:"Lee",
@@ -18,7 +18,7 @@ class DriverTest < ActiveSupport::TestCase
       car_color: "red",
       address_1: "address",
       address_2: "address2",
-      zip: "63105"
+      zip_code: "63105"
     )
   end
 
@@ -114,7 +114,7 @@ class DriverTest < ActiveSupport::TestCase
   end
 
   test "zip should exist" do
-    @driver.zip = ""
+    @driver.zip_code = ""
     assert_not @driver.valid?
   end
 

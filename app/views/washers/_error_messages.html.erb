@@ -1,0 +1,12 @@
+<% if @washer.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@washer.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @washer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

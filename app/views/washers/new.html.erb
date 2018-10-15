@@ -1,5 +1,65 @@
+<% provide(:title, 'New Washer') %>
 <h1>New Washer</h1>
 
-<%= render 'form', washer: @washer %>
+<div class="form-shared">
+  <%= form_for(@washer, url: new_washer_path) do |form| %>
+  <%= render 'error_messages' %>
+  <form>
+    <div class="container flex-center container-light">
+      <div class="section">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="">Account Information</h2>
+            <div class="hr-small"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
 
-<%= link_to 'Back', washers_path %>
+            <%= form.label :username %>
+            <%= form.text_field :username , class: 'form-control', placeholder: :username %>
+
+            <%= form.label :email %>
+            <%= form.text_field :email , class: 'form-control', placeholder: :email %>
+
+            <%= form.label :phone %>
+            <%= form.text_field :phone , class: 'form-control', placeholder: :phone %>
+
+            <%= form.label :firstname %>
+            <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
+
+            <%= form.label :lastname %>
+            <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+
+            <%= form.label :password %>
+            <%= form.password_field :password , class: 'form-control', placeholder: :password %>
+
+            <%= form.label :password_confirmation %>
+            <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
+
+            <%= form.label :address_1 %>
+            <%= form.text_field :address_1 , class: 'form-control',placeholder: :address_1 %>
+
+            <%= form.label :address_2 %>
+            <%= form.text_field :address_2 , class: 'form-control',placeholder: :address_2 %>
+
+            <%= form.label :zip_code %>
+            <%= form.text_field :zip_code , class: 'form-control',placeholder: :zip_code %>
+
+            <%= form.label :machine_description %>
+            <%= form.text_area :machine_description, class: 'form-control', placeholder: :machine_description %>
+
+            <%= form.label :start_date %>
+            <%= select_date Date.today, prefix: :start_date, class: "form-control-file"%>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+    <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+  </form>
+  <% end %>
+</div>

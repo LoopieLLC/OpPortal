@@ -10,6 +10,7 @@ class DriversController < ApplicationController
   # GET /drivers/1
   # GET /drivers/1.json
   def show
+    @driver = Driver.find(params[:id])
   end
 
   # GET /drivers/new
@@ -17,7 +18,7 @@ class DriversController < ApplicationController
     @driver = Driver.new
   end
 
-  # GET /drivers/1/edit 
+  # GET /drivers/1/edit
   def edit
   end
 
@@ -28,7 +29,8 @@ class DriversController < ApplicationController
 
     respond_to do |format|
       if @driver.save
-        format.html { redirect_to @driver, notice: 'Driver was successfully created.' }
+        flash[:success] = "You are now a Loopie driver!"
+        format.html { redirect_to @driver }
         format.json { render :show, status: :created, location: @driver }
       else
         format.html { render :new }
@@ -42,7 +44,8 @@ class DriversController < ApplicationController
   def update
     respond_to do |format|
       if @driver.update(driver_params)
-        format.html { redirect_to @driver, notice: 'Driver was successfully updated.' }
+        flash[:success] = "Your profile has been successfully updated!"
+        format.html { redirect_to @driver }
         format.json { render :show, status: :ok, location: @driver }
       else
         format.html { render :edit }
@@ -69,6 +72,6 @@ class DriversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def driver_params
-      params.require(:driver).permit(:username, :password, :password_confirmation, :firstname, :lastname, :email, :phone, :address_1, :address_2, :city, :state, :zip, :insurance_info, :vin, :license_plate, :car_year, :car_make, :car_model, :car_color, :license_image, :additional_information, :current_loads, :driving_status, :start_date)
+      params.require(:driver).permit(:username, :password, :password_confirmation, :firstname, :lastname, :email, :phone, :address_1, :address_2, :city, :state, :zip_code, :insurance_info, :vin, :license_plate, :car_year, :car_make, :car_model, :car_color, :license_image, :additional_information, :current_loads, :driving_status, :start_date)
     end
 end

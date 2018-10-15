@@ -1,9 +1,7 @@
 body {
-  padding-top: 50px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25px;
+  color: $ColorWhite;
   background-color: $ColorDark;
+  padding-top: 65px;
 }
 //fixing text for dark background
 
@@ -18,10 +16,10 @@ body {
 }
 .text-center {
   text-align: center;
-  padding-top: 1em;
-  padding-bottom: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .hr-small {
@@ -79,7 +77,22 @@ body {
 
 
 @mixin transition($property) {
-  transition: $property 0.15s ease-in-out ;
+  transition: $property 0.10s ease-in-out ;
+}
+
+@mixin breakpoint($breakpoint, $query: 'min-width') {
+  $breakpoints: (
+  'bp-small': $screen-xs-min,
+  'bp-medium': $screen-sm-min,
+  'bp-large': $screen-md-min,
+  'bp-huge': $screen-lg-min,
+  );
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (#{$query}: map-get($breakpoints, $breakpoint)) { @content; }
+  } @else {
+    @warn 'No breakpoint found for `#{$breakpoint}`. Allowed values are: #{map-keys($breakpoints)}.';
+  }
+
 }
 
 .header-block {

@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
-$regular: 400;
-$medium: 500;
-$bold: 700;
-$black: 900;
+
 
 
 
 body {
+  font-size: $font-size-base;
   font-family: 'Roboto', sans-serif;
+  @include breakpoint(bp-medium) {
+    font-size: $font-size-base-medium;
+  }
+
+  @include breakpoint(bp-large) {
+    font-size: $font-size-base-large;
+  }
 }
 
 
@@ -24,8 +29,10 @@ h1, {
   color: $ColorLoopie;
   text-transform: capitalize;
   font-weight: $black;
+
 }
 h2, {
+    font-size: 1.2em;
   color: $ColorDark;
   font-weight: $medium;
 
