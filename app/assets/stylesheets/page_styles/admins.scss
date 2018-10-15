@@ -3,15 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .table {
-  h2,
-  p {
-    color: $ColorWhite;
-  }
+  padding: 1em;
 }
+$sidebar-length: 15rem;
 
-$sidebar-length: 20rem;
 .admin-console {
-
   position: fixed;
   z-index: 10;
   width: 100vw;
@@ -20,7 +16,6 @@ $sidebar-length: 20rem;
   overflow: hidden;
   left: 0;
   top: 0;
-
 
   .sidebar {
     position: absolute;
@@ -31,19 +26,20 @@ $sidebar-length: 20rem;
     padding-left: 2em;
     color: $ColorLoopie;
     font-weight: $black;
-    h2, h3 {
+
+    h2,
+    h3 {
       color: $ColorLoopie;
       font-weight: $black;
       margin-bottom: 0.1rem;
     }
+
     h2 {
       font-size: 2em;
       margin-top: 0.1rem;
-
-
     }
-      .nav-brand {}
 
+    .nav-brand {}
   }
 
   .top-nav-bar {
@@ -54,23 +50,19 @@ $sidebar-length: 20rem;
     border-width: 0;
     height: 5em;
 
-    .breadcrumb {
+    .breadcrumb {}
 
-    }
     .logout {
-
       margin: 2rem;
+
       a {
         font-weight: $black;
         color: $ColorDark;
-
-
       }
     }
-
   }
-
 }
+
 .sidebar-main {
   background-color: $ColorWhite;
   width: 100%;
@@ -78,24 +70,32 @@ $sidebar-length: 20rem;
   overflow-x: hidden;
   padding-left: $sidebar-length + 2rem;
   z-index: 1;
+
   .table {
     display: flex;
-    overflow-x: hidden;
-  }
-  .container-light {
-    width: 25em;
-    box-shadow: $DropShadow;
-    margin: 1em;
-    margin-left: 0.5em;
-    margin-right: 2em;
-    padding: 1em;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 
-    h2, p {
-        color: $ColorDark;
-        font-weight: $black;
+    &::-webkit-scrollbar {
+      width: 0;
     }
 
+  }
 
+  .card-deck {
+    flex-flow: row;
+  }
 
+  .card-light {
+    padding: 1em;
+    width: 25em;
+    min-width: 20em;
+    box-shadow: $DropShadow;
+
+    h2,
+    p {
+      color: $ColorDark;
+      font-weight: $black;
+    }
   }
 }

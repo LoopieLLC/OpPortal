@@ -79,6 +79,10 @@ body {
     }
   }
 
+.card-light {
+
+
+}
 
 @mixin transition($property) {
   transition: $property 0.10s ease-in-out ;
