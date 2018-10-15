@@ -7,3 +7,7 @@ one:
 two:
   username: MyString1
   password_digest: MyString1
+
+John:
+  username: JohnLee
+  password_digest: password
