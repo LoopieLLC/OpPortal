@@ -10,7 +10,7 @@ mama Take me home 👪, country 🗾🗾🗾 roads Country 🗾🗾🗾 roads, t
     <div clas="nav-brand">
       <h3>hello,</h3>
       <h2>
-        <%= yield(@admin.username) %></h2>
+        <%= @admin.username %></h2>
     </div>
     <div class="">
       <ul class="nav nav-pills nav-stacked">
@@ -28,17 +28,14 @@ mama Take me home 👪, country 🗾🗾🗾 roads Country 🗾🗾🗾 roads, t
     </div>
 
     <nav class="navbar navbar-default top-nav-bar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        addsda
-      </a>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            addsda
+          </a>
+        </div>
+        <div class="logout navbar-right"><%= link_to 'logout', admin_logout_path, method: :delete %></div>
+      </div>
     </div>
-    <div class="logout navbar-right"><%link_to 'logout', admin_logout_path, method: :delete %></div>
-    </div>
-  </div>
-</nav>
-</div>
-
-    </div>
-  </header>
+  </nav>
+</header>

@@ -12,7 +12,7 @@
 $sidebar-length: 20rem;
 .admin-console {
 
-  position: absolute;
+  position: fixed;
   z-index: 10;
   width: 100vw;
   height: 100vh;
@@ -28,21 +28,31 @@ $sidebar-length: 20rem;
     width: $sidebar-length;
     height: 100%;
     background-color: $ColorDark;
+    padding-left: 2em;
     color: $ColorLoopie;
     font-weight: $black;
     h2, h3 {
-
+      color: $ColorLoopie;
+      font-weight: $black;
+      margin-bottom: 0.1rem;
     }
     h2 {
+      font-size: 2em;
+      margin-top: 0.1rem;
 
-    } 
+
+    }
+      .nav-brand {}
+
   }
 
   .top-nav-bar {
     pointer-events: auto;
     background-color: $ColorWhite;
     margin-left: $sidebar-length;
-
+    border-radius: 0;
+    border-width: 0;
+    height: 5em;
 
     .breadcrumb {
 
@@ -66,5 +76,26 @@ $sidebar-length: 20rem;
   width: 100%;
   height: auto;
   overflow-x: hidden;
-  padding-left: $sidebar-length;
+  padding-left: $sidebar-length + 2rem;
+  z-index: 1;
+  .table {
+    display: flex;
+    overflow-x: hidden;
+  }
+  .container-light {
+    width: 25em;
+    box-shadow: $DropShadow;
+    margin: 1em;
+    margin-left: 0.5em;
+    margin-right: 2em;
+    padding: 1em;
+
+    h2, p {
+        color: $ColorDark;
+        font-weight: $black;
+    }
+
+
+
+  }
 }

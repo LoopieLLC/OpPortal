@@ -2,13 +2,9 @@
 <% content_for :custom_header do %>
   <%= render 'layouts/admin_header' %>
 <% end %>
-<main class="sidebar-main">
-  <div class="header-block"></div>
-<p id="notice"><%= notice %></p>
+<div class="sidebar-main">
 
-<h1>
-  Hi, <%= @admin.username %>
-</h1>
+<p id="notice"><%= notice %></p>
 
 <h1>Pending Users</h1>
     <% user = User.all %>
@@ -29,18 +25,41 @@
   <div class="table">
     <!-- show pending users -->
     <% pending_users.each do |u| %>
-      <tr color="white">
-        <h2>User ID: <%= u.id%></h2>
-        <p>Email: <%= u.email%></p>
-        <p>Name: <%= u.firstname%> <%= u.lastname%> </p>
-        <p>Zip Code: <%= u.zip_code%></p>
-        <% if u.role == 1%>
-          <p>Requested: Driver</p>
-        <% else %>
-          <p>Requested: Washer</p>
-        <% end %>
+      <tr >
+        <div class="container-light ">
+          <div class="row">
+            <div class="col-xs-6">
+                <p>Name: <%= u.firstname%> <%= u.lastname%> </p>
+            </div>
+            <div class="col-xs-6">
+              <h2>User ID: <%= u.id%></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+                <p>Email: <%= u.email%></p>
+            </div>
+            <div class="col-xs-6">
+                      <p>Zip Code: <%= u.zip_code%></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <% if u.role == 1%>
+                <p>Requested: Driver</p>
+              <% else %>
+                <p>Requested: Washer</p>
+              <% end %>
+            </div>
+          </div>
+
+
+
+
+
         <%= link_to 'Approve this User', root_path, class: 'btn btn-success'%>
         <%= link_to 'Deny this User', root_path, class: 'btn btn-danger'%>
+      </div>
       </tr>
     <% end %>
     </div>
@@ -115,9 +134,8 @@
 
 <%= link_to 'Edit', edit_admin_path(@admin) %>
 <%= link_to 'Back', admins_path %>
-<<<<<<< HEAD
-<%= link_to 'Log Out', admin_logout_path, method: :delete, class: 'btn btn-primary'%>
-=======
 
-</main>
->>>>>>> bfbbc462b0d8e29152a313e63dea929870e336ef
+<%= link_to 'Log Out', admin_logout_path, method: :delete, class: 'btn btn-primary'%>
+
+
+</div>
