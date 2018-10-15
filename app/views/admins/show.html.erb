@@ -25,37 +25,29 @@
   <div class="table">
     <!-- show pending users -->
     <% pending_users.each do |u| %>
-      <tr >
-        <div class="container-light ">
-          <div class="row">
-            <div class="col-xs-6">
-                <p>Name: <%= u.firstname%> <%= u.lastname%> </p>
+      <tr>
+        <div class="row">
+
+        </div>
+        <div class="card" style="width:18rem;">
+            <div class="card-title">
+                <p><%= u.firstname%> <%= u.lastname%> </p>
             </div>
-            <div class="col-xs-6">
+
               <h2>User ID: <%= u.id%></h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
+
+
+
                 <p>Email: <%= u.email%></p>
-            </div>
-            <div class="col-xs-6">
-                      <p>Zip Code: <%= u.zip_code%></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
+
+
+                <p>Zip Code: <%= u.zip_code%></p>
+
               <% if u.role == 1%>
                 <p>Requested: Driver</p>
               <% else %>
                 <p>Requested: Washer</p>
               <% end %>
-            </div>
-          </div>
-
-
-
-
 
         <%= link_to 'Approve this User', root_path, class: 'btn btn-success'%>
         <%= link_to 'Deny this User', root_path, class: 'btn btn-danger'%>
