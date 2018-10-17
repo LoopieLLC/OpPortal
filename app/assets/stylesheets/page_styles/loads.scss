@@ -48,25 +48,44 @@
         }
 
         .card-footer {
-            font-size: 0.8rem;
+            font-size: 1.2rem;
             color: blue;
         }
-
+        
         .select-load {
 
             button {
                 margin-top: 1rem;
                 height: 3rem;
-                background-color: $ColorGreen;
+                border-color: $ColorGreen;
+                color: $ColorGreen;
+                background-color: white;
 
                 &:hover {
-                    background-color: white;
-                    color: $ColorGreen;
+                    background-color: $ColorGreen;
+                    color: white;
                 }
             }
         }
 
+        &.active {
+            background-color: $ColorGreen;
+
+            span {
+                color: black;
+            }
+
+            .customer-address {
+                color: white;
+            }
+            .card-footer {
+                font-size: 1.2rem;
+                color: blue;
+            }
+        }
+
     }
-    
 }
+
+
 
