@@ -13,6 +13,9 @@
     width: 14em;
   }
 }
+label {
+  color: $ColorDark;
+}
 // form defaults to light input
 .form-control {
   background-color: $ColorNotWhite;
