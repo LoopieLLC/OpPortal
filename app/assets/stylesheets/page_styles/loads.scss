@@ -56,6 +56,13 @@
 
             button {
                 margin-top: 1rem;
+                height: 3rem;
+                background-color: $ColorGreen;
+
+                &:hover {
+                    background-color: white;
+                    color: $ColorGreen;
+                }
             }
         }
 
