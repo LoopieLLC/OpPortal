@@ -3,16 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .table {
-  h2,
-  p {
-    color: $ColorWhite;
-  }
+  padding: 1em;
 }
+$sidebar-length: 15rem;
 
-$sidebar-length: 20rem;
 .admin-console {
-
-  position: absolute;
+  position: fixed;
   z-index: 10;
   width: 100vw;
   height: 100vh;
@@ -21,50 +17,94 @@ $sidebar-length: 20rem;
   left: 0;
   top: 0;
 
-
   .sidebar {
     position: absolute;
     pointer-events: auto;
     width: $sidebar-length;
     height: 100%;
     background-color: $ColorDark;
+    padding-left: 2em;
     color: $ColorLoopie;
     font-weight: $black;
-    h2, h3 {
 
+    h2,
+    h3 {
+      color: $ColorLoopie;
+      font-weight: $black;
+      margin-bottom: 0.1rem;
     }
+
     h2 {
-
+      font-size: 2em;
+      margin-top: 0.1rem;
     }
+
+    .nav-brand {}
   }
 
   .top-nav-bar {
     pointer-events: auto;
     background-color: $ColorWhite;
     margin-left: $sidebar-length;
+    border-radius: 0;
+    border-width: 0;
+    height: 5em;
 
+    .breadcrumb {}
 
-    .breadcrumb {
-
-    }
     .logout {
-
       margin: 2rem;
+
       a {
         font-weight: $black;
         color: $ColorDark;
-
-
       }
     }
-
   }
-
 }
+
 .sidebar-main {
   background-color: $ColorWhite;
   width: 100%;
   height: auto;
   overflow-x: hidden;
   padding-left: $sidebar-length;
+  z-index: 1;
+
+
+  .user-card {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+  }
+
+  .card-deck {
+    flex-flow: row;
+  }
+  h1,  h2,
+  p {
+    color: $ColorDark;
+    font-weight: $black;
+  }
+
+  .card-light {
+    width: 20em;
+    min-width: 20em;
+    box-shadow: $DropShadow;
+    margin: 0.5em;
+
+
+  }
+
+  .list {
+    box-shadow: $DropShadow;
+
+    border-radius: 3px;
+
+  }
 }
