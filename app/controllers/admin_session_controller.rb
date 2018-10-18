@@ -8,7 +8,7 @@ class AdminSessionController < ApplicationController
       log_in admin
       redirect_to admin
     else
-       flash.now[:danger] = 'Invalid username/password combination'
+      flash.now[:danger] = 'Invalid username/password combination'
       render 'new'
     end
 
@@ -20,6 +20,6 @@ class AdminSessionController < ApplicationController
   end
 
   def approve
-  end 
+  end
 
 end

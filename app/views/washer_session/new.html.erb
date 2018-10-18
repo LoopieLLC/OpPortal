@@ -1,2 +1,33 @@
-<h1>WasherSession#new</h1>
-<p>Find me in app/views/washer_session/new.html.erb</p>
+<% provide(:title, "Washer Login") %>
+<html lang="en">
+  <body>
+    <div class="container flex-center">
+      <div class="text-center ">
+        <%= form_for(:washer_session, url: washer_login_path) do |f| %>
+          <%= image_tag "loopie_logo.svg" %>
+          <h1 class="h3 mb-3 font-weight-normal text-light">Loopie Washer</h1>
+
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control' %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+
+          <div class="checkbox mb-3 text-light">
+            <label>
+              <input type="checkbox" value="remember-me">
+              Remember Me
+            </label>
+          </div>
+
+          <%= f.submit "Log in", class: "btn btn-primary" %>
+
+          <p class="mt-5 mb-3 text-muted text-light">&copy; 2017-2018</p>
+
+          <!-- <a href="/drivers/new/">Register</a> -->
+          <!-- add link_to link please -->
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

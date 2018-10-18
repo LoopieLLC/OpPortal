@@ -20,7 +20,7 @@ class DriverSignupTest < ActionDispatch::IntegrationTest
                                               car_color: "red",
                                               address_1: "address",
                                               address_2: "address2",
-                                              zip_code: "63105"} }
+                                              zip_code: "63105" } }
     end
     assert_template 'drivers/new'
   end
