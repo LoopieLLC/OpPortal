@@ -10,35 +10,28 @@ mama Take me home 👪, country 🗾🗾🗾 roads Country 🗾🗾🗾 roads, t
     <div clas="nav-brand">
       <h3>hello,</h3>
       <h2>
-        <%= yield(@admin.username) %></h2>
+        <%= @admin.username %></h2>
     </div>
     <div class="">
-      <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active">
-          <%link_to 'Home', root_url%>
-          </li>
-          <li role="presentation">
-            <a href="#">Profile</a>
-          </li>
-          <li role="presentation">
-            <a href="#">Messages</a>
-          </li>
-        </ul>
+      
+  <nav class="nav flex-column">
+    <a class="nav-link active" href="#">Active</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </nav>
       </div>
     </div>
 
     <nav class="navbar navbar-default top-nav-bar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        addsda
-      </a>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            addsda
+          </a>
+        </div>
+        <div class="logout navbar-right"><%= link_to 'logout', admin_logout_path, method: :delete %></div>
+      </div>
     </div>
-    <div class="logout navbar-right"><%link_to 'logout', admin_logout_path, method: :delete %></div>
-    </div>
-  </div>
-</nav>
-</div>
-
-    </div>
-  </header>
+  </nav>
+</header>

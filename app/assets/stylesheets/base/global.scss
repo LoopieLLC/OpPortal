@@ -40,9 +40,13 @@ body {
   border-radius: 5px;
   padding-left: 1em;
   padding-right: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   box-shadow: $DropShadowDark;
   margin-bottom: 1em;
 }
+
+
 
 
 .round {
@@ -59,9 +63,9 @@ body {
 }
 
 .field_with_errors {
-  @extend .has-error;
+//  @extend .has-error;
   .form-control {
-    color: $state-danger-text;
+    color: $ColorRed;
   }
 }
 
@@ -75,6 +79,10 @@ body {
     }
   }
 
+.card-light {
+
+
+}
 
 @mixin transition($property) {
   transition: $property 0.10s ease-in-out ;
