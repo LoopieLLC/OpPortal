@@ -10,6 +10,7 @@ class WashersController < ApplicationController
   # GET /washers/1
   # GET /washers/1.json
   def show
+    @washer = Washer.find(params[:id])
   end
 
   # GET /washers/new
@@ -28,7 +29,8 @@ class WashersController < ApplicationController
 
     respond_to do |format|
       if @washer.save
-        format.html { redirect_to @washer, notice: 'Washer was successfully created.' }
+        flash[:success] = "You are now a Loopie washer!"
+        format.html { redirect_to @washer }
         format.json { render :show, status: :created, location: @washer }
       else
         format.html { render :new }
@@ -42,7 +44,8 @@ class WashersController < ApplicationController
   def update
     respond_to do |format|
       if @washer.update(washer_params)
-        format.html { redirect_to @washer, notice: 'Washer was successfully updated.' }
+        flash[:success] = "Your profile has been successfully updated"
+        format.html { redirect_to @washer }
         format.json { render :show, status: :ok, location: @washer }
       else
         format.html { render :edit }

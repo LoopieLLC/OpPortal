@@ -2,7 +2,7 @@
 // Every time a new scss file is created, link it here
 //
 //import bootstrap
-@import "bootstrap-sprockets";
+//@import "bootstrap-sprockets";
 @import "bootstrap";
 
 //import global
@@ -15,6 +15,10 @@
 @import 'base/forms';
 @import 'base/header';
 
+//import plugins
+@import 'plugin/simplebar';
+
+
 //import page styles
 @import 'page_styles/admins';
 @import 'page_styles/drivers';
@@ -24,3 +28,6 @@
 @import 'page_styles/washers';
 @import 'page_styles/welcome_page';
 @import 'page_styles/users';
+
+@import 'page_styles/admin_session';
+@import 'page_styles/driver_session';

@@ -18,7 +18,8 @@ class DriverTest < ActiveSupport::TestCase
       car_color: "red",
       address_1: "address",
       address_2: "address2",
-      zip_code: "63105"
+      zip_code: "63105",
+      user_id: 2
     )
   end
 
@@ -137,6 +138,10 @@ class DriverTest < ActiveSupport::TestCase
     @driver.car_year = ""
     assert_not @driver.valid?
   end
+
+  # test associations
+  should have_many(:loads)
+  #should belong_to(:user)
 
   #test fails for some stupid reason, regex works fine, i have no idea why
   #because it works in cmd but not in rails model

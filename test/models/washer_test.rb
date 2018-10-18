@@ -11,7 +11,8 @@ class WasherTest < ActiveSupport::TestCase
       firstname:"John",
       lastname:"Lee",
       max_loads: 2,
-      current_loads: 1
+      current_loads: 1,
+      user_id: 2
     )
   end
 
@@ -81,4 +82,8 @@ class WasherTest < ActiveSupport::TestCase
     @Washer.password = @Washer.password_confirmation = "a" * 7
     assert_not @Washer.valid?
   end
+
+  # test associations
+  #should belong_to(:user)
+  should have_many(:loads)
 end

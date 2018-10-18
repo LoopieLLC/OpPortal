@@ -1,0 +1,2 @@
+module WasherSessionHelper
+end

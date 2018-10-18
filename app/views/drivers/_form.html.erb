@@ -1,4 +1,4 @@
-<% provide(:title, 'Driver Sign Up') %>
+<% provide(:title, 'Driver Edit') %>
 <div class="form-shared">
   <%= form_with(model: driver, local: true) do |form| %>
   <% if driver.errors.any? %>
@@ -174,7 +174,7 @@
           <!-- add terms of service  -->
         </div>
         <div class="">
-          <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
+          <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block'%>
 
         </div>
       </div>
