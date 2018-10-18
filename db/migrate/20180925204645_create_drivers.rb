@@ -27,6 +27,7 @@ class CreateDrivers < ActiveRecord::Migration[5.2]
       t.date :start_date
 
       t.timestamps
+
     end
   end
 end

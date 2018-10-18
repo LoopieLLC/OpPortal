@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_09_202206) do
+ActiveRecord::Schema.define(version: 2018_10_09_232243) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -80,8 +80,12 @@ ActiveRecord::Schema.define(version: 2018_10_09_202206) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.bigint "users_id"
+    t.bigint "email_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
+    t.index ["email_id"], name: "index_drivers_on_email_id"
     t.index ["username"], name: "index_drivers_on_username", unique: true
+    t.index ["users_id"], name: "index_drivers_on_users_id"
   end
 
   create_table "loads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -127,8 +131,14 @@ ActiveRecord::Schema.define(version: 2018_10_09_202206) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.bigint "users_id"
+    t.bigint "email_id"
     t.index ["email"], name: "index_washers_on_email", unique: true
+    t.index ["email_id"], name: "index_washers_on_email_id"
     t.index ["username"], name: "index_washers_on_username", unique: true
+    t.index ["users_id"], name: "index_washers_on_users_id"
   end
 
+  add_foreign_key "drivers", "users", column: "email_id"
+  add_foreign_key "washers", "users", column: "email_id"
 end
