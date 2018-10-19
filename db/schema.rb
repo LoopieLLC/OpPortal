@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_224027) do
+ActiveRecord::Schema.define(version: 2018_10_18_235638) do
 
-  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.index ["username"], name: "index_admins_on_username", unique: true
   end
 
-  create_table "available_zip_codes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "available_zip_codes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "drivers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "drivers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "username"
     t.string "firstname"
     t.string "lastname"
@@ -74,13 +74,11 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.bigint "user_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
-    t.index ["user_id"], name: "index_drivers_on_user_id"
     t.index ["username"], name: "index_drivers_on_username", unique: true
   end
 
-  create_table "loads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "loads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "washer_id"
     t.integer "driver_id"
     t.integer "status"
@@ -88,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email"
     t.string "firstname"
     t.string "lastname"
@@ -99,10 +97,13 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "zip_code"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.bigint "washer_id"
+    t.bigint "driver_id"
+    t.index ["driver_id"], name: "index_users_on_driver_id"
+    t.index ["washer_id"], name: "index_users_on_washer_id"
   end
 
-  create_table "washers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "washers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "username"
     t.string "firstname"
     t.string "lastname"
@@ -123,12 +124,10 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.bigint "user_id"
     t.index ["email"], name: "index_washers_on_email", unique: true
-    t.index ["user_id"], name: "index_washers_on_user_id"
     t.index ["username"], name: "index_washers_on_username", unique: true
   end
 
-  add_foreign_key "drivers", "users"
-  add_foreign_key "washers", "users"
+  add_foreign_key "users", "drivers"
+  add_foreign_key "users", "washers"
 end

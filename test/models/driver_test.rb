@@ -141,7 +141,7 @@ class DriverTest < ActiveSupport::TestCase
 
   # test associations
   should have_many(:loads)
-  #should belong_to(:user)
+  should have_one(:user)
 
   #test fails for some stupid reason, regex works fine, i have no idea why
   #because it works in cmd but not in rails model

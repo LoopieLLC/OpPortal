@@ -3,7 +3,7 @@
 one:
   id: 1
   email: ianwhite2@gmail.com
-  password_digest: <%= User.digest('password') %>
+  password_digest: <%= User.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   confirmation_status: 0
@@ -14,7 +14,29 @@ one:
 two:
   id: 2
   email: 'jackburns2324@gmail.com'
-  password_digest: <%= User.digest('password') %>
+  password_digest: <%= User.digest('testpassword') %>
+  firstname: 'MyString'
+  lastname: 'MyString'
+  confirmation_status: 1
+  zip_code: '98406'
+  role: 1
+  start_date: 2018-10-01
+
+three:
+  id: 3
+  email: 'jackburns@gmail.com'
+  password_digest: <%= User.digest('testpassword') %>
+  firstname: 'MyString'
+  lastname: 'MyString'
+  confirmation_status: 1
+  zip_code: '98406'
+  role: 1
+  start_date: 2018-10-01
+
+four:
+  id: 4
+  email: 'jackburns4@gmail.com'
+  password_digest: <%= User.digest('testpassword') %>
   firstname: 'MyString'
   lastname: 'MyString'
   confirmation_status: 1

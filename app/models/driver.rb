@@ -4,7 +4,7 @@ class Driver < ApplicationRecord
   before_save { self.driving_status = 0 }
 
   has_many :loads
-  #belongs_to :user
+  has_one :user
 
   #has_one_attached :license_image
 
