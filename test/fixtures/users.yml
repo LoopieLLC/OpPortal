@@ -7,7 +7,7 @@ one:
   firstname: MyString
   lastname: MyString
   confirmation_status: 0
-  zip_code: 98122
+  zip_code: '98122'
   role: 1
   start_date: 2018-10-01
 
@@ -19,5 +19,27 @@ two:
   lastname: 'MyString'
   confirmation_status: 1
   zip_code: '98406'
+  role: 1
+  start_date: 2018-10-01
+
+three:
+  id: 3
+  email: 'tombrady@gmail.com'
+  password_digest: <%= User.digest('password') %>
+  firstname: 'MyString'
+  lastname: 'MyString'
+  confirmation_status: 1
+  zip_code: '02030'
+  role: 1
+  start_date: 2018-10-01
+
+four:
+  id: 4
+  email: 'billbelichick2324@gmail.com'
+  password_digest: <%= User.digest('password') %>
+  firstname: 'MyString'
+  lastname: 'MyString'
+  confirmation_status: 1
+  zip_code: '02067'
   role: 1
   start_date: 2018-10-01

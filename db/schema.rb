@@ -33,12 +33,6 @@ ActiveRecord::Schema.define(version: 2018_10_15_190753) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "admin_stats", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "total_num_washers"
-    t.integer "total_num_loads"
-    t.integer "num_active_washers"
-  end
-
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "username"
     t.datetime "created_at", null: false
@@ -81,10 +75,8 @@ ActiveRecord::Schema.define(version: 2018_10_15_190753) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.bigint "users_id"
-    t.bigint "email_id"
     t.bigint "user_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
-    t.index ["email_id"], name: "index_drivers_on_email_id"
     t.index ["user_id"], name: "index_drivers_on_user_id"
     t.index ["username"], name: "index_drivers_on_username", unique: true
     t.index ["users_id"], name: "index_drivers_on_users_id"
@@ -134,15 +126,15 @@ ActiveRecord::Schema.define(version: 2018_10_15_190753) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.bigint "users_id"
-    t.bigint "email_id"
     t.bigint "user_id"
     t.index ["email"], name: "index_washers_on_email", unique: true
-    t.index ["email_id"], name: "index_washers_on_email_id"
     t.index ["user_id"], name: "index_washers_on_user_id"
     t.index ["username"], name: "index_washers_on_username", unique: true
     t.index ["users_id"], name: "index_washers_on_users_id"
   end
 
   add_foreign_key "drivers", "users"
-  add_foreign_key "washers", "users"
+  add_foreign_key "drivers", "users", column: "users_id"
+  add_foreign_key "washers", "users", column: "users_id"
+  add_foreign_key "washers", "users", on_delete: :cascade
 end

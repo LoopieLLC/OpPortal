@@ -26,7 +26,6 @@ class DriversController < ApplicationController
   # POST /drivers.json
   def create
     @driver = Driver.new(driver_params)
-
     respond_to do |format|
       if @driver.save
         flash[:success] = "You are now a Loopie driver!"
