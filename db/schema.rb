@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_10_19_011057) do
+=======
+ActiveRecord::Schema.define(version: 2018_10_18_233916) do
+>>>>>>> 450ed84dfbdee92e2de9fe2929ea79cf3eed7672
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -132,8 +136,13 @@ ActiveRecord::Schema.define(version: 2018_10_19_011057) do
     t.index ["users_id"], name: "index_washers_on_users_id"
   end
 
+<<<<<<< HEAD
   add_foreign_key "drivers", "users", column: "users_id"
   add_foreign_key "users", "drivers", column: "drivers_id", on_delete: :cascade
   add_foreign_key "users", "washers", column: "washers_id", on_delete: :cascade
   add_foreign_key "washers", "users", column: "users_id"
+=======
+  add_foreign_key "users", "drivers", on_delete: :cascade
+  add_foreign_key "users", "washers", on_delete: :cascade
+>>>>>>> 450ed84dfbdee92e2de9fe2929ea79cf3eed7672
 end

@@ -10,6 +10,8 @@ one:
   zip_code: '98122'
   role: 1
   start_date: 2018-10-01
+  washer_id: 1
+  driver_id: 1
 
 two:
   id: 2
@@ -21,6 +23,7 @@ two:
   zip_code: '98406'
   role: 1
   start_date: 2018-10-01
+<<<<<<< HEAD
 
 three:
   id: 3
@@ -43,3 +46,7 @@ four:
   zip_code: '98406'
   role: 1
   start_date: 2018-10-01
+=======
+  washer_id: 1
+  driver_id: 1
+>>>>>>> 450ed84dfbdee92e2de9fe2929ea79cf3eed7672

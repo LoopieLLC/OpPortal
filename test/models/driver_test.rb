@@ -18,8 +18,7 @@ class DriverTest < ActiveSupport::TestCase
       car_color: "red",
       address_1: "address",
       address_2: "address2",
-      zip_code: "63105",
-      user_id: 2
+      zip_code: "63105"
     )
   end
 
