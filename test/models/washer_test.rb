@@ -11,8 +11,7 @@ class WasherTest < ActiveSupport::TestCase
       firstname:"John",
       lastname:"Lee",
       max_loads: 2,
-      current_loads: 1,
-      user_id: 2
+      current_loads: 1
     )
   end
 
