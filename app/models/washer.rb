@@ -3,6 +3,7 @@ class Washer < ApplicationRecord
   before_save { self.confirmation_status = 1 }
   before_save { self.washing_status = 0 }
 
+  has_many :loads
   has_one :user
   #has_one_attached :profile_picture
 
