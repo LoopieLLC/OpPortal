@@ -67,15 +67,21 @@ $sidebar-length: 15rem;
   background-color: $ColorWhite;
   width: 100%;
   height: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   padding-left: $sidebar-length;
   z-index: 1;
+    color: $ColorDark;
 
 
+  .table {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   .user-card {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    margin-bottom: 0;
 
     &::-webkit-scrollbar {
       width: 0;
@@ -90,6 +96,11 @@ $sidebar-length: 15rem;
   p {
     color: $ColorDark;
     font-weight: $black;
+    margin-bottom: 0;
+
+  }
+  .row {
+    margin-bottom: 0.5em;
   }
 
   .card-light {
