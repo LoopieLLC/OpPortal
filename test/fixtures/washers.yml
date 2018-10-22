@@ -3,7 +3,7 @@
 one:
   id: 1
   username: Jackburns
-  password_digest: MyString
+  password_digest: <%= Washer.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: MyString@globstopper.com
@@ -24,7 +24,7 @@ one:
 two:
   id: 2
   username: Jackflackburns
-  password_digest: MyString
+  password_digest: <%= Washer.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: MyString@fuck.com

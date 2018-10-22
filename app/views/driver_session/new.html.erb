@@ -1,19 +1,33 @@
-<h1>DriverSession#new</h1>
-<p>Find me in app/views/driver_session/new.html.erb</p>
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<% provide(:title, "Driver Login") %>
+<html lang="en">
+  <body>
+    <div class="container flex-center">
+      <div class="text-center ">
+        <%= form_for(:driver_session, url: driver_login_path) do |f| %>
+          <%= image_tag "loopie_logo.svg" %>
+          <h1 class="h3 mb-3 font-weight-normal text-light">Loopie Driver</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:driver_session, url: driver_login_path) do |f| %>
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+          <div class="checkbox mb-3 text-light">
+            <label>
+              <input type="checkbox" value="remember-me">
+              Remember Me
+            </label>
+          </div>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+          <%= f.submit "Log in", class: "btn btn-primary" %>
+
+          <p class="mt-5 mb-3 text-muted text-light">&copy; 2017-2018</p>
+
+          <!-- <a href="/drivers/new/">Register</a> -->
+          <!-- add link_to link please -->
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

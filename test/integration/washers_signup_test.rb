@@ -30,7 +30,8 @@ class WashersSignupTest < ActionDispatch::IntegrationTest
                                               firstname:"John",
                                               lastname:"Lee",
                                               max_loads: 2,
-                                              current_loads: 1 } }
+                                              current_loads: 1,
+                                              user_id: 1 } }
     end
     follow_redirect!
     assert_template 'washers/show'

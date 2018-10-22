@@ -4,7 +4,7 @@ class Driver < ApplicationRecord
   before_save { self.driving_status = 0 }
 
   has_many :loads
-  has_one :user, :foreign_key => 'email'
+  has_one :user
 
   #has_one_attached :license_image
 
@@ -88,5 +88,11 @@ class Driver < ApplicationRecord
   # validates :start_date,
   # install gem required for dates
   # next
+
+  def Driver.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 
 end

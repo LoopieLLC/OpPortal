@@ -81,4 +81,8 @@ class WasherTest < ActiveSupport::TestCase
     @Washer.password = @Washer.password_confirmation = "a" * 7
     assert_not @Washer.valid?
   end
+
+  # test associations
+  should have_one(:user)
+  should have_many(:loads)
 end

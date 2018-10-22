@@ -89,4 +89,8 @@ class UserTest < ActiveSupport::TestCase
    end
  end
 
+ # test associations
+ should belong_to(:driver)
+ should belong_to(:washer)
+
 end

@@ -68,10 +68,11 @@ $sidebar-length: 15rem;
   width: 100%;
   height: auto;
   overflow-x: hidden;
-  padding-left: $sidebar-length + 2rem;
+  padding-left: $sidebar-length;
   z-index: 1;
 
-  .table {
+
+  .user-card {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -85,17 +86,25 @@ $sidebar-length: 15rem;
   .card-deck {
     flex-flow: row;
   }
+  h1,  h2,
+  p {
+    color: $ColorDark;
+    font-weight: $black;
+  }
 
   .card-light {
-    padding: 1em;
-    width: 25em;
+    width: 20em;
     min-width: 20em;
     box-shadow: $DropShadow;
+    margin: 0.5em;
 
-    h2,
-    p {
-      color: $ColorDark;
-      font-weight: $black;
-    }
+
+  }
+
+  .list {
+    box-shadow: $DropShadow;
+
+    border-radius: 3px;
+
   }
 }
