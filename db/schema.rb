@@ -33,12 +33,6 @@ ActiveRecord::Schema.define(version: 2018_10_08_224027) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "admin_stats", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "total_num_washers"
-    t.integer "total_num_loads"
-    t.integer "num_active_washers"
-  end
-
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "username"
     t.datetime "created_at", null: false
