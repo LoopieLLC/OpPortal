@@ -2,8 +2,8 @@
 
 one:
   username: Admin34325q34
-  password_digest: MyString
+  password_digest: <%= Admin.digest('password') %>
 
 two:
   username: MyString1
-  password_digest: MyString1
+  password_digest: <%= Admin.digest('password') %>

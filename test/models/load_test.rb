@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class LoadTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  # test associations
+  should belong_to(:washer)
+  should belong_to(:driver)
 end

@@ -1,3 +1,91 @@
 // Place all the styles related to the Loads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.loads-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        display: inline-block;
+        padding-bottom: 5px;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 1px;
+            bottom: 0;
+            left: 25%;
+            border-bottom: 2px solid gray;
+        }
+    }
+
+    p {
+        color: gray;
+    }
+
+}
+.card {
+    border: 1px solid gray;
+    border-radius: .5rem;
+    height: 7rem;
+    background-color: white;
+    .card-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        span {
+            display: block;
+            color: gray
+        }
+
+        .customer-address {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .card-footer {
+            font-size: 1.2rem;
+            color: blue;
+        }
+        
+        .select-load {
+
+            button {
+                margin-top: 1rem;
+                height: 3rem;
+                border-color: $ColorGreen;
+                color: $ColorGreen;
+                background-color: white;
+
+                &:hover {
+                    background-color: $ColorGreen;
+                    color: white;
+                }
+            }
+        }
+
+        &.active {
+            background-color: $ColorGreen;
+
+            span {
+                color: black;
+            }
+
+            .customer-address {
+                color: white;
+            }
+            .card-footer {
+                font-size: 1.2rem;
+                color: blue;
+            }
+        }
+
+    }
+}
+
+
+
