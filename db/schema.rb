@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_18_233916) do
+ActiveRecord::Schema.define(version: 2018_10_23_191931) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -86,6 +86,17 @@ ActiveRecord::Schema.define(version: 2018_10_18_233916) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+    t.index ["name"], name: "index_roles_on_name"
+    t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email"
     t.string "firstname"
@@ -126,6 +137,14 @@ ActiveRecord::Schema.define(version: 2018_10_18_233916) do
     t.string "password_digest"
     t.index ["email"], name: "index_washers_on_email", unique: true
     t.index ["username"], name: "index_washers_on_username", unique: true
+  end
+
+  create_table "washers_roles", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "washer_id"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_washers_roles_on_role_id"
+    t.index ["washer_id", "role_id"], name: "index_washers_roles_on_washer_id_and_role_id"
+    t.index ["washer_id"], name: "index_washers_roles_on_washer_id"
   end
 
   add_foreign_key "users", "drivers", on_delete: :cascade
