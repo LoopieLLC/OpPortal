@@ -1,17 +1,14 @@
 <% provide(:title, "Washer Login") %>
-<html lang="en">
-  <body>
+
     <div class="container flex-center">
       <div class="text-center ">
-        <%= form_for(:washer_session, url: washer_login_path) do |f| %>
+        <%= form_for(:washer_session, url: washer_login_path, html: {class: 'form-signin'}) do |f| %>
           <%= image_tag "loopie_logo.svg" %>
           <h1 class="h3 mb-3 font-weight-normal text-light">Loopie Washer</h1>
 
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control' %>
+          <%= f.text_field :email, class: 'form-control', placeholder: "enter your email" %>
 
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
+          <%= f.password_field :password, class: 'form-control', placeholder: "enter your email" %>
 
           <div class="checkbox mb-3 text-light">
             <label>
@@ -29,5 +26,3 @@
         <% end %>
       </div>
     </div>
-  </body>
-</html>
