@@ -9,7 +9,7 @@ module AdminSessionHelper
     end
   end
 
-  def log_out
+ def log_out
    session.delete(:admin_id)
    @current_admin = nil
  end
