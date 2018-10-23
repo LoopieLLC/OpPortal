@@ -1,5 +1,5 @@
 class Washer < ApplicationRecord
-  authenticates_with_sorcery!
+  #authenticates_with_sorcery!
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 1 }
   before_save { self.washing_status = 0 }
