@@ -1,4 +1,5 @@
 class Admin < ApplicationRecord
+  authenticates_with_sorcery!
   has_secure_password
 
   def Admin.digest(string)
