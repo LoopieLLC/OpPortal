@@ -69,7 +69,13 @@ body {
   }
 }
 
+.debug_dump {
+  padding: 1em;
 
+  &:hover {
+    background-color: $ColorWhite;
+  }
+}
 @mixin transition($property) {
   transition: $property 0.10s ease-in-out ;
 }
