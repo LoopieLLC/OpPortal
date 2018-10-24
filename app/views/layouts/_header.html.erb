@@ -7,22 +7,29 @@
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <%= link_to "Sign in as a washer", washer_login_path, class: "nav-link"%><span class="sr-only">(current)</span>
-        </li>
-        <li class="nav-item">
-        <%= link_to "Sign in as a driver", driver_login_path, class: "nav-link" %>
+          <% if @user.role == 1 %>
+            <%= link_to "Sign in", washer_login_path, class: "nav-link"%><span class="sr-only">(current)</span>
+          <% else %>
+            <%= link_to "Sign in", driver_login_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Info
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-            <%= link_to "About", about_path, class: "dropdown-item" %>
-            <%= link_to "About", about_path %>
-            <%= link_to "Help", help_path %>
-            <%= link_to "Driver Guidelines", driver_guidelines_path %>
-            <%= link_to "Washer Guidelines", washer_guidelines_path %>
+            <ul>
+              <li>
+                <% if @user.role == 1 %>
+                  <li><%= link_to "Washer Guidelines", washer_guidelines_path %></li>
+                <% else %>
+                  <li><%= link_to "Driver Guidelines", driver_guidelines_path %></li>
+                <% end %>
+              </li>
+              <li><%= link_to "Help", help_path %></li>
+            </ul>        
+            
+            
             <div class="dropdown-divider">
                 <%= link_to "Contacts", contact_path,class: "dropdown-item" %>
           </div>
@@ -34,6 +41,6 @@
 
     </div>
   </nav>
-
+p
 
 </header>

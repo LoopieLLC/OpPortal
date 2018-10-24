@@ -7,6 +7,10 @@
     }
   }
 
+  .navbar-nav .dropdown-menu {
+    background-color: $ColorGrey;
+
+  }
   li {
     a:hover {
       color: $ColorLoopie;
