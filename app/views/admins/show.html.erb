@@ -3,177 +3,197 @@
     <%= render 'layouts/admin_header' %>
   <% end %>
   <div class="sidebar-main">
-      <p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
     <div class="container-fluid">
 
-    <h1>Pending Users</h1>
-    <% user = User.all %>
-      <% pending_users = [] %>
-      <% approved_users = [] %>
-      <% denied_users = [] %>
-        <% user.each do |u| %>
-          <% if u.confirmation_status = 0 %>
-            <% pending_users.push(u)%>
-            <% elsif u.confirmation_status = 1%>
-              <% approved_users.push(u)%>
-            <% else%>
-              <% denied_users.push(u)%><% end %>
-            <% end %>
+      <h1>Pending Users</h1>
+      <% user = User.all %>
+        <% pending_users = [] %>
+          <% approved_users = [] %>
+            <% denied_users = [] %>
+              <% user.each do |u| %>
+                <% if u.confirmation_status = 0 %>
+                  <% pending_users.push(u)%>
+                    <% elsif u.confirmation_status = 1%>
+                      <% approved_users.push(u)%>
+                      <% else%>
+                        <% denied_users.push(u)%><% end %>
+                      <% end %>
 
-            <tbody>
-              <div class="table user-card">
-                <!-- show pending users -->
-                <div class="card-deck">
+                      <tbody>
+                        <div class="table user-card">
+                          <!-- show pending users -->
+                          <div class="card-deck">
 
-                  <% pending_users.each do |u| %>
-                    <tr>
+                            <% pending_users.each do |u| %>
 
-                      <div class="card card-light">
+                              <div class="card card-light">
 
-                        <div class="card-body">
-                          <div class="card-title">
-                            <p><%= u.firstname%>
-                              <%= u.lastname%>
-                            </p>
+                                <div class="card-body">
+                                  <div class="row">
+
+                                    <div class="col-sm">
+
+                                        <h4>Name:
+                                        </h4>
+
+                                    </div>
+                                    <div class="col-sm text-right">
+                                      <h4>ID:
+                                        <%= u.id%></h4>
+                                    </div>
+                                  </div>
+                                  <div class="row"><div class="col-sm">
+                                    <%= u.firstname%>
+                                    <%= u.lastname%>
+                                  </div></div>
+                                  <div class="row">
+
+                                    <div class="col-sm-6">
+
+                                      <p>Zip Code: </p>
+                                      <p><%= u.zip_code%></p>
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                      <% if u.role == 1%>
+                                        <p>Requested: Driver</p>
+                                      <% else %>
+                                        <p>Requested: Washer</p>
+                                      <% end %>
+                                    </div>
+
+                                    <div class="col-sm">
+                                      <p>Email:
+                                        <%= u.email%></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer bg-transparent ">
+                                  <%= link_to 'Approve User', root_path, class: 'btn btn-success'%>
+                                  <%= link_to 'Remove', root_path, class: 'btn btn-danger-invert '%>
+                                </div>
+
+                              </div>
+
+                            <% end %>
                           </div>
-                          <h2>User ID:
-                            <%= u.id%></h2>
-
-                          <p>Email:
-                            <%= u.email%></p>
-
-                          <p>Zip Code:
-                            <%= u.zip_code%></p>
-
-                          <% if u.role == 1%>
-                            <p>Requested: Driver</p>
-                          <% else %>
-                            <p>Requested: Washer</p>
-                          <% end %>
                         </div>
-                        <div class="card-footer bg-transparent">
-                          <%= link_to 'Approve', root_path, class: 'btn btn-success'%>
-                          <%= link_to 'Remove', root_path, class: 'btn btn-danger'%>
+                      </tbody>
+                    </div>
+
+                    <div class="container-fluid">
+                      <h1>Manage Users</h1>
+                      <div class="list">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All Users</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="accepted-tab" data-toggle="tab" href="#accepted" role="tab" aria-controls="accepted" aria-selected="false">Accepted Users</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="denied-tab" data-toggle="tab" href="#denied" role="tab" aria-controls="denied" aria-selected="false">Denied Users</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+
+                            <table class="table table-bordered table-striped">
+                              <thead>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Zip Code</th>
+                                <th class="text-center">Role</th>
+                              </thead>
+                              <tbody>
+
+                                <!-- show all users -->
+                                <% user.each do |u| %>
+                                  <tr>
+                                    <td class="text-right">
+                                      <%= u.id%></td>
+
+                                    <td>
+                                      <%= u.firstname%>
+                                      <%= u.lastname%>
+                                    </td>
+                                    <td>
+                                      <%= u.email%></td>
+                                    <td>
+                                      <%= u.zip_code%></td>
+                                    <% if u.role == 1%>
+                                      <td>Driver</td>
+                                    <% else %>
+                                      <td>Washer</td>
+                                    <% end %>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                            </table>
+
+                          </div>
+                          <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+
+                            <tbody>
+                              <div class="table">
+                                <!-- show approved users -->
+                                <% approved_users.each do |u| %>
+                                  <tr color="white">
+                                    <h2>User ID:
+                                      <%= u.id%></h2>
+                                    <p>Email:
+                                      <%= u.email%></p>
+                                    <p>Name:
+                                      <%= u.firstname%>
+                                      <%= u.lastname%>
+                                    </p>
+                                    <p>Zip Code:
+                                      <%= u.zip_code%></p>
+                                    <% if u.role == 1%>
+                                      <p>Role: Driver</p>
+                                    <% else %>
+                                      <p>Role: Washer</p>
+                                    <% end %>
+                                  </tr>
+                                <% end %>
+                              </div>
+                            </tbody>
+                          </div>
+                          <div class="tab-pane fade" id="denied" role="tabpanel" aria-labelledby="denied-tab">
+
+                            <tbody>
+                              <div class="table">
+                                <!-- show denied_users -->
+                                <% denied_users.each do |u| %>
+                                  <tr color="white">
+                                    <h2>User ID:
+                                      <%= u.id%></h2>
+                                    <p>Email:
+                                      <%= u.email%></p>
+                                    <p>Name:
+                                      <%= u.firstname%>
+                                      <%= u.lastname%>
+                                    </p>
+                                    <p>Zip Code:
+                                      <%= u.zip_code%></p>
+                                    <% if u.role == 1%>
+                                      <p>Role: Driver</p>
+                                    <% else %>
+                                      <p>Role: Washer</p>
+                                    <% end %>
+                                  </tr>
+                                <% end %>
+
+                              </div>
+                            </tbody>
+                          </div>
                         </div>
                       </div>
-                    </tr>
-                  <% end %>
-                </div>
-              </div>
-            </tbody>
-          </div>
 
-          <div class="container-fluid">
-            <h1>Manage Users</h1>
-                  <div class="list">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All Users</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="accepted-tab" data-toggle="tab" href="#accepted" role="tab" aria-controls="accepted" aria-selected="false">Accepted Users</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="denied-tab" data-toggle="tab" href="#denied" role="tab" aria-controls="denied" aria-selected="false">Denied Users</a>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                      <%= link_to 'Edit', edit_admin_path(@admin) %>
+                      <%= link_to 'Back', admins_path %>
 
-
-                  <table class="table table-bordered table-striped">
-                    <thead>
-                      <th class="text-center">ID</th>
-                      <th class="text-center">Name</th>
-                      <th class="text-center">Email</th>
-                    </thead>
-                    <tbody>
-
-                    <!-- show all users -->
-                    <% user.each do |u| %>
-                      <td >
-                        <h2>User ID:
-                          <%= u.id%></h2>
-                        <p>Email:
-                          <%= u.email%></p>
-                        <p>Name:
-                          <%= u.firstname%>
-                          <%= u.lastname%>
-                        </p>
-                        <p>Zip Code:
-                          <%= u.zip_code%></p>
-                        <% if u.role == 1%>
-                          <p>Role: Driver</p>
-                        <% else %>
-                          <p>Role: Washer</p>
-                        <% end %>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                  </table>
-
-              </div>
-              <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
-
-
-                <tbody>
-                  <div class="table">
-                    <!-- show approved users -->
-                    <% approved_users.each do |u| %>
-                      <tr color="white">
-                        <h2>User ID:
-                          <%= u.id%></h2>
-                        <p>Email:
-                          <%= u.email%></p>
-                        <p>Name:
-                          <%= u.firstname%>
-                          <%= u.lastname%>
-                        </p>
-                        <p>Zip Code:
-                          <%= u.zip_code%></p>
-                        <% if u.role == 1%>
-                          <p>Role: Driver</p>
-                        <% else %>
-                          <p>Role: Washer</p>
-                        <% end %>
-                      </tr>
-                    <% end %>
+                    </div>
                   </div>
-                </tbody>
-              </div>
-              <div class="tab-pane fade" id="denied" role="tabpanel" aria-labelledby="denied-tab">
-
-                <tbody>
-                  <div class="table">
-                    <!-- show denied_users -->
-                    <% denied_users.each do |u| %>
-                      <tr color="white">
-                        <h2>User ID:
-                          <%= u.id%></h2>
-                        <p>Email:
-                          <%= u.email%></p>
-                        <p>Name:
-                          <%= u.firstname%>
-                          <%= u.lastname%>
-                        </p>
-                        <p>Zip Code:
-                          <%= u.zip_code%></p>
-                        <% if u.role == 1%>
-                          <p>Role: Driver</p>
-                        <% else %>
-                          <p>Role: Washer</p>
-                        <% end %>
-                      </tr>
-                    <% end %>
-
-                  </div>
-                </tbody>
-              </div>
-            </div>
-          </div>
-
-            <%= link_to 'Edit', edit_admin_path(@admin) %>
-            <%= link_to 'Back', admins_path %>
-
-          </div>
-        </div>

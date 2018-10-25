@@ -1,7 +1,8 @@
 .btn {
   border-radius: 3px;
   margin-bottom: 1em;
-  color: $ColorDark;
+  color: $ColorWhite;
+  font-weight: $black;
 }
 
 .btn-primary,
@@ -51,16 +52,29 @@
 .btn-success:active,
 .btn-success:visited {
   background-color: $ColorGreen;
+  border-width: 0;
+  box-shadow: $DropShadow;
 }
 
 
 .btn-success:hover {
   background-color: $ColorGreen_Hover;
+  color: $ColorWhite;
 }
 
 .btn-danger,
 .btn-danger:visited {
   background-color: $ColorRed;
+}
+
+.btn-danger-invert {
+  background-color: transparent;
+  color: $ColorRed;
+
+  &:hover {
+    color: $ColorWhite;
+    @include background-opacity($ColorRed, 1);
+  }
 }
 
 .btn-danger:hover {
