@@ -23,30 +23,5 @@ two:
   zip_code: '98406'
   role: 1
   start_date: 2018-10-01
-<<<<<<< HEAD
-
-three:
-  id: 3
-  email: 'jackburns@gmail.com'
-  password_digest: <%= User.digest('testpassword') %>
-  firstname: 'MyString'
-  lastname: 'MyString'
-  confirmation_status: 1
-  zip_code: '98406'
-  role: 1
-  start_date: 2018-10-01
-
-four:
-  id: 4
-  email: 'jackburns4@gmail.com'
-  password_digest: <%= User.digest('testpassword') %>
-  firstname: 'MyString'
-  lastname: 'MyString'
-  confirmation_status: 1
-  zip_code: '98406'
-  role: 1
-  start_date: 2018-10-01
-=======
   washer_id: 1
   driver_id: 1
->>>>>>> 450ed84dfbdee92e2de9fe2929ea79cf3eed7672
