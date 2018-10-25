@@ -1,51 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid">
-  <div class="row  loads-container">
+<div class="container">
+  <div class="row  loads-header">
     <h1 class="loads-header">Pick up Laundry</h1>
     <p>Tap laundry loads you want to pick up.</p>
-  </div> 
-</div>
-
-<div class="card">
-  <div class="card-body">
-    <div>
-      <span class="customer-name"><b>Brandon</b></span>
-      <span class="customer-address"><b>762 30th Ave</b></span>
-      <span class="card-footer">4.20 miles away | load ID: 420</span>
-    </div>
-    <div class="select-load">
-      <button type="button" class="btn btn-outline-primary">Select Load</button>
-    </div>
   </div>
 </div>
+<div class="container-fluid loads-container">
 
-<div class="card">
-  <div class="card-body active">
-    <div>
-      <span class="customer-name"><b>Brandon</b></span>
-      <span class="customer-address"><b>762 30th Ave</b></span>
-      <span class="card-footer">4.20 miles away | load ID: 420</span>
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <span class="customer-name">
+            <b>Brandon</b>
+          </span>
+          <span class="customer-address">
+            <b>762 30th Ave</b>
+          </span>
+          <span class="card-footer">4.20 miles away | load ID: 420</span>
+        </div>
+        <div class="select-load">
+          <button type="button" class="btn btn-outline-primary">Select Load</button>
+        </div>
+      </div>
     </div>
-    <div class="select-load">
-      <button type="button" class="btn btn-outline-primary">Unselect Load</button>
+
+    <div class="card">
+      <div class="card-body active">
+        <div>
+          <span class="customer-name">
+            <b>Brandon</b>
+          </span>
+          <span class="customer-address">
+            <b>762 30th Ave</b>
+          </span>
+          <span class="card-footer">4.20 miles away | load ID: 420</span>
+        </div>
+        <div class="select-load">
+          <button type="button" class="btn btn-outline-primary">Unselect Load</button>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <tbody>
+      <% @loads.each do |load| %>
+        <tr>
+          <td><%= load.washer_id %></td>
+          <td><%= load.driver_id %></td>
+          <td><%= load.status %></td>
+          <td><%= link_to 'Show', load %></td>
+          <td><%= link_to 'Edit', edit_load_path(load) %></td>
+          <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-  <tbody>
-    <% @loads.each do |load| %>
-      <tr>
-        <td><%= load.washer_id %></td>
-        <td><%= load.driver_id %></td>
-        <td><%= load.status %></td>
-        <td><%= link_to 'Show', load %></td>
-        <td><%= link_to 'Edit', edit_load_path(load) %></td>
-        <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
