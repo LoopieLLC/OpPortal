@@ -10,7 +10,6 @@
           <% if @user and @user.role == 1 %>
             <%= link_to "Sign in", washer_login_path, class: "nav-link"%><span class="sr-only">(current)</span>
           <% else %>
-            <%  %>
             <%= link_to "Sign in", driver_login_path, class: "nav-link" %>
           <% end %>
         </li>
