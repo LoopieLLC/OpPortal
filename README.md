@@ -18,6 +18,33 @@ Load tracking is a major part of the Loopie washer/driver portal.  With load tra
 
 The admin portal acts as a centralized governing tool between the above pieces that allows an administrative user to create, update, and destroy users and loads.  The administrative portal also allows an administrator to view application-wide statistics and trends.  Via the administrative portal, an admin can accept and decline pending users with access to the other portals and can view all past and current loads.  
 
+## Getting Started
+
+This application is built on a Debian based Linux distribution (Ubuntu 16.0.4) features the Ruby on Rails framework, MySQL for database management, Nginx as the web server, and Puma as the application server.
+
+```
+Ruby version 2.5.1
+Rails version 5.2.1
+Puma version 3.12.0
+Nginx version  1.10.3
+MySQL version 14.14, Distribution 5.7.23
+```
+
+For dependency management this application uses Bundler.
+
+```
+Bundler version 1.17.1
+```
+
+
+### Prerequisites
+
+### Installing
+
+## Testing
+
+## Deployment
+
 Things you may want to cover:
 
 * Ruby version
