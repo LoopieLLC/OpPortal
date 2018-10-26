@@ -4,13 +4,19 @@ The Loopie washer/driver portal is a platform for Loopie washers and drivers to 
 
 ### Washer Portal
 
+The washer portal allows a Loopie washer to create a unique account in which they can provide personal information about themselves, their washing and drying machines, and their load capacity.  The washer portal also allows washer to provide their availability for the day, how many loads they are available to take, and which loads they currently have.  This information is shared with drivers and creates an automated line of communication between the washer and the driver.  This helps remove the need for a centralized governing body to control the communication between washers and drivers.  Using the washer portal, a Loopie washer can also set their availability to wash loads for the day.
 
 ### Driver Portal
 
+The driver portal allows a Loopie driver to create a unique account in which they can provide personal information about themselves, their car and car insurance, and loads they currently posses.  In the driver portal, a driver can view the location of all active washers during a given time slot, and whether or not they are accepting loads.  The driver portal allows active drivers to view any loads that need to be picked up, either from a washer or from a client.  This way, a driver can simply log into the Loopie washer/driver portal and view any available loads from pickup or drop-off, without needing to directly communicate with the washer or Loopie HQ.  Using the driver portal, a Loopie driver can also set their availability to driver for the day.   
+
 ### Load Tracking
+
+Load tracking is a major part of the Loopie washer/driver portal.  With load tracking, we can see who has and has had their hands on a load.  Loads have an associated washer, driver, and client.  This gives Loopie the ability to see a load at all times, safeguarding against load mixups or lost loads.  In future versions of the application we hope to provide the client with live load tracking.  
 
 ### Admin Portal    
 
+The admin portal acts as a centralized governing tool between the above pieces that allows an administrative user to create, update, and destroy users and loads.  The administrative portal also allows an administrator to view application-wide statistics and trends.  Via the administrative portal, an admin can accept and decline pending users with access to the other portals and can view all past and current loads.  
 
 Things you may want to cover:
 
