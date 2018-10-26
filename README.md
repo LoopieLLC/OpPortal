@@ -1,8 +1,18 @@
-<<<<<<< HEAD
-# README
+# Loopie, LLC Washer/Driver Portal: README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+
+The Loopie washer/driver portal is a platform for Loopie washers and drivers to track and perform operational tasks relating to the Loopie laundry order lifecycle.  The Loopie washer/driver portal is a culmination of 4 subsequent tools: the washer portal which provides functionality pertaining to washer responsibilities, the driver portal which provides functionality pertaining to driver responsibilities, load tracking of a Loopie laundry load, and a centralized governing administrative portal that oversees administrative operations pertaining to all of the mentioned fields.
+
+### Washer Portal
+
+
+### Driver Portal
+
+### Load Tracking
+
+### Admin Portal    
+
 
 Things you may want to cover:
 
@@ -25,4 +35,3 @@ Things you may want to cover:
 * ...
 =======
 # WasherPortal
->>>>>>> 5cff284bcb611cf58e93edde15664ddd02d7eb03
