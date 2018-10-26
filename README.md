@@ -36,8 +36,13 @@ For dependency management this application uses Bundler.
 Bundler version 1.17.1
 ```
 
-
 ### Prerequisites
+
+To run this application on your machine first you need to install the necessary Ruby and MySQL versions.  When installing Ruby, I like to use RVM (Ruby Version Manager).  It is a good tool to use when building multiple Ruby applications that use their own specific sets of tools and dependencies.  To install RVM, you can follow the guide below.
+
+```
+https://github.com/rvm/ubuntu_rvm
+```    
 
 ### Installing
 
