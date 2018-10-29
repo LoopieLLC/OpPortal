@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_195620) do
     t.bigint "washer_id"
     t.bigint "driver_id"
     t.index ["driver_id"], name: "index_users_on_driver_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["washer_id"], name: "index_users_on_washer_id"
   end
 
