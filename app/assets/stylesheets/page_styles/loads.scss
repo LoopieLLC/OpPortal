@@ -72,23 +72,23 @@
     }
   }
 
-  h1 {
-    display: inline-block;
-    padding-bottom: 5px;
-    position: relative;
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 50%;
-      height: 1px;
-      bottom: 0;
-      left: 25%;
-      border-bottom: 2px solid gray;
-    }
-  }
-
   p {
     color: gray;
   }
 }
+
+.new-load {
+  display: flex;
+  justify-content: center;
+  
+  .new-load-link {
+    display: flex;
+    color: $ColorWhite;
+
+    &:hover,  
+    &:focus {
+      color: $ColorGreen;
+    }
+  }
+}
+
