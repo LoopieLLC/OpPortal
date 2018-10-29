@@ -1,65 +1,117 @@
 <% provide(:title, 'New Washer') %>
-<h1>New Washer</h1>
+  <div class="container">
+    <div class="row  center-header">
+      <h1 class="">Washer Sign Up</h1>
+      <p>Enter in information to sign up</p>
+    </div>
+  </div>
 
-<div class="form-shared">
-  <%= form_for(@washer, url: new_washer_path) do |form| %>
-  <%= render 'error_messages' %>
-  <form>
-    <div class="container flex-center container-light">
-      <div class="section">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 class="">Account Information</h2>
-            <div class="hr-small"></div>
+  <div class="form-shared">
+    <%= form_for(@washer, url: new_washer_path) do |form| %>
+    <%= render 'error_messages' %>
+    <form>
+      <div class="container flex-center container-light">
+        <div class="section">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2 class="">Account Information</h2>
+              <div class="hr-small"></div>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
+          <div class="row  form-group">
+            <div class="col-sm">
+              <%= form.label :username %>
+              <%= form.text_field :username , class: 'form-control', placeholder: :username %>
+            </div>
+            <div class="col-sm">
+              <%= form.label :email %>
+              <%= form.text_field :email , class: 'form-control', placeholder: :email %>
+            </div>
+          </div>
+          <div class="row form-group">
 
-            <%= form.label :username %>
-            <%= form.text_field :username , class: 'form-control', placeholder: :username %>
+            <div class="col-sm">
+              <%= form.label :password %>
+              <%= form.password_field :password , class: 'form-control', placeholder: :password %>
+            </div>
+            <div class="col-sm">
 
-            <%= form.label :email %>
-            <%= form.text_field :email , class: 'form-control', placeholder: :email %>
+              <%= form.label :password_confirmation %>
+              <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
 
-            <%= form.label :phone %>
-            <%= form.text_field :phone , class: 'form-control', placeholder: :phone %>
+            </div>
 
-            <%= form.label :firstname %>
-            <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
+          </div>
+          <hr>
+          <div class="row  form-group">
+            <div class="col-sm">
 
-            <%= form.label :lastname %>
-            <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+              <%= form.label :firstname %>
+              <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
 
-            <%= form.label :password %>
-            <%= form.password_field :password , class: 'form-control', placeholder: :password %>
+            </div>
+            <div class="col-sm">
 
-            <%= form.label :password_confirmation %>
-            <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
+              <%= form.label :lastname %>
+              <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+            </div>
+            <div class="col-md-3">
+              <%= form.label :phone %>
+              <%= form.text_field :phone , class: 'form-control', placeholder: :phone %>
+            </div>
+          </div>
+          <hr>
+          <div class="row  form-group">
+            <div class="col-md">
+              <%= form.label :address_1 %>
+              <%= form.text_field :address_1 , class: 'form-control',placeholder: :address_1 %>
+            </div>
+            <div class="col-md">
+              <%= form.label :address_2 %>
+              <%= form.text_field :address_2 , class: 'form-control',placeholder: :address_2 %>
+            </div>
+          </div>
 
-            <%= form.label :address_1 %>
-            <%= form.text_field :address_1 , class: 'form-control',placeholder: :address_1 %>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <%= form.label :city %>
+                <%= form.text_field :city , class: 'form-control',placeholder: :city %>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <%= form.label :state %>
+                <%= form.text_field :state, class: 'form-control',placeholder: :state%>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <%= form.label :zip_code %>
+                <%= form.text_field :zip_code , class: 'form-control',placeholder: :zip_code %>
 
-            <%= form.label :address_2 %>
-            <%= form.text_field :address_2 , class: 'form-control',placeholder: :address_2 %>
-
-            <%= form.label :zip_code %>
-            <%= form.text_field :zip_code , class: 'form-control',placeholder: :zip_code %>
-
-            <%= form.label :machine_description %>
-            <%= form.text_area :machine_description, class: 'form-control', placeholder: :machine_description %>
-
-            <%= form.label :start_date %>
-            <%= select_date Date.today, prefix: :start_date, class: "form-control-file"%>
-
-
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row form-group">
+            <div class="col-md-12">
+          <%= form.label :machine_description %>
+          <%= form.text_area :machine_description, class: 'form-control', placeholder: :machine_description %>
+          </div>
+<div class="col-md-12">
+          <%= form.label :start_date %>
+          <%= select_date Date.today, prefix: :start_date, class: "form-control"%>
+          </div>
           </div>
         </div>
       </div>
     </div>
-    
-    <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
-    <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block rounded-circle'%>
-  </form>
-  <% end %>
+  </div>
+  <div class="container">
+  <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block'%>
+  <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block'%>
+  </div>
+</form>
+<% end %>
 </div>
