@@ -1,12 +1,11 @@
 class DriverSessionController < ApplicationController
   def new
+    @driver = Driver.new
   end
 
   def create
-    driver = Driver.find_by(email: params[:driver_session][:email].downcase)
-    if driver && driver.authenticate(params[:driver_session][:password])
-      log_in driver
-      redirect_to driver
+    if @driver = login(params[:driver_session][:email], params[:driver_session][:password])
+    redirect_back_or_to(:drivers, notice: 'Login Successful')
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
@@ -14,7 +13,7 @@ class DriverSessionController < ApplicationController
   end
 
   def destroy
-    log_out
+    logout
     redirect_to root_url
   end
 end
