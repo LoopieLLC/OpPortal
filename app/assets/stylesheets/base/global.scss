@@ -9,11 +9,13 @@ body {
 
 
 .flex-center {
-  align-items: center;
-  justify-content: center;
+  //align-items: center;
+  //justify-content: center;
 
 
 }
+
+
 .text-center {
   text-align: center;
   padding-top: 0.5em;
@@ -69,21 +71,17 @@ body {
   }
 }
 
-.form-signin {
-    max-width: 300px;
-    margin: 0 auto;
-    padding-top: 5em;
-    img {
-      width: 12em;
-      height: auto;
-    }
-  }
-
-.card-light {
-
+.btn-debug {
+  position: fixed;
+  float: left;
+  left: 1em;
+  bottom: 1em;
+  z-index: 99;
 
 }
-
+.debug_dump {
+  padding: 1em;
+}
 @mixin transition($property) {
   transition: $property 0.10s ease-in-out ;
 }

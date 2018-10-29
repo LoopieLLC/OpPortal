@@ -68,3 +68,21 @@ label {
 .form-text-area {
   border-radius: 3px;
 }
+.form-signin {
+    max-width: 300px;
+    margin: 0 auto;
+    padding-top: 5em;
+    img {
+      width: 12em;
+      margin: 1em;
+      height: auto;
+    }
+  }
+
+.tab-content {
+
+  .disabled {
+    
+    pointer-events:none;
+  }
+}

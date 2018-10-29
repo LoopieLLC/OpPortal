@@ -1,52 +1,135 @@
 <% provide(:title, 'Register') %>
-<h1>Register</h1>
+  <h1>Register</h1>
 
-<div class="form-shared">
-  <%= form_for(@user, url: new_user_path) do |form| %>
-  <%= render 'error_messages' %>
-  <form>
+  <div class="form-shared">
+
     <div class="container flex-center container-light">
-      <div class="section">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 class="">Account Information</h2>
-            <div class="hr-small"></div>
-          </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="">Account Information</h2>
+          <div class="hr-small"></div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
+      </div>
 
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-driver-tab" data-toggle="pill" href="#pills-driver" role="tab" aria-controls="pills-driver" aria-selected="true">Sign up as Driver
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-washer-tab" data-toggle="pill" href="#pills-washer" role="tab" aria-controls="pills-washer" aria-selected="false">Sign up as Washer
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content " id="pills-tabContent">
+            <div class="tab-pane show active" id="pills-driver" role="tabpanel" aria-labelledby="pills-driver-tab">
 
-            <%= form.label :firstname %>
-            <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
+              <form>
+                <%= form_for(@user, url: new_driver_path) do |form| %>
+                <%= render 'error_messages' %>
+                <div class="row">
 
-            <%= form.label :lastname %>
-            <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+                  <div class="col-md ">
+                    <%= form.label "Enter your First name" %>
+                    <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
+                  </div>
+                  <div class="col-md ">
+                    <%= form.label "Enter your Last name" %>
+                    <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md ">
+                    <%= form.label :email %>
+                    <%= form.email_field :email , class: 'form-control',type: 'email' ,placeholder: :email %>
+                  </div>
+                  <div class="col-md ">
+                    <%= form.label :zip_code %>
+                    <%= form.text_field :zip_code , class: 'form-control', placeholder: :zip_code %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md ">
+                    <%= form.label :password %>
+                    <%= form.password_field :password , class: 'form-control', type: 'password',placeholder: :password %>
+                  </div>
+                  <div class="col-md ">
+                    <%= form.label :password_confirmation %>
+                    <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
 
-            <%= form.label :email %>
-            <%= form.email_field :email , class: 'form-control', placeholder: :email %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md ">
+                    <%= form.submit'Register', :class => 'btn btn-lg btn-light btn-block '%>
+                    <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-light btn-block '%>
+                  </div>
+                </div>
+              </form>
 
-            <%= form.label :zip_code %>
-            <%= form.text_field :zip_code , class: 'form-control', placeholder: :zip_code %>
-
-            <%= form.label :password %>
-            <%= form.password_field :password , class: 'form-control', placeholder: :password %>
-
-            <%= form.label :password_confirmation %>
-            <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
-
-            <%= form.label :role %>
-            <%= form.select :role, [['Washer', 1],['Driver', 2]], {}, {class: "form-control"} %>
-
+            <% end %>
 
           </div>
+
+          <div class="tab-pane" id="pills-washer" role="tabpanel" aria-labelledby="pills-washer-tab">
+
+              <form>
+                <%= form_for(@user, url: new_washer_path) do |form| %>
+                <%= render 'error_messages' %>
+
+                <div class="row">
+
+                  <div class="col-md ">
+                    <%= form.label "Enter your First name" %>
+                    <%= form.text_field :firstname , class: 'form-control', placeholder: :firstname %>
+                  </div>
+                  <div class="col-md ">
+                    <%= form.label "Enter your Last name" %>
+                    <%= form.text_field :lastname , class: 'form-control', placeholder: :lastname %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md ">
+                    <%= form.label :email %>
+                    <%= form.email_field :email , class: 'form-control',type: 'email' ,placeholder: :email %>
+                  </div>
+                  <div class="col-md ">
+                    <%= form.label :zip_code %>
+                    <%= form.text_field :zip_code , class: 'form-control', placeholder: :zip_code %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md ">
+                    <%= form.label :password %>
+                    <%= form.password_field :password , class: 'form-control', type: 'password',placeholder: :password %>
+                  </div>
+                  <div class="col-md ">
+                    <%= form.label :password_confirmation %>
+                    <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md ">
+                    <%= form.submit'Register', :class => 'btn btn-lg btn-light btn-block '%>
+                    <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-light btn-block '%>
+                  </div>
+                </div>
+
+              </form>
+
+            <% end %>
+
+
         </div>
       </div>
     </div>
-    <div class="container">
-      <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block '%>
-      <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block '%>
-    </div>
-  </form>
-  <% end %>
+  </div>
+</div>
+
+</div>
+</div>
 </div>

@@ -80,3 +80,13 @@
 .btn-danger:hover {
   background-color: $ColorRed_Hover;
 }
+
+.btn-light {
+  @extend .btn-primary;
+  box-shadow: $DropShadow;
+  &:hover {
+    box-shadow: 0 0.3em 10px rgba(0, 0, 0, 0.4);
+  }
+
+
+}
