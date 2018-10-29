@@ -8,14 +8,26 @@
     <div class="row flex-center">
       <div class="col-md-12 profile">
         <div class="img-big round"></div>
-        <h1><%= :firstname%>
-          <%= :lastname%></h1>
+        <h1><%= @driver.firstname%>
+          <%= @driver.lastname%></h1>
         <p class="text-light">Loopie Driver |
-          <%= :car_color%>
-          <%= :car_make %>
-          <%=:car_model%>
+          <%= @driver.car_color%>
+          <%= @driver.car_make %>
+          <%= @driver.car_model%>
         </p>
         <p>
+        <p class="text-light">
+          From <%= @driver.city %>, <%= @driver.state %>
+        </p>
+        <p class="text-light">
+          License Plate: <%= @driver.license_plate %>
+        </p>
+        <p>
+          Phone Number: <%= @driver.phone %>
+        </p>
+        <p>
+
+        </p>
         <%= link_to 'Edit', edit_driver_path(@driver) %> |</p>
       </div>
 </div>
