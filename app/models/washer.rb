@@ -1,5 +1,5 @@
 class Washer < ApplicationRecord
-  #authenticates_with_sorcery!
+  authenticates_with_sorcery!
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 1 }
   before_save { self.washing_status = 0 }
@@ -36,8 +36,9 @@ class Washer < ApplicationRecord
     presence: true
     #format: { with: VALID_PHONE_NUMBER_REGEX }
 
-  has_secure_password
-  validates :password, presence: true, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
+  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   def Washer.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

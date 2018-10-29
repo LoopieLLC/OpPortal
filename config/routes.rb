@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/driver_guidelines', to: 'static_pages#driver_guidelines'
   get '/washer_guidelines', to: 'static_pages#washer_guidelines'
+  get '/approve', to: 'users#approve', as: 'approve'
 
   # driver controller actions
   get '/new_driver', to: 'drivers#new'
@@ -39,11 +40,19 @@ Rails.application.routes.draw do
   delete '/admin_logout', to: 'admin_session#destroy'
 
   # resources
+
   resources :loads
-  resources :users
+  resources :users do
+    member do
+      get :approve
+      get :deny
+    end
+  end
   resources :drivers
   resources :washers
-  resources :admins
+  resources :admins do
+    resources :users
+  end 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

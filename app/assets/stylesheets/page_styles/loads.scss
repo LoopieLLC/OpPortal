@@ -1,11 +1,7 @@
 // Place all the styles related to the Loads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.loads-header {  // renamed some stuff so that css doesnt conflict with one another
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .loads-container {
 
   .card {

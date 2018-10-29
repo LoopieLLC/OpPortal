@@ -3,7 +3,8 @@
 one:
   id: 1
   username: Jackburns
-  password_digest: <%= Washer.digest('testpassword') %>
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("testpassword", salt) %>
   firstname: MyString
   lastname: MyString
   email: MyString@globstopper.com
@@ -24,7 +25,8 @@ one:
 two:
   id: 2
   username: Jackflackburns
-  password_digest: <%= Washer.digest('testpassword') %>
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("testpassword", salt) %>
   firstname: MyString
   lastname: MyString
   email: MyString@fuck.com
