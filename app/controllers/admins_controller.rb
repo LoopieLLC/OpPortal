@@ -5,6 +5,7 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
     @admins = Admin.all
+    @users = User.all
   end
 
   # GET /admins/1
@@ -24,6 +25,19 @@ class AdminsController < ApplicationController
 
   # GET /admins/1/edit
   def edit
+  end
+
+  def approve
+    @user = User.find(params[:id])
+    @user.update_attribute(:confirmation_status, 1)
+    #redirect_to admin_url
+    # if Driver.id?( :id) == true
+  end
+
+  def deny
+    @user = User.find(params[:id])
+    @user['confirmation_status'] = -1
+    #redirect_to admin_url
   end
 
   # POST /admins
@@ -76,4 +90,5 @@ class AdminsController < ApplicationController
     def admin_params
       params.require(:admin).permit(:username, :password, :password_confirmation)
     end
+
 end
