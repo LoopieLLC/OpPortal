@@ -2,6 +2,9 @@
 
 .form-group {
   //@extend .text-light;
+  label {
+    color: $ColorDark
+  }
 }
 
 .form-shared {
@@ -13,9 +16,7 @@
     width: 14em;
   }
 }
-label {
-  color: $ColorDark
-}
+
 // form defaults to light input
 .form-control {
   background-color: $ColorNotWhite;
@@ -82,7 +83,7 @@ label {
 .tab-content {
 
   .disabled {
-    
+
     pointer-events:none;
   }
 }

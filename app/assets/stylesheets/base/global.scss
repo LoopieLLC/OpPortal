@@ -8,13 +8,11 @@ body {
 // scss for buttons
 
 
-.flex-center {
-  //align-items: center;
-  //justify-content: center;
-
-
+.center-header {  // renamed some stuff so that css doesnt conflict with one another
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .text-center {
   text-align: center;

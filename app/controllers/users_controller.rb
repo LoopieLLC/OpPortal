@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   # GET /users
   # GET /users.json
   def index
@@ -45,6 +44,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def approve
+    @user = User.find(params[:id])
+    @user.update_attribute(:confirmation_status, 1)
+    #redirect_to admin_url
+    # if Driver.id?( :id) == true
+  end
+
+  def deny
+    @user = User.find(params[:id])
+    @user['confirmation_status'] = -1
+    #redirect_to admin_url
+  end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
@@ -70,7 +82,7 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
     end

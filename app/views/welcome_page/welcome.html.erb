@@ -1,21 +1,43 @@
 <% provide(:title, "Welcome") %>
 
-<html lang="en">
-  <body>
-    <div class="container flex-center">
-      <div class="text-center ">
-        <form class="form-signin">
-          <%= image_tag "loopie_logo.svg" %>
-          <h1 class="h3 mb-3 font-weight-normal text-light">Loopie Laundry</h1>
+  <html lang="en">
+    <body>
+      <div class="container flex-center">
+        <div class="text-center ">
+          <form class="form-signin">
+            <%= image_tag "loopie_logo.svg" %>
+            <h1 class="h3 mb-3 font-weight-normal text-light">Loopie Laundry</h1>
 
-          <!-- <button class="btn btn-lg btn-primary btn-block rounded-circle" type="submit">Sign in</button> -->
-          <%= link_to "Washer Sign In", washer_login_path, class: 'btn btn-lg btn-primary btn-block' %>
-          <%= link_to "Driver Sign In", driver_login_path, class: 'btn btn-lg btn-primary btn-block' %>
-          <%= link_to "New Washer", new_washer_path, class: 'btn btn-lg btn-primary btn-block' %>
-          <%= link_to "New Driver", new_driver_path, class: 'btn btn-lg btn-primary btn-block' %>
-          <p class="mt-5 mb-3 text-muted text-light">&copy; 2017-2018</p>
-        </form>
+            <!-- <button class="btn btn-lg btn-primary btn-block rounded-circle" type="submit">Sign in</button> -->
+            <%= link_to "Washer Sign In", washer_login_path, class: 'btn btn-lg btn-primary btn-block' %>
+            <%= link_to "Driver Sign In", driver_login_path, class: 'btn btn-lg btn-primary btn-block' %>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+              Sign up
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalCenterTitle">Sign up as a:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <%= link_to "New Washer", new_washer_path, class: 'btn btn-lg btn-light btn-block' %>
+                    <%= link_to "New Driver", new_driver_path, class: 'btn btn-lg btn-light btn-block' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-5 mb-3 text-muted text-light">&copy; 2017-2018</p>
+          </form>
+        </div>
       </div>
-    </div>
-  </body>
-</html>
+    </body>
+  </html>

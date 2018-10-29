@@ -2,29 +2,43 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="header-block"></div>
-<div class="container container-top">
-<div class="col-md-4">
+<div class="container ">
+<div class="col-md-12">
     <div class="row flex-center">
       <div class="col-md-12 profile">
         <div class="img-big round"></div>
-        <h1><%= :firstname%>
-          <%= :lastname%></h1>
+        <h1><%= @driver.firstname%>
+          <%= @driver.lastname%></h1>
         <p class="text-light">Loopie Driver |
-          <%= :car_color%>
-          <%= :car_make %>
-          <%=:car_model%>
+          <%= @driver.car_color%>
+          <%= @driver.car_make %>
+          <%= @driver.car_model%>
         </p>
         <p>
+        <p class="text-light">
+          From <%= @driver.city %>, <%= @driver.state %>
+        </p>
+        <p class="text-light">
+          License Plate: <%= @driver.license_plate %>
+        </p>
+        <p>
+          Phone Number: <%= @driver.phone %>
+        </p>
+        <p>
+          ID: <%= @driver.id %>
+        </p>
+        <p>
+
+        </p>
         <%= link_to 'Edit', edit_driver_path(@driver) %> |</p>
       </div>
 </div>
 
   </div>
-  <div class="col-md-8 profile">
+  <div class="col-md-12 profile">
     <button class="btn btn-primary btn-lg btn-block">Start delivering Laundry</button>
   </div>
-  <div class="col-md-8 ">
+  <div class="col-md-12 ">
     <div class="row container-light">
       <div class="col-xs-4">
         <h1>Stats</h1>

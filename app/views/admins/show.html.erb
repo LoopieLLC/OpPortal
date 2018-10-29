@@ -7,7 +7,7 @@
     <div class="container-fluid">
 
       <h1>Pending Users</h1>
-      <% user = User.all %>
+        <% user = User.all %>
         <% pending_users = [] %>
           <% approved_users = [] %>
             <% denied_users = [] %>
@@ -19,24 +19,17 @@
                       <% else%>
                         <% denied_users.push(u)%><% end %>
                       <% end %>
-
                       <tbody>
                         <div class="table user-card">
                           <!-- show pending users -->
                           <div class="card-deck">
-
                             <% pending_users.each do |u| %>
-
                               <div class="card card-light">
-
                                 <div class="card-body">
                                   <div class="row">
-
                                     <div class="col-sm">
-
                                         <h4>Name:
                                         </h4>
-
                                     </div>
                                     <div class="col-sm text-right">
                                       <h4>ID:
@@ -66,14 +59,15 @@
                                     <div class="col-sm">
                                       <p>Email:
                                         <%= u.email%></p>
+
                                     </div>
                                   </div>
                                 </div>
                                 <div class="card-footer bg-transparent ">
-                                  <%= link_to 'Approve User', root_path, class: 'btn btn-success'%>
-                                  <%= link_to 'Remove', root_path, class: 'btn btn-danger-invert '%>
+                                  <%= button_to 'Approve User', approve_path, method: :get, class: 'btn btn-success'%>
+                                  <!-- <%= button_to 'Approve User', approve_path(u), method: :get, class: 'btn btn-success'%>  -->
+                                  <%= button_to 'Deny User', deny_user_path(u), class: 'btn btn-danger-invert'%>
                                 </div>
-
                               </div>
 
                             <% end %>
@@ -148,7 +142,7 @@
                                     <p>Name:
                                       <%= u.firstname%>
                                       <%= u.lastname%>
-                                    </p>
+                                    </p>  q
                                     <p>Zip Code:
                                       <%= u.zip_code%></p>
                                     <% if u.role == 1%>

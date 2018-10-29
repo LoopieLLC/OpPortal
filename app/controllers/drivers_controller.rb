@@ -1,4 +1,5 @@
 class DriversController < ApplicationController
+  #has_one_attached :license_image
   before_action :set_driver, only: [:show, :edit, :update, :destroy]
 
   # GET /drivers

@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_221059) do
     t.string "crypted_password"
     t.string "salt"
     t.index ["driver_id"], name: "index_users_on_driver_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["washer_id"], name: "index_users_on_washer_id"
   end
 
