@@ -1,44 +1,49 @@
+<p id="notice"><%= notice %></p>
 
-<div class="header-block"></div>
-<div class="container container-top">
-<div class="col-md-4">
-    <div class="row flex-center">
-      <div class="col-md-12 profile">
-        <div class="img-big round"></div>
-        <h1><%= :firstname %>
-          <%= :lastname%></h1>
-        <p class="text-light">Loopie Driver |
-          <%= :car_color%>
-          <%= :car_make %>
-          <%=:car_model%>
-        </p>
-      </div>
-</div>
+<h1>Drivers</h1>
 
-  </div>
-  <div class="col-md-8 profile">
-    <button class="btn btn-primary btn-lg btn-block">Start delivering Laundry</button>
-  </div>
-  <div class="col-md-8 ">
-    <div class="row container-light">
-      <div class="col-xs-4">
-        <h1>Stats</h1>
-      </div>
-      <div class="col-xs-4">
-        <h3>Monthly</h3>
-        <h2>$300</h2>
-        <h3>Monthly</h3>
-        <h2>$300</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Start date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-      </div>
-      <div class="col-xs-4">
-        <h3>All Time</h3>
-        <h2>$5.2k</h2>
-        <h3>All Time</h3>
-        <h2>$5.2k</h2>
-      </div>
-    </div>
+  <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.username %></td>
+        <td><%= driver.password %></td>
+        <td><%= driver.firstname %></td>
+        <td><%= driver.lastname %></td>
+        <td><%= driver.email %></td>
+        <td><%= driver.phone %></td>
+        <td><%= driver.address_1 %></td>
+        <td><%= driver.address_2 %></td>
+        <td><%= driver.city %></td>
+        <td><%= driver.state %></td>
+        <td><%= driver.zip_code %></td>
+        <td><%= driver.start_date %></td>
+        <td><%= link_to 'Show', driver %></td>
+        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
+        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-  </div>
+<br>
 
-</div>
+<%= link_to 'New driver', new_driver_path %>
