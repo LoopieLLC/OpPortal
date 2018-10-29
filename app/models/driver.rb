@@ -100,7 +100,7 @@ class Driver < ApplicationRecord
 
   def make_user
     user = User.create!(:email => self.email, :password => self.password, :password_confirmation => self.password_confirmation, :firstname => self.firstname, :lastname => self.lastname, :role => 2, :zip_code => self.zip_code)
-    user.washer_id = self.id
+    user.driver_id = self.id
     user.save
   end
 

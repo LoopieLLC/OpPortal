@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  #authenticates_with_sorcery!
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
 
@@ -26,6 +27,10 @@ class User < ApplicationRecord
     length: { minimum: 5, maximum: 15 }
 
   has_secure_password
+
+  #validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
+  #validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
+  #validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password, presence: true, length: { minimum: 8 }
 
   def User.digest(string)
@@ -33,5 +38,4 @@ class User < ApplicationRecord
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-
 end
