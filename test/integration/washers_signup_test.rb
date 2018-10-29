@@ -13,7 +13,8 @@ class WashersSignupTest < ActionDispatch::IntegrationTest
                                               firstname:"John",
                                               lastname:"Lee",
                                               max_loads: 2,
-                                              current_loads: 1 } }
+                                              current_loads: 1,
+                                              zip_code: "98122" } }
     end
     assert_template 'washers/new'
   end
@@ -31,7 +32,8 @@ class WashersSignupTest < ActionDispatch::IntegrationTest
                                               lastname:"Lee",
                                               max_loads: 2,
                                               current_loads: 1,
-                                              user_id: 1 } }
+                                              user_id: 1,
+                                              zip_code: "98122" } }
     end
     follow_redirect!
     assert_template 'washers/show'

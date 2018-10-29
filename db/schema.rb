@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_195620) do
+ActiveRecord::Schema.define(version: 2018_10_29_204728) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 2018_10_23_195620) do
     t.string "zip_code"
     t.bigint "washer_id"
     t.bigint "driver_id"
+    t.string "crypted_password"
+    t.string "salt"
     t.index ["driver_id"], name: "index_users_on_driver_id"
     t.index ["washer_id"], name: "index_users_on_washer_id"
   end
