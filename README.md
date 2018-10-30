@@ -74,8 +74,8 @@ https://help.github.com/articles/cloning-a-repository/
 2. To set up the development and test databases you need to create a new MySQL user where newuser=loopiellcdev and password=password.  Then grant loopiellcdev privileges:
 
 ```
-CREATE USER '<newuser>'@'localhost' IDENTIFIED BY '<password>';
-GRANT ALL PRIVILEGES ON * . * TO '<newuser>'@'localhost';
+mysql> CREATE USER '<newuser>'@'localhost' IDENTIFIED BY '<password>';
+mysql> GRANT ALL PRIVILEGES ON * . * TO '<newuser>'@'localhost';
 ```
 
 Establish a connection using those credentials in the MySQL console and then create 2 new databases.
