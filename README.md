@@ -71,6 +71,41 @@ To this application up and running in a development environment you need to 1) c
 https://help.github.com/articles/cloning-a-repository/
 ```
 
+2. To set up the development and test databases you need to create a new MySQL user where <newuser> = loopiellcdev and <password> = password.  Then grant loopiellcdev privileges:
+
+```
+CREATE USER '<newuser>'@'localhost' IDENTIFIED BY '<password>';
+GRANT ALL PRIVILEGES ON * . * TO '<newuser>'@'localhost';
+```
+
+Establish a connection using those credentials in the MySQL console and then create 2 new databases.
+
+```
+mysql> CREATE DATABASE washerportaldev;
+mysql> CREATE DATABASE washerportaltest;
+```
+
+This should set you up for the later rails database migration.
+
+4) Before we can run our application in a development environment we need to install all of the necessary dependencies.  Open a terminal in the root project directory and run the command 
+
+```
+bundle install
+```
+
+This tells Bundler to install all gems listed in the application's Gemfile.  If you get any errors during the installation, examine the console and fix them.  Once Bundler is done installing necessary gems, we need to run a database migrations to generate the necessary tables in our test and development databases.  To do this run the following command in the root project directory
+
+```
+rails db:migrate
+```
+
+5. After the bundle install and the rails migration, you should be ready to run the application in development mode on your local machine.  To do this open a terminal in the project's root directory and run the command
+
+```
+rails server
+```
+
+Open your browser (preferably Chrome or Firefox) and open localhost:3000.  If everything is working correctly the welcome page of the application will render and you can start fiddling around and developing! 
 
 
 ## Testing
