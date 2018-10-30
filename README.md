@@ -44,6 +44,21 @@ To run this application on your machine first you need to install the necessary 
 https://github.com/rvm/ubuntu_rvm
 ```    
 
+You can then use RVM to install different versions of Ruby.  We are using Ruby -v 2.5.1.
+
+```
+rvm install ruby_version
+```
+
+To view you list all of your installed Ruby versions and set a default version with the following commands:
+
+```
+rvm list
+rvm use ruby_version
+```
+
+
+
 ### Installing
 
 ## Testing
