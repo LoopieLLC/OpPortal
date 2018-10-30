@@ -110,6 +110,8 @@ Open your browser (preferably Chrome or Firefox) and open localhost:3000.  If ev
 
 ## Testing
 
+For testing, we are using a number of
+
 ## Deployment
 
 Things you may want to cover:
