@@ -11,7 +11,7 @@
           <%= f.password_field :password, class: 'form-control', placeholder: "password"  %>
 
           <div class="checkbox mb-3 text-light">
-            <label class="">
+            <label class='remember-me'>
               <input type="checkbox" value="remember-me">
               Remember Me
             </label>
@@ -21,8 +21,7 @@
 
           <p class="mt-5 mb-3 text-muted text-light">&copy; 2017-2018</p>
 
-          <!-- <a href="/drivers/new/">Register</a> -->
-          <!-- add link_to link please -->
+          <%= link_to "Register as a washer", new_washer_path , class: "dropdown-item washer-register-link" %>
         <% end %>
       </div>
     </div>

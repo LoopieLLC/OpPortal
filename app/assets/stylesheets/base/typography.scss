@@ -29,8 +29,20 @@ h1, {
   color: $ColorLoopie;
   text-transform: capitalize;
   font-weight: $black;
-
+  position: relative;
+  padding-bottom: 5px;
 }
+
+h1:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: 0;
+  left: 25%;
+  border-bottom: 1px solid $ColorGrey;
+}
+
 h2, {
     font-size: 1.2em;
   color: $ColorDark;

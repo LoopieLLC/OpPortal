@@ -13,8 +13,6 @@
     }
   }
 
-
-
   a {
     color: $ColorWhite;
     @include transition(all);
@@ -28,5 +26,15 @@
     &:focus {
       
     }
-  };
+  }
+
+  .dropdown-menu.show {
+    background-color: $ColorGrey;
+
+      .dropdown-item {
+
+      }
+        
+  }
 }
+
