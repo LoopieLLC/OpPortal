@@ -62,8 +62,16 @@ Next we need to install Rails 5.2.1 and MySQL.  Here is a good tutorial that des
 https://gorails.com/setup/ubuntu/16.04
 ```
 
-
 ### Installing
+To this application up and running in a development environment you need to 1) clone the Git repository, 2) set up your local databases, 3) install the necessary gems, and 4) test locally using the rails server.
+
+1. You need to clone the Loopie OpPortal into a directory on your local machine.  If you have not cloned a git repository before you can follow this guide:
+
+```
+https://help.github.com/articles/cloning-a-repository/
+```
+
+
 
 ## Testing
 
