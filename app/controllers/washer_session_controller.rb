@@ -4,8 +4,10 @@ class WasherSessionController < ApplicationController
   end
 
   def create
-    if @washer = login(params[:washer_session][:email], params[:washer_session][:password])
-    redirect_back_or_to(:washers, notice: 'Login Successful')
+    washer = Washer.find_by(email: params[:washer_session][:email].downcase)
+    if washer && washer.authenticate(params[:washer_session][:password])
+      log_in washer
+      redirect_to washer
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
@@ -13,7 +15,7 @@ class WasherSessionController < ApplicationController
   end
 
   def destroy
-    logout
+    log_out
     redirect_to root_url
   end
 end

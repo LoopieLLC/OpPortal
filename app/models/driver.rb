@@ -1,7 +1,7 @@
 class Driver < ApplicationRecord
-  authenticates_with_sorcery!
+  has_secure_password
   before_save { self.email = email.downcase }
-  before_save { self.confirmation_status = 1 }
+  before_save { self.confirmation_status = 0 }
   before_save { self.driving_status = 0 }
 
   after_create :make_user
@@ -37,9 +37,9 @@ class Driver < ApplicationRecord
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
 
-  validates :password, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
-  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, length: { minimum: 8 }#, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, confirmation: true#, if: -> { new_record? || changes[:crypted_password] }
+  validates :password_confirmation, presence: true#, if: -> { new_record? || changes[:crypted_password] }
 
   #validates names
   validates :firstname, :lastname,

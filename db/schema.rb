@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_221059) do
+ActiveRecord::Schema.define(version: 2018_10_31_203608) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -77,18 +77,17 @@ ActiveRecord::Schema.define(version: 2018_10_29_221059) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "crypted_password"
-    t.string "salt"
+    t.string "password_digest"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["username"], name: "index_drivers_on_username", unique: true
   end
 
   create_table "loads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "washer_id"
-    t.integer "driver_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "washer_id"
+    t.bigint "driver_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -103,10 +102,8 @@ ActiveRecord::Schema.define(version: 2018_10_29_221059) do
     t.string "zip_code"
     t.bigint "washer_id"
     t.bigint "driver_id"
-    t.string "crypted_password"
-    t.string "salt"
+    t.string "password_digest"
     t.index ["driver_id"], name: "index_users_on_driver_id"
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["washer_id"], name: "index_users_on_washer_id"
   end
 
@@ -130,8 +127,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_221059) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "crypted_password"
-    t.string "salt"
+    t.string "password_digest"
     t.index ["email"], name: "index_washers_on_email", unique: true
     t.index ["username"], name: "index_washers_on_username", unique: true
   end

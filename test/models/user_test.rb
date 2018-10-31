@@ -8,7 +8,8 @@ class UserTest < ActiveSupport::TestCase
       password_confirmation: "foobar9494934",
       firstname: "Jack",
       lastname: "Burns",
-      zip_code: "98406"
+      zip_code: "98406",
+      washer_id: 1
     )
   end
 

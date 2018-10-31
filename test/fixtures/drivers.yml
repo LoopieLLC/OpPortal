@@ -3,8 +3,7 @@
 one:
   id: 1
   username: MyString1
-  salt: <%= salt = "asdasdastr4325234324sdfds" %>
-  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("testpassword", salt) %>
+  password_digest: <%= Driver.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: zac@gmail.com
@@ -31,8 +30,7 @@ one:
 two:
   id: 2
   username: MyString2
-  salt: <%= salt = "asdasdastr4325234324sdfds" %>
-  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("testpassword", salt) %>
+  password_digest: <%= Driver.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: slack@gmail.com
