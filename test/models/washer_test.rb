@@ -84,6 +84,5 @@ class WasherTest < ActiveSupport::TestCase
   end
 
   # test associations
-  should have_one(:user)
-  should have_many(:loads)
+  should belong_to(:user)
 end

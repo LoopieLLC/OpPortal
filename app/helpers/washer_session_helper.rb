@@ -3,7 +3,7 @@ module WasherSessionHelper
     session[:washer] = washer.id
   end
 
-  def current_user
+  def current_washer
     if session[:washer_id]
       @current_washer ||= Washer.find_by(id: session[:washer_id])
     end

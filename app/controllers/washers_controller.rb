@@ -30,6 +30,7 @@ class WashersController < ApplicationController
     respond_to do |format|
       if @washer.save
         flash[:success] = "You are now a Loopie washer!"
+        log_in @washer
         format.html { redirect_to @washer }
         format.json { render :show, status: :created, location: @washer }
       else

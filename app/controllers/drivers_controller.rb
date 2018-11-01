@@ -30,6 +30,7 @@ class DriversController < ApplicationController
 
     respond_to do |format|
       if @driver.save
+        log_in @driver
         flash[:success] = "You are now a Loopie driver!"
         format.html { redirect_to @driver }
         format.json { render :show, status: :created, location: @driver }

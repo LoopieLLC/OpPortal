@@ -3,7 +3,7 @@ module DriverSessionHelper
     session[:driver] = driver.id
   end
 
-  def current_user
+  def current_driver
     if session[:driver_id]
       @current_driver ||= Driver.find_by(id: session[:driver_id])
     end
