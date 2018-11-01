@@ -99,18 +99,16 @@
           <%= form.label :machine_description %>
           <%= form.text_area :machine_description, class: 'form-control', placeholder: :machine_description %>
           </div>
-<div class="col-md-12">
+          <div class="col-md-12">
           <%= form.label :start_date %>
           <%= select_date Date.today, prefix: :start_date, class: "form-control"%>
           </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
   <div class="container">
-  <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block'%>
-  <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block'%>
+    <%= form.submit'Register', :class => 'btn btn-lg btn-primary btn-block'%>
+    <%= link_to 'Back', welcome_path, :class => 'btn btn-lg btn-primary btn-block'%>
   </div>
 </form>
 <% end %>

@@ -24,11 +24,11 @@ development:
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: loopiellcdev
+  username: loopietest
   password: password
   host: 127.0.0.1
   port: 3306
-  database: washerportaldev
+  database: washerportaldev2
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -37,11 +37,11 @@ test:
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: loopiellcdev
+  username: loopietest
   password: password
   host: 127.0.0.1
   port: 3306
-  database: washerportaltest
+  database: washerportaltest2
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
