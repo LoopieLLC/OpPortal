@@ -4,8 +4,6 @@ class DriverTest < ActiveSupport::TestCase
   def setup
     @driver = Driver.new(
       username: "ExUsername2",
-      password: "foobar9494934",
-      password_confirmation: "foobar9494934",
       email:"yeet@yeeter.com",
       phone:"123-456-789",
       firstname:"John",
