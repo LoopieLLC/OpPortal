@@ -48,10 +48,10 @@ class User < ApplicationRecord
   end
 
   def make_washer
-
+    #washer = Washer.create(:email => self.email)
   end
 
   def make_driver
-
+    #driver = Driver.create
   end
 end

@@ -3,7 +3,7 @@
   <div class="text-center ">
     <%= form_tag(user_sessions_path, class: 'form-signin', method: 'post') do %>
       <%= image_tag "loopie_logo.svg" %>
-      <h1 class="h3 mb-3 font-weight-normal text-light">Loopie User</h1>
+      <h1 class="h3 mb-3 font-weight-normal text-light">Loopie Login</h1>
         <%= text_field_tag :email, "", class: 'form-control', placeholder: 'Email' %>
         <%= password_field_tag :password, "", class: 'form-control', placeholder: 'password' %>
       <div class="checkbox mb-3 text-light">
