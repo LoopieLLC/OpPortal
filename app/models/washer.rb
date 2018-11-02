@@ -1,7 +1,9 @@
 class Washer < ApplicationRecord
+  #authenticates_with_sorcery!
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 1 }
   before_save { self.washing_status = 0 }
+  after_create :make_user
 
   has_many :loads
   has_one :user
@@ -41,5 +43,11 @@ class Washer < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  def make_user
+    user = User.create!(:email => self.email, :password => self.password, :password_confirmation => self.password_confirmation, :firstname => self.firstname, :lastname => self.lastname, :role => 1, :zip_code => self.zip_code)
+    user.washer_id = self.id
+    user.save
   end
 end
