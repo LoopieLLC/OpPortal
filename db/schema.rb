@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_01_000445) do
+ActiveRecord::Schema.define(version: 2018_11_02_001759) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 2018_11_01_000445) do
     t.integer "total_loads_touched"
     t.string "crypted_password"
     t.string "salt"
+    t.string "phone"
   end
 
   create_table "washers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

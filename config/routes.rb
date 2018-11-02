@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   get '/approve', to: 'users#approve', as: 'approve'
 
   # driver controller actions
-  get '/new_driver', to: 'drivers#new'
-  post '/new_driver', to: 'drivers#create'
+  get '/new_driver', to: 'users#new_driver'
+  post '/new_driver', to: 'users#create'
 
   # washer controller actions
-  get '/new_washer', to: 'washers#new'
-  post '/new_washer', to: 'washers#create'
+  get '/new_washer', to: 'users#new_washer'
+  post '/new_washer', to: 'users#create'
 
   get '/new_user', to: 'users#new'
   post '/new_user',  to: 'users#create'

@@ -18,6 +18,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def new_washer
+    @user = User.new
+  end
+
+  def new_driver
+    @user = User.new
+  end
+
   # GET /users/1/edit
   def edit
   end
