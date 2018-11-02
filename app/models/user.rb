@@ -12,8 +12,8 @@ class User < ApplicationRecord
     end
   }
 
-  has_one :washer, optional: true
-  has_one :driver, optional: true
+  has_one :washer
+  has_one :driver
   #has_many :loads
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -30,7 +30,8 @@ class User < ApplicationRecord
   validates :email,
     presence: true,
     length: { maximum: 255 },
-    format: { with: VALID_EMAIL_REGEX }
+    format: { with: VALID_EMAIL_REGEX },
+    uniqueness: true
 
   validates :zip_code,
     presence: true,
