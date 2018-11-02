@@ -10,18 +10,14 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/driver_guidelines', to: 'static_pages#driver_guidelines'
   get '/washer_guidelines', to: 'static_pages#washer_guidelines'
-  get '/approve', to: 'users#approve', as: 'approve'
 
   # driver controller actions
   get '/new_driver', to: 'users#new_driver'
-  post '/new_driver', to: 'users#create'
+  post '/new_driver', to: 'users#create_driver'
 
   # washer controller actions
   get '/new_washer', to: 'users#new_washer'
-  post '/new_washer', to: 'users#create'
-
-  get '/new_user', to: 'users#new'
-  post '/new_user',  to: 'users#create'
+  post '/new_washer', to: 'users#create_washer'
 
   #sessions
   get 'login' => 'user_sessions#new', :as => :login
@@ -30,16 +26,9 @@ Rails.application.routes.draw do
   # resources
   resources :user_sessions
   resources :loads
-  resources :users #do
-    #member do
-    #  get :approve
-    #  get :deny
-  #  end
-  #end
+  resources :users
   resources :drivers
   resources :washers
-  resources :admins #do
-    #resources :users
-  #end
+  resources :admins 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

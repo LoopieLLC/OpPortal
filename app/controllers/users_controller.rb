@@ -52,17 +52,34 @@ class UsersController < ApplicationController
     end
   end
 
-  def approve
-    @user = User.find(params[:id])
-    @user.update_attribute(:confirmation_status, 1)
-    #redirect_to admin_url
-    # if Driver.id?( :id) == true
+  def create_washer
+    @user = User.new(user_params)
+    @user.role = 1
+    respond_to do |format|
+      if @user.save
+        flash[:success] = "You are now a Loopie washer!"
+        format.html { redirect_to @user}
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new_washer }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
-  def deny
-    @user = User.find(params[:id])
-    @user['confirmation_status'] = -1
-    #redirect_to admin_url
+  def create_driver
+    @user = User.new(user_params)
+    @user.role = 2
+    respond_to do |format|
+      if @user.save
+        flash[:success] = "You are now a Loopie Driver!"
+        format.html { redirect_to @user}
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new_driver }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /users/1
@@ -97,6 +114,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :role, :zip_code)
+      params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :role, :zip_code, :role, :start_date, :address_1, :address_2, :city, :state, :insurance_info, :vin, :license_plate, :car_year, :car_make, :car_model, :car_color, :additional_information, :phone, :machine_description)
     end
 end
