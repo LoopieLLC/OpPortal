@@ -3,7 +3,6 @@
 one:
   id: 1
   username: Jackburns
-  password_digest: <%= Washer.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: MyString@globstopper.com
@@ -20,11 +19,11 @@ one:
   current_loads: 1
   total_loads_completed: 1
   start_date: 2018-09-25
+  user_id: 1
 
 two:
   id: 2
   username: Jackflackburns
-  password_digest: <%= Washer.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: MyString@fuck.com
@@ -41,3 +40,4 @@ two:
   current_loads: 1
   total_loads_completed: 1
   start_date: 2018-09-25
+  user_id: 3

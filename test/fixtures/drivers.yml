@@ -3,7 +3,6 @@
 one:
   id: 1
   username: MyString1
-  password_digest: <%= Driver.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: zac@gmail.com
@@ -26,11 +25,11 @@ one:
   driving_status: 1
   confirmation_status: 1
   start_date: 2018-09-25
+  user_id: 2
 
 two:
   id: 2
   username: MyString2
-  password_digest: <%= Driver.digest('testpassword') %>
   firstname: MyString
   lastname: MyString
   email: slack@gmail.com
@@ -53,3 +52,4 @@ two:
   driving_status: 1
   confirmation_status: 1
   start_date: 2018-09-25
+  user_id: 4

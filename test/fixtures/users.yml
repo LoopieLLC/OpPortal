@@ -7,28 +7,25 @@
 one:
   id: 1
   email: ianwhite2@gmail.com
-  password_digest: <%= User.digest('testpassword') %>
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("testpassword", salt) %>
   firstname: MyString
   lastname: MyString
   confirmation_status: 0
   zip_code: 98122
   role: 1
   start_date: 2018-10-01
-  washer_id: 1
-  driver_id: 1
 
 # column: value
 #
 two:
   id: 2
   email: 'jackburns2324@gmail.com'
-  password_digest: <%= User.digest('testpassword') %>
+  salt: <%= salt = "asdasdastr4325234324sdfds" %>
+  crypted_password: <%= Sorcery::CryptoProviders::BCrypt.encrypt("testpassword", salt) %>
   firstname: 'MyString'
   lastname: 'MyString'
   confirmation_status: 1
   zip_code: '98406'
   role: 1
   start_date: 2018-10-01
-  washer_id: 1
-  driver_id: 1
-# column: value

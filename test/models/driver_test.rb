@@ -4,8 +4,6 @@ class DriverTest < ActiveSupport::TestCase
   def setup
     @driver = Driver.new(
       username: "ExUsername2",
-      password: "foobar9494934",
-      password_confirmation: "foobar9494934",
       email:"yeet@yeeter.com",
       phone:"123-456-789",
       firstname:"John",
@@ -139,8 +137,7 @@ class DriverTest < ActiveSupport::TestCase
   end
 
   # test associations
-  should have_many(:loads)
-  should have_one(:user)
+  should belong_to(:user)
 
   #test fails for some stupid reason, regex works fine, i have no idea why
   #because it works in cmd but not in rails model

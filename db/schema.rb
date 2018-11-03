@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_203425) do
+ActiveRecord::Schema.define(version: 2018_11_02_001759) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name", null: false
@@ -77,8 +77,9 @@ ActiveRecord::Schema.define(version: 2018_10_31_203425) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
+    t.bigint "user_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
+    t.index ["user_id"], name: "index_drivers_on_user_id"
     t.index ["username"], name: "index_drivers_on_username", unique: true
   end
 
@@ -100,11 +101,28 @@ ActiveRecord::Schema.define(version: 2018_10_31_203425) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "zip_code"
-    t.bigint "washer_id"
-    t.bigint "driver_id"
-    t.string "password_digest"
-    t.index ["driver_id"], name: "index_users_on_driver_id"
-    t.index ["washer_id"], name: "index_users_on_washer_id"
+    t.string "username"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "state"
+    t.text "insurance_info"
+    t.string "vin"
+    t.string "license_plate"
+    t.string "car_year"
+    t.string "car_make"
+    t.string "car_model"
+    t.string "car_color"
+    t.text "additional_information"
+    t.integer "current_loads"
+    t.integer "driving_status"
+    t.text "machine_description"
+    t.integer "washing_status"
+    t.integer "max_loads"
+    t.integer "total_loads_touched"
+    t.string "crypted_password"
+    t.string "salt"
+    t.string "phone"
   end
 
   create_table "washers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
@@ -127,11 +145,12 @@ ActiveRecord::Schema.define(version: 2018_10_31_203425) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
+    t.bigint "user_id"
     t.index ["email"], name: "index_washers_on_email", unique: true
+    t.index ["user_id"], name: "index_washers_on_user_id"
     t.index ["username"], name: "index_washers_on_username", unique: true
   end
 
-  add_foreign_key "users", "drivers", on_delete: :cascade
-  add_foreign_key "users", "washers", on_delete: :cascade
+  add_foreign_key "drivers", "users"
+  add_foreign_key "washers", "users"
 end

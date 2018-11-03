@@ -7,10 +7,7 @@
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <%= link_to "Sign in as a washer", washer_login_path, class: "nav-link"%><span class="sr-only">(current)</span>
-        </li>
-        <li class="nav-item">
-        <%= link_to "Sign in as a driver", driver_login_path, class: "nav-link" %>
+        <%= link_to "Login", login_path, class: "nav-link"%><span class="sr-only">(current)</span>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -23,16 +20,11 @@
             <%= link_to "Driver Guidelines", driver_guidelines_path, class: "dropdown-item" %>
             <%= link_to "Washer Guidelines", washer_guidelines_path, class: "dropdown-item" %>
             <div class="dropdown-divider">
-                <%= link_to "Contacts", contact_path,class: "dropdown-item" %>
+              <%= link_to "Contacts", contact_path,class: "dropdown-item" %>
+            </div>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
       </ul>
-
     </div>
   </nav>
-
-
 </header>

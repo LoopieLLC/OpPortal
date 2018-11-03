@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class WasherLoginTestTest < ActionDispatch::IntegrationTest
-  include Sorcery::TestHelpers::Rails::Integration
-  include Sorcery::TestHelpers::Rails::Controller
 
   def setup
     @washer = washers(:one)
@@ -22,6 +20,7 @@ class WasherLoginTestTest < ActionDispatch::IntegrationTest
     get washer_login_path
     post washer_login_path, params: { washer_session: { email: @washer.email,
                                                  password: 'testpassword' } }
+
     assert_redirected_to @washer
     follow_redirect!
     assert_template 'washers/show'

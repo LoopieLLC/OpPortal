@@ -4,8 +4,6 @@ class WasherTest < ActiveSupport::TestCase
   def setup
     @Washer = Washer.new(
       username: "ExUsername",
-      password: "foobar9494934",
-      password_confirmation: "foobar9494934",
       email:"yeet@yeet.com",
       phone:"(123)-456-789",
       firstname:"John",
@@ -84,6 +82,5 @@ class WasherTest < ActiveSupport::TestCase
   end
 
   # test associations
-  should have_one(:user)
-  should have_many(:loads)
+  should belong_to(:user)
 end

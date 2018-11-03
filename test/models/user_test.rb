@@ -8,8 +8,7 @@ class UserTest < ActiveSupport::TestCase
       password_confirmation: "foobar9494934",
       firstname: "Jack",
       lastname: "Burns",
-      zip_code: "98406",
-      washer_id: 1
+      zip_code: "98406"
     )
   end
 
@@ -91,6 +90,6 @@ class UserTest < ActiveSupport::TestCase
  end
 
  # test associations
- should belong_to(:driver)
- should belong_to(:washer)
+ should have_one(:driver)
+ should have_one(:washer)
 end
