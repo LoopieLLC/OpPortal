@@ -10,7 +10,8 @@ class WasherTest < ActiveSupport::TestCase
       lastname:"Lee",
       max_loads: 2,
       current_loads: 1,
-      zip_code: "98122"
+      zip_code: "98122",
+      user_id: 1
     )
   end
 
@@ -68,16 +69,6 @@ class WasherTest < ActiveSupport::TestCase
 
   test "phone number should be valid" do
     @Washer.phone = ""
-    assert_not @Washer.valid?
-  end
-
-  test "password should be present (nonblank)" do
-    @Washer.password = @Washer.password_confirmation = " " * 8
-    assert_not @Washer.valid?
-  end
-
-  test "password should have a minimum length" do
-    @Washer.password = @Washer.password_confirmation = "a" * 7
     assert_not @Washer.valid?
   end
 

@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
 
@@ -12,8 +11,9 @@ class User < ApplicationRecord
     end
   }
 
-  has_one :washer
-  has_one :driver
+  #attr_accessor :password, :password_confirmation
+  has_one :washer, dependent: :destroy
+  has_one :driver, dependent: :destroy
   #has_many :loads
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

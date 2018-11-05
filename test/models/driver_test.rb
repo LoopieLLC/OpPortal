@@ -16,7 +16,8 @@ class DriverTest < ActiveSupport::TestCase
       car_color: "red",
       address_1: "address",
       address_2: "address2",
-      zip_code: "63105"
+      zip_code: "63105",
+      user_id: 2
     )
   end
 
@@ -83,16 +84,6 @@ class DriverTest < ActiveSupport::TestCase
 
   test "car_year should exist" do
     @driver.car_year = ""
-    assert_not @driver.valid?
-  end
-
-  test "password should be present (nonblank)" do
-    @driver.password = @driver.password_confirmation = " " * 8
-    assert_not @driver.valid?
-  end
-
-  test "password should have a minimum length" do
-    @driver.password = @driver.password_confirmation = "a" * 7
     assert_not @driver.valid?
   end
 

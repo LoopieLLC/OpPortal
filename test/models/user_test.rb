@@ -3,6 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(
+      username: "jackburns69",
       email: "jackburns1232542@gmail.com",
       password: "foobar9494934",
       password_confirmation: "foobar9494934",

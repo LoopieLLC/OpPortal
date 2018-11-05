@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  username: jackburns22
   id: 1
   email: ianwhite2@gmail.com
   salt: <%= salt = "asdasdastr4325234324sdfds" %>
@@ -19,6 +20,7 @@ one:
 # column: value
 #
 two:
+  username: jackburns222
   id: 2
   email: 'jackburns2324@gmail.com'
   salt: <%= salt = "asdasdastr4325234324sdfds" %>

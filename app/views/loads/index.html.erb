@@ -45,8 +45,6 @@
     <tbody>
       <% @loads.each do |load| %>
         <tr>
-          <td><%= load.washer_id %></td>
-          <td><%= load.driver_id %></td>
           <td><%= load.status %></td>
           <td><%= link_to 'Show', load %></td>
           <td><%= link_to 'Edit', edit_load_path(load) %></td>
@@ -62,4 +60,3 @@
 <div class="row new-load">
   <%= link_to 'New Load', new_load_path, class: "new-load-link" %>
 </div>
-
