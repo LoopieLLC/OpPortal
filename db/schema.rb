@@ -84,8 +84,6 @@ ActiveRecord::Schema.define(version: 2018_11_02_001759) do
   end
 
   create_table "loads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.integer "washer_id"
-    t.integer "driver_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
