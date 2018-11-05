@@ -1,5 +1,4 @@
 class Driver < ApplicationRecord
-  has_secure_password
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
   before_save { self.driving_status = 0 }
@@ -35,10 +34,6 @@ class Driver < ApplicationRecord
     length: { maximum: 255 },
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
-
-  validates :password, length: { minimum: 8 }#, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, confirmation: true#, if: -> { new_record? || changes[:crypted_password] }
-  validates :password_confirmation, presence: true#, if: -> { new_record? || changes[:crypted_password] }
 
   #validates names
   validates :firstname, :lastname,
@@ -89,12 +84,6 @@ class Driver < ApplicationRecord
   # validates :start_date,
   # install gem required for dates
   # next
-
-  def Driver.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
 
   def make_user
     user = User.create!(:email => self.email, :password => self.password, :password_confirmation => self.password_confirmation, :firstname => self.firstname, :lastname => self.lastname, :role => 2, :zip_code => self.zip_code)
