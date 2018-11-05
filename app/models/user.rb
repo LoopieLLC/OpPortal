@@ -1,5 +1,7 @@
 class User < ApplicationRecord
+  rolify
   authenticates_with_sorcery!
+
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
 
@@ -11,7 +13,6 @@ class User < ApplicationRecord
     end
   }
 
-  #attr_accessor :password, :password_confirmation
   has_one :washer, dependent: :destroy
   has_one :driver, dependent: :destroy
   #has_many :loads
@@ -48,10 +49,13 @@ class User < ApplicationRecord
 
   def make_washer
     washer = Washer.create!(:email => self.email, :username => self.username, :user_id => self.id, :firstname => self.firstname, :lastname => self.lastname, :phone => self.phone, :address_1 => self.address_1, :address_2 => self.address_2, :city => self.city, :state => self.state, :zip_code => self.zip_code, :machine_description => self.machine_description)
+    washer.save
+    self.add_role(:washer) if self.roles.blank?
   end
 
   def make_driver
     driver = Driver.create!(:email => self.email, :username => self.username, :user_id => self.id, :firstname => self.firstname, :lastname => self.lastname, :phone => self.phone, :address_1 => self.address_1, :address_2 => self.address_2, :city => self.city, :state => self.state, :zip_code => self.zip_code, :insurance_info => self.insurance_info, :vin => self.vin, :license_plate => self.license_plate, :car_make => self.car_make, :car_year => self.car_year, :car_color => self.car_color, :car_model => self.car_model, :additional_information => self.additional_information)
     driver.save
+    self.add_role(:driver) if self.roles.blank
   end
 end

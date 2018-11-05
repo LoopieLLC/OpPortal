@@ -1,4 +1,6 @@
 class Washer < ApplicationRecord
+  resourcify
+  
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
   before_save { self.washing_status = 0 }
