@@ -1,4 +1,5 @@
 <header>
+  <% user = User.find(1) %>
   <nav class="navbar navbar-dark navbar-loopie fixed-top navbar-expand-md">
       <%= link_to "Loopie LLC", root_path , class: "navbar-brand"%>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,11 +15,16 @@
             Info
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+            <% if user.role = 1 %>
+            
+            <% end %>
+            <% elsif user.role = 2 %>
+            <% end %>
+            <% else %>
+            <% end %>
             <%= link_to "About", about_path, class: "dropdown-item" %>
             <%= link_to "Help", help_path, class: "dropdown-item"%>
-            <%= link_to "Driver Guidelines", driver_guidelines_path, class: "dropdown-item" %>
-            <%= link_to "Washer Guidelines", washer_guidelines_path, class: "dropdown-item" %>
+            
             <div class="dropdown-divider">
               <%= link_to "Contacts", contact_path,class: "dropdown-item" %>
             </div>
