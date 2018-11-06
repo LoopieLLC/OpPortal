@@ -13,8 +13,11 @@
   </head>
 
   <body>
-    <%= content_for?(:custom_header) ? yield(:custom_header) : render(partial: "layouts/header") %>
-
+    <% if current_user %>
+      <%= render(partial: "layouts/header_logged_in") %>
+    <% else %>
+      <%= content_for?(:custom_header) ? yield(:custom_header) : render(partial: "layouts/header") %>
+    <% end %>
 
     <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
