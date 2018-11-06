@@ -1,6 +1,5 @@
 class Admin < ApplicationRecord
-  #authenticates_with_sorcery!
-  has_secure_password
+  resourcify
 
   def Admin.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

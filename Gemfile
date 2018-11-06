@@ -60,7 +60,7 @@ gem "aws-sdk-s3", require: false
 gem 'sorcery'
 
 # authorization
-gem 'pundit'
+gem 'cancancan', '~> 2.0'
 
 # roles
 gem 'rolify'
