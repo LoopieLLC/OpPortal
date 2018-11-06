@@ -1,6 +1,6 @@
 class WelcomePageController < ApplicationController
   layout "welcome"
-  skip_before_filter :require_login
+  skip_before_action :require_login
 
   def welcome
 

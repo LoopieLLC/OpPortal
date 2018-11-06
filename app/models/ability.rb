@@ -3,15 +3,17 @@ class Ability
   alias_action :create, :read, :update, to :cru
 
   def initialize(user)
+    user ||= User.new # guest user (not logged in)
     if user.logged_in?
       if user.has_role? :admin
         can :manage, :all
-      elsif user.has_role? :any, Washer
+      end
+      if user.has_role? :any, Washer
         can :cru, Washer, user_id: user.id
-      elsif user.has_role? :any, Driver
+      end
+      if user.has_role? :any, Driver
         can :cru, Driver, user_id: user.id
-
-
+      end
     end
     # Define abilities for the passed in user here. For example:
     #
