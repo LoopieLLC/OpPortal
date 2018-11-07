@@ -5,16 +5,31 @@
 //
 .profile {
 
-  //margin: 1.5em 0;
 
+  padding-bottom: 0.25em;
   .btn {
     padding-top: 1em;
     padding-bottom: 1em;
   }
   //profile cards
   .card-light {
+    //margin: 0 1em;
+    color: $ColorDark;
     h1 {
       color: $ColorDark;
+    }
+    .card-title {
+      margin-bottom: 0.25em;
+    }
+
+
+    .card-text {
+      margin-left: 20%;
+    }
+    .card-link {
+      font-weight: $black;
+      margin-bottom: -0.5em;
+      //padding-bottom: 1em;
     }
 
   }
