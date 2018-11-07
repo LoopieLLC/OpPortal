@@ -8,5 +8,75 @@
   </section>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<% provide(:title, 'Driver Profile') %>
+<p id="notice"><%= notice %></p>
+
+
+<div class="container ">
+<div class="col-md-12">
+    <div class="row flex-center">
+      <div class="col-md-12 profile">
+        <div class="img-big round"></div>
+        <h1><%= @user.firstname%>
+          <%= @user.lastname%></h1>
+        <p class="text-light">Loopie User |
+          <%= @user.car_color%>
+          <%= @user.car_make %>
+          <%= @user.car_model%>
+        </p>
+        <p>
+        <p class="text-light">
+          From <%= @user.city %>, <%= @user.state %>
+        </p>
+        <p class="text-light">
+          License Plate: <%= @user.license_plate %>
+        </p>
+        <p>
+          Phone Number: <%= @user.phone %>
+        </p>
+        <p>
+          ID: <%= @user.id %>
+        </p>
+        <p>
+
+        </p>
+        <%= link_to 'Edit', edit_driver_path(@user) %> |</p>
+      </div>
+</div>
+
+  </div>
+  <div class="col-md-12 profile">
+    <button class="btn btn-primary btn-lg btn-block">Start delivering Laundry</button>
+  </div>
+  <div class="col-md-6 profile">
+    <div class="card card-light">
+
+        <h1 class="card-title">Stats</h1>
+
+      <div class="card-body">
+    <div class="row">
+
+
+      <div class="col-xs-4">
+        <h3>Monthly</h3>
+        <h2>$300</h2>
+        <h3>Monthly</h3>
+        <h2>$300</h2>
+
+      </div>
+      <div class="col-xs-4">
+        <h3>All Time</h3>
+        <h2>$5.2k</h2>
+        <h3>All Time</h3>
+        <h2>$5.2k</h2>
+      </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
 <%= link_to 'Back', users_path %>

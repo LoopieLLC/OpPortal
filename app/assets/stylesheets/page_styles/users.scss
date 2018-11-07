@@ -2,20 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// form styling
-
+//
 .profile {
-  text-align: center;
-  padding-left: 0em;
-  padding-right: 0em;
 
-  margin: 1.5em 0;
+  //margin: 1.5em 0;
 
   .btn {
     padding-top: 1em;
     padding-bottom: 1em;
   }
+  //profile cards
+  .card-light {
+    h1 {
+      color: $ColorDark;
+    }
+
+  }
 }
+
 .img-big {
     margin: 0 auto;
   width: 9em;
