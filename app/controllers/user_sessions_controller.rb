@@ -23,6 +23,6 @@ class UserSessionsController < ApplicationController
   def destroy
     logout
     flash[:success] = 'Logged Out!'
-    redirect_to(:welcome)
+    redirect_to(:login)
   end
 end
