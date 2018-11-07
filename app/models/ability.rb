@@ -1,6 +1,6 @@
 class Ability
   include CanCan::Ability
-  alias_action :create, :read, :update, to :ruc
+  alias_action :read, :update, to :ru
 
   def initialize(user)
     user ||= User.new
@@ -9,10 +9,16 @@ class Ability
         can :manage, :all
       end
       if user.has_role? :any, Washer
-        can :ruc, Washer, user_id: user.id
+        can :ru, Washer, user_id: user.id
+        if user.has_role? :moderator, Washer
+          can :create, Washer
+        end
       end
       if user.has_role? :any, Driver
-        can :ruc, Driver, user_id: user.id
+        can :ru, Driver, user_id: user.id
+        if user.has_role? :moderator, Driver
+          can :create, Driver
+        end
       end
     end
     # Define abilities for the passed in user here. For example:
