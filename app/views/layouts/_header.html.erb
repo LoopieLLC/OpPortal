@@ -7,11 +7,13 @@
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <% if logged_in? %>
-          <%= link_to "Logout", logout_path, class: "nav-link"%><span class="sr-only">(current)</span>
-        <% else %>
-          <%= link_to "Login", login_path, class: "nav-link"%>
-        <% end %>
+          <% if logged_in? %>
+            <%= link_to "Logout", logout_path, class: "nav-link"%><span class="sr-only">(current)</span>
+            <%= link_to "Profile", user_path(current_user.id), class: "nav-link"%><span class="sr-only">(current)</span>
+            <%= link_to "Loads", loads_path, class: "nav-link"%><span class="sr-only">(current)</span>
+          <% else %>
+            <%= link_to "Login", login_path, class: "nav-link"%>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -20,8 +22,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% if current_user.has_role? Washer %>
               <%= link_to "Washer Guidelines", washer_guidelines_path, class: "dropdown-item" %>
-              <%= link_to "Profile", user_path(current_user.id), class: "dropdown-item" %>
-
+            <% end %>
+            <% if current_user.has_role? Driver %>
+              <%= link_to "Driver Guidelines", driver_guidelines_path, class: "dropdown-item" %>
             <% end %>
             <%= link_to "About", about_path, class: "dropdown-item" %>
             <%= link_to "Help", help_path, class: "dropdown-item"%>
