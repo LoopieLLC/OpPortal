@@ -18,13 +18,13 @@ Rails.application.routes.draw do
   get '/new_driver', to: 'users#new_driver'
   post '/new_driver', to: 'users#create_driver'
 
+  # loads
+  get '/loads', to: 'loads#index', as: 'loads'
+
   # washer controller actions
   get '/new_washer', to: 'users#new_washer'
   post '/new_washer', to: 'users#create_washer'
-
-  # loads
-  get '/loads', to: 'loads#index', as: 'loads'
-  
+  get '/washers/:id/show_drivers', to: 'drivers#index', as: 'drivers'
 
   #sessions
   get 'login' => 'user_sessions#new', :as => :login

@@ -13,6 +13,11 @@ class WashersController < ApplicationController
     @washer = Washer.find(params[:id])
   end
 
+  # GET /washers/1/show_drivers
+   # GET /washers/1/show_drivers.jsom
+  def show_drivers
+  end
+
   # GET /washers/new
   def new
     @washer = Washer.new
