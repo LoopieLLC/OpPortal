@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/driver_guidelines', to: 'static_pages#driver_guidelines'
   get '/washer_guidelines', to: 'static_pages#washer_guidelines'
 
+  get '/users/:id', to: 'users#show', as: 'user'
   # driver controller actions
   get '/new_driver', to: 'users#new_driver'
   post '/new_driver', to: 'users#create_driver'
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   # washer controller actions
   get '/new_washer', to: 'users#new_washer'
   post '/new_washer', to: 'users#create_washer'
+  
 
   #sessions
   get 'login' => 'user_sessions#new', :as => :login
