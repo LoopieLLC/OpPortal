@@ -6,36 +6,33 @@
    </button>
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <% if logged_in? %>
+        <% if logged_in? %>
+          <li class="nav-item active">
             <%= link_to "Logout", logout_path, class: "nav-link"%><span class="sr-only">(current)</span>
             <%= link_to "Profile", user_path(current_user.id), class: "nav-link"%><span class="sr-only">(current)</span>
             <%= link_to "Loads", loads_path, class: "nav-link"%><span class="sr-only">(current)</span>
-          <% else %>
-            <%= link_to "Login", login_path, class: "nav-link"%>
-          <% end %>
-          <% if current_user.has_role? Washer %>
-            <%= link_to "Drivers", drivers_path(current_user.id), class: "nav-link"%><span class="sr-only">(current)</span>
-          <% end %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Info
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% if current_user.has_role? Washer %>
-              <%= link_to "Washer Guidelines", washer_guidelines_path, class: "dropdown-item" %>
+              <%= link_to "Drivers", drivers_path(current_user.id), class: "nav-link"%><span class="sr-only">(current)</span>
+              <%= link_to "Washer Guidelines", washer_guidelines_path, class: "nav-link" %>
+            <% elsif current.has_role? Driver %>
+              <%= link_to "Driver Guidelines", washer_guidelines_path, class: "nav-link" %>
             <% end %>
-            <% if current_user.has_role? Driver %>
-              <%= link_to "Driver Guidelines", driver_guidelines_path, class: "dropdown-item" %>
-            <% end %>
-            <%= link_to "About", about_path, class: "dropdown-item" %>
-            <%= link_to "Help", help_path, class: "dropdown-item"%>
-            <div class="dropdown-divider">
-              <%= link_to "Contacts", contact_path, class: "dropdown-item" %>
-            </div>
-          </div>
-        </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Info
+              </a>
+              <div class="dropdown-menu">
+                <%= link_to "About", about_path, class: "dropdown-item" %>
+                <%= link_to "Help", help_path, class: "dropdown-item" %>
+                <%= link_to "Contacts", contact_path, class: "dropdown-item" %>
+              </div>
+            </li>
+          </li>
+        <% else %>
+            <%= link_to "Login", login_path, class: "nav-link"%>
+            <%= link_to "About", about_path, class: "nav-link" %>
+            <%= link_to "Help", help_path, class: "nav-link"%>
+        <% end %>
       </ul>
     </div>
   </nav>
