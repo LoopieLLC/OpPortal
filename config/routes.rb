@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'password_resets/create'
+  get 'password_resets/edit'
+  get 'password_resets/update'
   get 'user_sessions/new'
   # welcome page is root
   root 'welcome_page#welcome'
@@ -39,5 +42,6 @@ Rails.application.routes.draw do
   resources :drivers
   resources :washers
   resources :admins
+  resources :password_resets
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -5,7 +5,32 @@
       <%= gravatar_for @user %>
       <%= @user.firstname %> <%= @user.lastname %>, <%= @user.email %>
     </h1>
+    <button data-toggle="modal" data-target="#changePassword">Change Password</button>
   </section>
+  <%= form_with(model: @user, local: true) do |form| %>
+    <div class="modal fade change-password-modal" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <form>
+              <div class="form-group">
+                <label>Enter new password</label>
+                <%= form.password_field :password , class: 'form-control', placeholder: :password %>
+              </div>
+              <div class="form-group">
+                <label>Confirm new password</label>
+                <%= form.password_field :password_confirmation , class: 'form-control', placeholder: :password_confirmation %>
+              </div>
+              <%= form.submit 'Submit', :class => 'btn btn-lg btn-primary btn-block'%>
+            </form>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
