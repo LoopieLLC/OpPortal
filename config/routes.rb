@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   # loads
   get '/loads', to: 'loads#index', as: 'loads'
+  get '/loads/:id', to: 'loads#show', as: 'show_load'
+  get '/loads/new', to: 'loads#new', as: 'new_load'
 
   # washer controller actions
   get '/new_washer', to: 'users#new_washer'

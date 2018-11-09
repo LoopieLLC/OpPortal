@@ -10,6 +10,12 @@ class LoadsController < ApplicationController
   # GET /loads/1
   # GET /loads/1.json
   def show
+    @loads = Load.find(params[:id])
+  end
+
+  # GET /loads/active
+  def show_active
+
   end
 
   # GET /loads/new

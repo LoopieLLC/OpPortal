@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="container-fluid loads-container">
-
+  <% @loads.each do |load| %>
     <div class="card">
       <div class="card-body">
         <div>
@@ -24,24 +24,7 @@
         </div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-body active">
-        <div>
-          <span class="customer-name">
-            <b>Brandon</b>
-          </span>
-          <span class="customer-address">
-            <b>762 30th Ave</b>
-          </span>
-          <span class="card-footer">4.20 miles away | load ID: 420</span>
-        </div>
-        <div class="select-load">
-          <button type="button" class="btn btn-outline-primary">Unselect Load</button>
-        </div>
-      </div>
-    </div>
-
+  <% end %>
     <tbody>
       <% @loads.each do |load| %>
         <tr>
