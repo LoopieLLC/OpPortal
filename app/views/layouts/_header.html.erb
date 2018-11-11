@@ -8,7 +8,7 @@
       <ul class="navbar-nav mr-auto">
         <% if logged_in? %>
           <li class="nav-item active">
-            <%= link_to "Logout", logout_path, class: "nav-link"%><span class="sr-only">(current)</span>
+            <%= link_to "Logout", :logout, method: :post, class: "nav-link"%><span class="sr-only">(current)</span>
             <%= link_to "Profile", user_path(current_user.id), class: "nav-link"%><span class="sr-only">(current)</span>
             <%= link_to "Loads", loads_path, class: "nav-link"%><span class="sr-only">(current)</span>
             <% if current_user.has_role? Washer %>
