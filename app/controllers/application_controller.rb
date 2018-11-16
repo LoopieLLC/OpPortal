@@ -11,8 +11,13 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to '/login' unless current_user
   end
+  include UserSessionsHelper
+  protect_from_forgery with: :exception
+  before_action :require_login
+
   private
     def not_authenticated
-      redirect_to login_path
+      flash[:danger] = "Please login first."
+      redirect_to(login_path)
     end
 end
