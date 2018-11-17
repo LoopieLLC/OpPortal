@@ -14,7 +14,7 @@
             <% if current_user.has_role? Washer %>
               <%= link_to "Drivers", drivers_path(current_user.id), class: "nav-link"%><span class="sr-only">(current)</span>
               <%= link_to "Washer Guidelines", washer_guidelines_path, class: "nav-link" %>
-            <% elsif current.has_role? Driver %>
+            <% elsif current_user.has_role? Driver %>
               <%= link_to "Driver Guidelines", washer_guidelines_path, class: "nav-link" %>
             <% end %>
             <li class="nav-item dropdown">
