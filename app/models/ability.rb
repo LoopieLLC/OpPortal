@@ -1,26 +1,25 @@
 class Ability
   include CanCan::Ability
-  alias_action :read, :update, to :ru
+  alias_action :read, :update, :create, to :cru
 
   def initialize(user)
     user ||= User.new
     if user.logged_in?
+
       if user.has_role? :admin
         can :manage, :all
-      end
-      if user.has_role? :any, Washer
-        can :ru, Washer, user_id: user.id
-        if user.has_role? :moderator, Washer
-          can :create, Washer
-        end
-      end
-      if user.has_role? :any, Driver
-        can :ru, Driver, user_id: user.id
-        if user.has_role? :moderator, Driver
-          can :create, Driver
-        end
+
+      elsif user.has_role? :washer_moderator
+        can :cru, role: 1
+
+      elsif user.has_role? :driver_moderator
+        can :cru, role: 2
+
+      elsif user.has_role? :standard_user
+        can [:read, :update], user_id: user.id
       end
     end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
