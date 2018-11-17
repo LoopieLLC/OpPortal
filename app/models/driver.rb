@@ -1,11 +1,9 @@
 class Driver < ApplicationRecord
   resourcify
-  
+
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
   before_save { self.driving_status = 0 }
-
-  #after_create :make_user
 
   belongs_to :user
 
@@ -82,15 +80,5 @@ class Driver < ApplicationRecord
 
   validates :vin,
     presence: true
-
-  # validates :start_date,
-  # install gem required for dates
-  # next
-
-  def make_user
-    user = User.create!(:email => self.email, :password => self.password, :password_confirmation => self.password_confirmation, :firstname => self.firstname, :lastname => self.lastname, :role => 2, :zip_code => self.zip_code)
-    user.driver_id = self.id
-    user.save
-  end
 
 end
