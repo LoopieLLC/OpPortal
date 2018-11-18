@@ -5,6 +5,7 @@ class UserSessionsController < ApplicationController
     @user = User.new
   end
 
+  
   def create
     if @user = login(params[:email], params[:password])
       if @user.confirmation_status < 1

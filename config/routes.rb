@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'password_resets/create'
   get 'password_resets/edit'
-  get 'password_resets/update'
+  get 'password_resets/new'
   get 'user_sessions/new'
   # welcome page is root
   root 'welcome_page#welcome'

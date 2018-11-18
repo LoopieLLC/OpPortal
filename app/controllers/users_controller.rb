@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new_washer, :new_driver, :create_washer, :create_driver]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_login, only: [:index, :new, :create]
   # GET /users
   # GET /users.json
   def index

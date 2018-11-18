@@ -9,14 +9,13 @@
             <h1 class="h3 mb-3 font-weight-normal text-light">Loopie Laundry</h1>
 
             <!-- <button class="btn btn-lg btn-primary btn-block rounded-circle" type="submit">Sign in</button> -->
-            <%= link_to "Login", :login, method: :get,  class: 'btn btn-lg btn-primary btn-block' %>
+            <%= link_to "Login", login_path, class: 'btn btn-lg btn-primary btn-block' %>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">
               Sign up
             </button>
-            <h2>Forgot Password?</h2>
-            <%= link_to "Reset Password", :controller => :password_resets, :action => :edit %>
+            <%= link_to "Forgot Password?", :controller => :password_resets, :action => :edit %>
             <!-- Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">

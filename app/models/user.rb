@@ -46,7 +46,6 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 8 }#, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true#, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true#, if: -> { new_record? || changes[:crypted_password] }
-
   def make_washer
     washer = Washer.create!(:email => self.email, :username => self.username, :user_id => self.id, :firstname => self.firstname, :lastname => self.lastname, :phone => self.phone, :address_1 => self.address_1, :address_2 => self.address_2, :city => self.city, :state => self.state, :zip_code => self.zip_code, :machine_description => self.machine_description)
     washer.save
