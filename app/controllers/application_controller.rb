@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
 
   private
     def not_authenticated
-      format.html { redirect_to login_path }
-      format.json { render :show, status: :created, location: @user }
-      redirect_to(login_path, :alert => "Please login first")
+      # format.html { redirect_to login_path }
+      # format.json { render :show, status: :created, location: @user }
+      flash[:danger] = 'Please Login First'
+      redirect_to(login_path)
     end
 end
