@@ -77,10 +77,10 @@ ActiveRecord::Schema.define(version: 2018_11_05_223514) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.string "profile_picture"
     t.string "crypted_password"
     t.string "salt"
-    t.bigint "user_id"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["user_id"], name: "index_drivers_on_user_id"
     t.index ["username"], name: "index_drivers_on_username", unique: true
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_223514) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
     t.bigint "resource_id"
@@ -135,10 +135,9 @@ ActiveRecord::Schema.define(version: 2018_11_05_223514) do
     t.string "crypted_password"
     t.string "salt"
     t.string "phone"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "users_roles", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users_roles", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "role_id"
     t.index ["role_id"], name: "index_users_roles_on_role_id"
@@ -166,10 +165,10 @@ ActiveRecord::Schema.define(version: 2018_11_05_223514) do
     t.date "start_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.string "profile_picture"
     t.string "crypted_password"
     t.string "salt"
-    t.bigint "user_id"
     t.index ["email"], name: "index_washers_on_email", unique: true
     t.index ["user_id"], name: "index_washers_on_user_id"
     t.index ["username"], name: "index_washers_on_username", unique: true

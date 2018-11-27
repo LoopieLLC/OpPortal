@@ -8,10 +8,20 @@ body {
 // scss for buttons
 
 
-.center-header {  // renamed some stuff so that css doesnt conflict with one another
+.center-header {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h1:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 1px solid $ColorGrey;
+  }
 }
 
 .text-center {
