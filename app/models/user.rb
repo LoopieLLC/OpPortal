@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :avatar
   rolify
   authenticates_with_sorcery!
 
@@ -15,7 +16,7 @@ class User < ApplicationRecord
 
   has_one :washer, dependent: :destroy
   has_one :driver, dependent: :destroy
-  #has_many :loads
+
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}\z/
