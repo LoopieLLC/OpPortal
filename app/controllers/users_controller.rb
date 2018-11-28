@@ -5,12 +5,15 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @drivers = Driver.all
+    @washers = Washer.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    #@driver = Driver.find(params[:user_id])
     #debugger
   end
 
@@ -115,6 +118,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :firstname, :lastname, :role, :zip_code, :role, :start_date, :address_1, :address_2, :city, :state, :insurance_info, :vin, :license_plate, :car_year, :car_make, :car_model, :car_color, :additional_information, :phone, :machine_description)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :firstname, :lastname, :role, :zip_code, :role, :start_date, :address_1, :address_2, :city, :state, :insurance_info, :vin, :license_plate, :car_year, :car_make, :car_model, :car_color, :additional_information, :phone, :machine_description, :avatar)
     end
 end

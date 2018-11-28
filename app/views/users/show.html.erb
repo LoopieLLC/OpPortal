@@ -2,11 +2,52 @@
 <div class="container-light">
   <section class="user_info">
     <h1>
-      <%= gravatar_for @user %>
-      <%= @user.firstname %> <%= @user.lastname %>, <%= @user.email %>
+      <!-- if user has avatar attached do this or that blah -->
+      <% if @user.avatar.attached? %>
+        <div class="img-big round"><%= image_tag @user.avatar%></div>
+      <%else%>
+        <div class="img-big round">
+        </div>
+      <%end%>
+      Welcome, <%= @user.firstname %> <%= @user.lastname %>, <%= @user.email %>
     </h1>
   </section>
 </div>
+
+<div>
+  <!-- show different pages based on different users -->
+  <% if @user.role == 1%>
+    <p>
+      I'm a washer!
+    </p>
+
+
+
+    <!-- washer code goes here -->
+  <% elsif @user.role == 2%>
+    <p>
+      I'm a driver from <%= @user.city %>, <%= @user.state %>!
+
+    </p>
+
+    <p>
+      Here are my stats:
+    </p>
+
+    <p>
+      Car: <%= @user.car_color%> <%= @user.car_model%>
+    </p>
+
+      <!-- driver code goes here -->
+  <% else %>
+    <P>
+      i̧̙͓̗̦̤͕͚̙̲͇͖̩̖̯͙̙ͤ͐͊ͦ̈́́ͪ̎͠ͅ ̶̸̢̤͇̙͈̣͚͓͓̗̹̖̰͔̬ͣ̐̄̏͋̒̾̅ͮ̅͗ͯͨͬͪ̑͢ͅa̧͒́̓͂̓̒̀̉ͭ͋ͦ̒̀̓̔ͫ̎́̚͟͞҉̤̗̼̝̳̥m̡̡̛͚̙̲̩̱̺̙͔̘͙̜̯̫̙͔̠̠̂ͨ͌ͪ̓͛͋ ̢̀̋̄͐̄͑ͧ̄̃̎҉̠̭͔̳̦͖̫̖̲͚̳̘͕͡e̸̸̡͚̮͕̫̼͚̓̍͋͒̿̅ͥ͝g̑͛͒ͬ̅ͣͤͧ̔̈́ͨ̈̏͌̚͏̝̤̞̗͍̞̩͍͎͖͖̺̜͕̱̺̳͉͢͞g̴̰̙̖̠̱͎̰̀̍ͪ͐̀̕
+    </P>
+  <!-- else goes here  -->
+
+  <%end%>
+</div>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

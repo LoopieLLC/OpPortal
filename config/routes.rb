@@ -26,7 +26,10 @@ Rails.application.routes.draw do
   # resources
   resources :user_sessions
   resources :loads
-  resources :users
+  resources :users do
+    resources :drivers
+    resources :washers
+  end
   resources :drivers
   resources :washers
   resources :admins

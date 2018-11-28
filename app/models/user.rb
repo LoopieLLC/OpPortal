@@ -5,6 +5,8 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   before_save { self.confirmation_status = 0 }
 
+  has_one_attached :avatar
+
   after_create {
     if self.role == 1
       make_washer
