@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(version: 2018_11_05_223514) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "profile_picture"
+    t.string "crypted_password"
+    t.string "salt"
     t.index ["email"], name: "index_drivers_on_email", unique: true
     t.index ["user_id"], name: "index_drivers_on_user_id"
     t.index ["username"], name: "index_drivers_on_username", unique: true
@@ -163,6 +166,9 @@ ActiveRecord::Schema.define(version: 2018_11_05_223514) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "profile_picture"
+    t.string "crypted_password"
+    t.string "salt"
     t.index ["email"], name: "index_washers_on_email", unique: true
     t.index ["user_id"], name: "index_washers_on_user_id"
     t.index ["username"], name: "index_washers_on_username", unique: true

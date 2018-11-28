@@ -1,12 +1,102 @@
 <% provide(:title, @user.firstname) %>
-<div class="container-light">
-  <section class="user_info">
-    <h1>
-      <%= gravatar_for @user %>
-      <%= @user.firstname %> <%= @user.lastname %>, <%= @user.email %>
-    </h1>
-  </section>
-</div>
+  <div class="container container-light">
+    <section class="user_info">
+      <h2 class="text-big">
+        Welcome back,
+        <%= @user.firstname %>
+      </h2>
+    </section>
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <% provide(:title, 'Driver Profile') %>
+    <p id="notice"><%= notice %></p>
+
+    <div class="container ">
+      <div class="col-md-12">
+        <div class="row flex-center">
+          <div class="col-md-12 profile">
+            <div class="img-big round"></div>
+            <h1><%= @user.firstname%>
+              <%= @user.lastname%></h1>
+            <p class="text-light">Loopie User |
+              <%= @user.car_color%>
+              <%= @user.car_make %>
+              <%= @user.car_model%>
+            </p>
+            <p>
+              <p class="text-light">
+                From
+                <%= @user.city %>,
+                <%= @user.state %>
+              </p>
+              <p class="text-light">
+                License Plate:
+                <%= @user.license_plate %>
+              </p>
+              <p>
+                Phone Number:
+                <%= @user.phone %>
+              </p>
+              <p>
+                ID:
+                <%= @user.id %>
+              </p>
+              <p>
+                <%= link_to 'Edit', edit_user_path(@user) %>
+                |</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-12 profile">
+            <button class="btn btn-primary btn-lg btn-block">Start delivering Laundry</button>
+          </div>
+          <div class="col-md-6 profile">
+            <div class="card card-light">
+              <div class="card-body">
+                <h1 class="card-title">Stats</h1>
+
+                <div class="card-text">
+                  <p>owowowowow</p>
+                  <p>asdad</p>
+                  <p>owowowowow</p>
+                  <p>asdad</p>
+                  <p>owowowowow</p>
+                  <p>asdad</p>
+                </div>
+
+                <a class='card-link' href="">
+                  See more stats >
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 profile">
+            <div class="card card-light">
+              <div class="card-body">
+                <h1 class="card-title">Stats</h1>
+
+                <div class="card-text">
+                  <p>owowowowow</p>
+                  <p>asdad</p>
+                  <p>owowowowow</p>
+                  <p>asdad</p>
+                  <p>owowowowow</p>
+                  <p>asdad</p>
+                </div>
+
+                <a class='card-link' href="">
+                  See more stats >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+      </div>
+
+    </div>
+
+    <%= link_to 'Back', users_path %>
