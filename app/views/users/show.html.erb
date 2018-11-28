@@ -1,12 +1,10 @@
 <% provide(:title, @user.firstname) %>
-  <div class="container-light">
+  <div class="container container-light">
     <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
+      <h2 class="text-big">
+        Welcome back,
         <%= @user.firstname %>
-        <%= @user.lastname %>,
-        <%= @user.email %>
-      </h1>
+      </h2>
     </section>
   </div>
 
@@ -44,7 +42,7 @@
                 <%= @user.id %>
               </p>
               <p>
-                <%= link_to 'Edit', edit_driver_path(@user) %>
+                <%= link_to 'Edit', edit_user_path(@user) %>
                 |</p>
             </div>
           </div>
