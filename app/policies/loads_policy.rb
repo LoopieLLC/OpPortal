@@ -1,0 +1,2 @@
+class LoadsPolicy < ApplicationPolicy
+end
