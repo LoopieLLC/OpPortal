@@ -22,12 +22,10 @@
     </p>
 
 
-
     <!-- washer code goes here -->
   <% elsif @user.role == 2%>
     <p>
       I'm a driver from <%= @user.city %>, <%= @user.state %>!
-
     </p>
 
     <p>
@@ -35,14 +33,26 @@
     </p>
 
     <p>
-      Car: <%= @user.car_color%> <%= @user.car_model%>
+      Car: <%=@user.car_year%> <%= @user.car_color%> <%= @user.car_make %> <%= @user.car_model%>
+    </p>
+
+    <p>
+      ID: <%= @user.id %>
+    </p>
+
+    <p>
+      Phone Number: <%=@user.phone%>
+    </p>
+
+    <p>
+      Driving Status: <%=@user.driving_status%>
     </p>
 
       <!-- driver code goes here -->
   <% else %>
-    <P>
+    <p>
       i̧̙͓̗̦̤͕͚̙̲͇͖̩̖̯͙̙ͤ͐͊ͦ̈́́ͪ̎͠ͅ ̶̸̢̤͇̙͈̣͚͓͓̗̹̖̰͔̬ͣ̐̄̏͋̒̾̅ͮ̅͗ͯͨͬͪ̑͢ͅa̧͒́̓͂̓̒̀̉ͭ͋ͦ̒̀̓̔ͫ̎́̚͟͞҉̤̗̼̝̳̥m̡̡̛͚̙̲̩̱̺̙͔̘͙̜̯̫̙͔̠̠̂ͨ͌ͪ̓͛͋ ̢̀̋̄͐̄͑ͧ̄̃̎҉̠̭͔̳̦͖̫̖̲͚̳̘͕͡e̸̸̡͚̮͕̫̼͚̓̍͋͒̿̅ͥ͝g̑͛͒ͬ̅ͣͤͧ̔̈́ͨ̈̏͌̚͏̝̤̞̗͍̞̩͍͎͖͖̺̜͕̱̺̳͉͢͞g̴̰̙̖̠̱͎̰̀̍ͪ͐̀̕
-    </P>
+    </p>
   <!-- else goes here  -->
 
   <%end%>
