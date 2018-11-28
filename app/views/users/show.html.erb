@@ -18,9 +18,24 @@
   <!-- show different pages based on different users -->
   <% if @user.role == 1%>
     <p>
-      I'm a washer!
+      I'm a washer <%= @user.city %>, <%= @user.state %>!
     </p>
 
+    <p>
+      Here are my stats:
+    </p>
+
+    <p>
+      ID: <%= @user.id%>
+    </p>
+
+    <p>
+      Phone Number: <%=@user.phone%>
+    </p>
+
+    <p>
+      Washer Status: <%= @user.washing_status%>
+    </p>
 
     <!-- washer code goes here -->
   <% elsif @user.role == 2%>
