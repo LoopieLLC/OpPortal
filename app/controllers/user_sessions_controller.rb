@@ -6,23 +6,23 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    if @user = login(params[:email], params[:password])
-      if @user.confirmation_status < 1
-        logout
-        redirect_to(:welcome)
-      else
-        flash[:success] = 'Login successful'
-        redirect_back_or_to(:users)
-      end
+    @user = login(params[:email], params[:password])
+    if @user
+      redirect_back_or_to(@user)
     else
-      flash[:danger] = 'Login failed'
+      flash.now[:danger] = 'Login failed'
       render action: 'new'
     end
   end
 
   def destroy
-    logout
-    flash[:success] = 'Logged Out!'
-    redirect_to(:login)
+    if logout
+      flash[:success] = 'Log out successful'
+      redirect_to(welcome_path)
+    end
+  end
+
+  def index
+    redirect_to :login
   end
 end

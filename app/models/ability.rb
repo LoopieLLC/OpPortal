@@ -1,22 +1,18 @@
 class Ability
   include CanCan::Ability
-  alias_action :read, :update, :create, to :cru
 
   def initialize(user)
+    alias_action :read, :update, :create, to: :cru
     user ||= User.new
-    if user.logged_in?
+    can :create, User
 
+    if user
       if user.has_role? :admin
         can :manage, :all
 
-      elsif user.has_role? :washer_moderator
-        can :cru, role: 1
-
-      elsif user.has_role? :driver_moderator
-        can :cru, role: 2
-
-      elsif user.has_role? :standard_user
-        can [:read, :update], user_id: user.id
+      elsif user.has_role? :standard
+        can :update, User, id: user.id
+        can :read, User
       end
     end
 
