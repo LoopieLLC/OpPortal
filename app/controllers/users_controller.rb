@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+
   # GET /users
   # GET /users.json
   def index
@@ -18,6 +21,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+'''
   def new_washer
     @user = User.new
   end
@@ -25,6 +29,7 @@ class UsersController < ApplicationController
   def new_driver
     @user = User.new
   end
+'''
 
   # GET /users/1/edit
   def edit
@@ -34,19 +39,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
-        if @user.role = 1
-          flash[:success] = "Thank you!\nYour Loopie LLC washer application will be processed shortly."
-        elsif @user.role = 2
-          flash[:success] = "Thank you!\nYour Loopie LLC driver application will be processed shortly."
-        end
+        flash[:success] = "Your account has been created!"
 
         format.html { redirect_to @user}
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { render :new_user }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +58,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:success] = "You are now a Loopie washer!"
-        format.html { redirect_to @user}
+
+        format.html { redirect_to login_path}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new_washer }
@@ -73,7 +74,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:success] = "You are now a Loopie Driver!"
-        format.html { redirect_to @user}
+        format.html { redirect_to login_path}
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new_driver }
